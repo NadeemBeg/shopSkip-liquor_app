@@ -1,0 +1,195 @@
+<template name="register">
+	<div class="signup">
+		<div class="page-wrapper"> 
+			<div class="banner">
+				<div class="header">
+					<div class="container">
+						<div class="row npm">
+							<div class="col-xs-3 npm icon-left"> <a href="/login" id="nav-icon2"><img src="/images/back-icon.png" alt="back-icon"> </a> </div>
+							<div class="col-xs-6 npm">
+								<div class="header_title"><h2>Create Account</h2></div>
+							</div>
+							<!-- <div class="col-xs-3 npm text-right icon-right"> 
+								<a href="#"><img src="/images/check-icon.png" alt="check-icon"/> </a> 
+					</div> -->
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+					<div class="logo">
+						<img src="/images/logo.png" alt="logo" class="img-responsive">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content common-form">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+					<form id="registerForm">
+						<div class="form" id="signupForm">
+							<h3>Your Account Details</h3>
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">First Name</label>
+								<input type="text" class="form-control isRequired validateName" name="firstName" id="firstName">
+								<span class="errorSpan"></span>
+							</div>
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Last Name</label>
+								<input type="text" class="form-control isRequired validateName" name="lastName" id="lastName"> 
+								<span class="errorSpan"></span>
+							</div>
+							<div class="label-floating is-empty">
+								<label class="control-label" style="color: #1d1d26;font-size: 24px; font-weight: 400;">Profile Pic</label><br>
+								<div class="upload-btn-wrapper">
+								  <button type="button" class="uplodImgBtn">Upload picture</button>
+								  <input type="file" id="userimage" name="profileImage" accept="image/*"/><br>
+								</div>
+
+								<!-- <input type="file" id="userimage" name="profileImage" accept="image/*"/><br> -->
+								<br>
+								<img id= "showImg" src="" height="100px" width="150px" alt="">
+   							<span class="errorSpan"></span>
+							</div>
+							<!-- <div class="select-box">
+								<div class="form-group label-floating is-empty">
+									<select class="form-control isRequired" id="userCountry" name="userCountry">
+										<option  value="">Select Country</option> 
+										{{#each country in countries}}
+											<option selected={{isSelected country.countryName}}>{{country.countryName}}</option>
+										{{/each}}
+									</select>
+									<span class="errorSpan"></span>
+								</div>
+								<div class="selectarrow"><i class="fa fa-angle-down"></i></div>
+							</div> -->
+							<div class="form-group label-floating is-empty birthdayLabel">
+								<label class="control-label">Birthday</label>
+								<input type="text" class="datepicker form-control isRequired" name="userdob" id="userdob" readonly="readonly">
+								<span class="errorSpan"></span>
+							</div>
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Email</label>
+								<input type="email" class="form-control isRequired validateEmail" name="userEmailRegister" id="userEmailRegister">
+								<span class="errorSpan"></span>
+							</div>
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Password</label>
+								<input type="password" class="form-control isRequired" name="userPasswordRegister"  id="userPasswordRegister">
+								<span class="errorSpan"></span>
+							</div>
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Confirm Password</label>
+								<input type="password" class="form-control isRequired" name="userConfirmPasswordRegister" id="userConfirmPasswordRegister">
+								<span class="errorSpan"></span>
+							</div>
+							<!-- <div class="form-group label-floating is-empty">
+	                            <select class="form-control isRequired" name="mobileNumberCode" id="mobileNumberCode">
+	                              <option value="">Select Code</option>
+	                              {{#each countries}}
+		                              <option data-countryCode="{{this.countryCode}}" value="{{this.countryCodeISD}}">{{this.countryName}}</option>
+	                              {{/each}}
+	                            </select>
+	                            <span class="errorSpan"></span>
+                          	</div> -->
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Phone Number</label>
+								<input type="text" class="form-control isRequired validateMobileNumber" name="phoneNumber" id="phoneNumber">
+								<span class="errorSpan"></span>
+							</div>
+							<h3>Home Address</h3>
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Street</label>
+								<input type="text" class="form-control isRequired" name="userStreet" id="userStreet">
+								<span class="errorSpan"></span>
+							</div>
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">City</label>
+								<input type="text" class="form-control isRequired" name="userCity" id="userCity">
+								<span class="errorSpan"></span>
+							</div>
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">State</label>
+								<input type="text" class="form-control isRequired" name="userState" id="userState">
+								<span class="errorSpan"></span>
+							</div>
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Zip</label>
+								<input type="text" class="form-control isRequired validateZip" name="userZip" id="userZip">
+								<span class="errorSpan"></span>
+							</div>
+							<!-- terms of service -->
+					    <div class="form-group label-floating is-empty">
+                <!-- <div class="checkboxmark">
+                  <label>
+                    <input type="checkbox" value="off" id="termsOfService">
+                    <span class="checkeds blackboder"><i class="fa fa-check checkeds-icon"></i></span>
+                    <h3 class="font-weit-normal">
+                    	<a href="/termsofservice" style="color: red;text-decoration: underline;"> Terms Of Service</a>
+                    	<p class="termsRead" style="color: red;text-decoration: underline;">Terms Of Service</p>
+                    </h3>
+                  </label>
+                </div> -->
+			          <span class="material-input"></span> 
+			        </div>
+              <!-- end -->
+							<div class="form-group">
+								<div class="pos-relative">
+									<button type="button" class="btn btn-block" id="createAccount">Create Account<div class="ripple-container"></div></button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+<div class="tremCondition-modal">
+  <div class="modal" id="termsAndCondition" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Terms Of Service</h4>
+        </div>
+        <div class="modal-body">
+
+					<div class="content common-form favorites-list">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="terms-of-services-legal-page text-center">
+                        {{{getContents.pageContent}}}
+                        
+                        <!-- <div class="form-group label-floating is-empty">
+                          
+                          <span class="material-input"></span> 
+                        </div> -->
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+		 		</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</template>

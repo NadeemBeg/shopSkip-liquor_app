@@ -1,0 +1,267 @@
+<template name="cart">
+	<div class="yourcart flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="cartProductsList" style="display: flex;flex: 1;overflow-x: hidden;overflow-y: auto;flex-direction: column;">
+        <div class="tabPart" style="padding-top: 0;">
+          <div class="tabs" style="margin-top: 10px;">
+            <div class="tabItems" data-selection="pickup">
+              <span>Pick Up</span>
+            </div>
+            <div class="tabItems" data-selection="delivery">
+              <span>Delivery</span>
+            </div>
+            <div class="tabItems" data-selection="shopInStore">
+              <span>Shop In Store</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="middlePart">
+              <div class="form cartlist">
+                      {{#if getCarts}}
+
+
+
+
+                        {{#if isDeliverySelected}}
+                          {{#if getCarts.nonLiquorProducts}}
+                            <div class="liquorProductsDiv">
+                              <label>
+                                Delivery:
+                              </label>
+                              <div class="listItems">
+                                {{#each getCarts.nonLiquorProducts}}
+                                  <div class="form-group your-cart-list" style="padding-bottom: 0;">
+                                    <div class="cartproduct">
+                                      <div class="cartproduct-image">
+                                        {{#if hasProductImage this.productId}}
+                                        <a href="#"><img src="{{productImage this.productId}}" class="avlImage" alt="bottle-product"></a>
+                                        {{else}}
+                                        <a href="#"><img src="{{productImage this.productId}}" class="noAvlImage" alt="bottle-product"></a>
+                                        {{/if}}
+                                      </div>
+                                        
+                                    </div>
+                                    <div class="cartprodutitles">
+                                      {{#with productDetails this.productId}}
+                                      <span>{{this.productName}}</span>
+                                      <div class="rodutitles-price"> ${{this.price}} <span>{{bottleSize this._id}}</span> </div>
+                                      <div class="rodutitles-price"> Tax: {{#if this.productTax}} {{this.productTax}}% {{else}} 0% {{/if}}</div>
+                                      <div class="rodutitles-price"> Sin Tax: {{#if this.sinProductTax}} ${{this.sinProductTax}} {{else}} $0.00 {{/if}}</div>
+                                      <div style="font-size: 13px;"><b>Store:</b> {{storename this._id}}</div>
+                                      {{/with}}
+                                    </div>
+                                    <div class="product-quality">
+                                      <div id='myform' action='#'>
+                                        <input type='button' value='-' class='qtyminus' field='quantity' data-attr="{{this.productId}}" />
+                                        <input type='number' name='quantity' value='{{quantity this}}' class='qty' data-attr="{{this.productId}}"/>
+                                        <!-- <input type='text' name='quantity' value='{{quantity this}}' class='qty' disabled="true" /> -->
+                                        <input type='button' value='+' class='qtyplus' field='quantity' data-attr="{{this.productId}}"/>
+                                      </div>
+                                    </div>
+                                    <div class="closebtn"><a href="#"><img src="/images/close-arrow.png" id="removeFromCart" data-attr="{{this._id}}" alt="close-arrow"></a></div>
+                                  </div>
+                                {{/each}}
+                              </div>
+                            </div>
+                          {{/if}}
+                          {{#if getCarts.liquorProducts}}
+                            <div class="nonLiquorProductsDiv">
+                              <label>
+                                Items Needed To Be Picked Up:
+                              </label>
+                              <div class="listItems">
+                                {{#each getCarts.liquorProducts}}
+                                  <div class="form-group your-cart-list" style="padding-bottom: 0;">
+                                    <div class="cartproduct">
+                                      <div class="cartproduct-image">
+                                        {{#if hasProductImage this.productId}}
+                                        <a href="#"><img src="{{productImage this.productId}}" class="avlImage" alt="bottle-product"></a>
+                                        {{else}}
+                                        <a href="#"><img src="{{productImage this.productId}}" class="noAvlImage" alt="bottle-product"></a>
+                                        {{/if}}
+                                      </div>
+                                        
+                                    </div>
+                                    <div class="cartprodutitles">
+                                      {{#with productDetails this.productId}}
+                                      <span>{{this.productName}}</span>
+                                      <div class="rodutitles-price"> ${{this.price}} <span>{{bottleSize this._id}}</span> </div>
+                                      <div class="rodutitles-price"> Tax: {{#if this.productTax}} {{this.productTax}}% {{else}} 0% {{/if}}</div>
+                                      <div class="rodutitles-price"> Sin Tax: {{#if this.sinProductTax}} ${{this.sinProductTax}} {{else}} $0.00 {{/if}}</div>
+                                      <div style="font-size: 13px;"><b>Store:</b> {{storename this._id}}</div>
+                                      {{/with}}
+                                    </div>
+                                    <div class="product-quality">
+                                      <div id='myform' action='#'>
+                                        <input type='button' value='-' class='qtyminus' field='quantity' data-attr="{{this.productId}}" />
+                                        <input type='number' name='quantity' value='{{quantity this}}' class='qty' data-attr="{{this.productId}}"/>
+                                        <!-- <input type='text' name='quantity' value='{{quantity this}}' class='qty' disabled="true" /> -->
+                                        <input type='button' value='+' class='qtyplus' field='quantity' data-attr="{{this.productId}}"/>
+                                      </div>
+                                    </div>
+                                    <div class="closebtn"><a href="#"><img src="/images/close-arrow.png" id="removeFromCart" data-attr="{{this._id}}" alt="close-arrow"></a></div>
+                                  </div>
+                                {{/each}}
+                              </div>
+                            </div>
+                          {{/if}}
+                        {{else}}
+                          <div class="allProductsDiv">
+                              {{#if getCarts.nonLiquorProducts}}
+                                
+                                    {{#each getCarts.nonLiquorProducts}}
+                                      <div class="form-group your-cart-list" style="padding-bottom: 0;">
+                                        <div class="cartproduct">
+                                          <div class="cartproduct-image">
+                                            {{#if hasProductImage this.productId}}
+                                            <a href="#"><img src="{{productImage this.productId}}" class="avlImage" alt="bottle-product"></a>
+                                            {{else}}
+                                            <a href="#"><img src="{{productImage this.productId}}" class="noAvlImage" alt="bottle-product"></a>
+                                            {{/if}}
+                                          </div>
+                                            
+                                        </div>
+                                        <div class="cartprodutitles">
+                                          {{#with productDetails this.productId}}
+                                          <span>{{this.productName}}</span>
+                                          <div class="rodutitles-price"> ${{this.price}} <span>{{bottleSize this._id}}</span> </div>
+                                          <div class="rodutitles-price"> Tax: {{#if this.productTax}} {{this.productTax}}% {{else}} 0% {{/if}}</div>
+                                          <div class="rodutitles-price"> Sin Tax: {{#if this.sinProductTax}} ${{this.sinProductTax}} {{else}} $0.00 {{/if}}</div>
+                                          <div style="font-size: 13px;"><b>Store:</b> {{storename this._id}}</div>
+                                          {{/with}}
+                                        </div>
+                                        <div class="product-quality">
+                                          <div id='myform' action='#'>
+                                            <input type='button' value='-' class='qtyminus' field='quantity' data-attr="{{this.productId}}" />
+                                            <input type='number' name='quantity' value='{{quantity this}}' class='qty' data-attr="{{this.productId}}"/>
+                                            <!-- <input type='text' name='quantity' value='{{quantity this}}' class='qty' disabled="true" /> -->
+                                            <input type='button' value='+' class='qtyplus' field='quantity' data-attr="{{this.productId}}"/>
+                                          </div>
+                                        </div>
+                                        <div class="closebtn"><a href="#"><img src="/images/close-arrow.png" id="removeFromCart" data-attr="{{this._id}}" alt="close-arrow"></a></div>
+                                      </div>
+                                    {{/each}}
+                                 
+                              {{/if}}
+
+
+                              {{#if getCarts.liquorProducts}}
+                                
+                                  
+                                  
+                                    {{#each getCarts.liquorProducts}}
+                                      <div class="form-group your-cart-list" style="padding-bottom: 0;">
+                                        <div class="cartproduct">
+                                          <div class="cartproduct-image">
+                                            {{#if hasProductImage this.productId}}
+                                            <a href="#"><img src="{{productImage this.productId}}" class="avlImage" alt="bottle-product"></a>
+                                            {{else}}
+                                            <a href="#"><img src="{{productImage this.productId}}" class="noAvlImage" alt="bottle-product"></a>
+                                            {{/if}}
+                                          </div>
+                                            
+                                        </div>
+                                        <div class="cartprodutitles">
+                                          {{#with productDetails this.productId}}
+                                          <span>{{this.productName}}</span>
+                                          <div class="rodutitles-price"> ${{this.price}} <span>{{bottleSize this._id}}</span> </div>
+                                          <div class="rodutitles-price"> Tax: {{#if this.productTax}} {{this.productTax}}% {{else}} 0% {{/if}}</div>
+                                          <div class="rodutitles-price"> Sin Tax: {{#if this.sinProductTax}} ${{this.sinProductTax}} {{else}} $0.00 {{/if}}</div>
+                                          <div style="font-size: 13px;"><b>Store:</b> {{storename this._id}}</div>
+                                          {{/with}}
+                                        </div>
+                                        <div class="product-quality">
+                                          <div id='myform' action='#'>
+                                            <input type='button' value='-' class='qtyminus' field='quantity' data-attr="{{this.productId}}" />
+                                            <input type='number' name='quantity' value='{{quantity this}}' class='qty' data-attr="{{this.productId}}"/>
+                                            <!-- <input type='text' name='quantity' value='{{quantity this}}' class='qty' disabled="true" /> -->
+                                            <input type='button' value='+' class='qtyplus' field='quantity' data-attr="{{this.productId}}"/>
+                                          </div>
+                                        </div>
+                                        <div class="closebtn"><a href="#"><img src="/images/close-arrow.png" id="removeFromCart" data-attr="{{this._id}}" alt="close-arrow"></a></div>
+                                      </div>
+                                    {{/each}}
+                                  
+                                
+                              {{/if}}
+                            </div>
+                        {{/if}}
+
+                        
+
+
+
+
+                        
+                          
+                        
+                      {{else}}
+                        <div class="form-group col-xs-12">
+                          <div class="favorites-products">
+                            Your Cart Is Empty..!
+                            <a href="/products"><button class="btn btn-block YourCartIsEmpty"><img src="/images/carts-icon.png" alt="carts-icon"><br>Continue Shopping</button></a>
+                          </div>
+                        </div>
+                      {{/if}}
+                    </div>
+            </div>
+      </div>
+      <div class="cartFooterSection" style="margin-bottom: 2px;">
+        <div class="footerPart">
+              {{#if getCarts}}
+                {{#if isDeliverySelected}}
+                  <div class="deliveryFeesDiv">
+                    <div class="leftSide">
+                    </div>
+                    <div class="rightSide">
+                      <label>Delivery Fees:</label>
+                      <span>$4.99</span>
+                    </div>
+                  </div>
+                {{/if}}
+                <div class="place-orders">
+                  <div class="subtotals">TOTAL
+                    <span>${{totalAmount}}</span>
+                  </div>
+                  {{#if updateOrderCart}}
+                    <div class="place-orderbtn">
+                      <button class="btn btn-block" id="updateOrder"><img src="/images/carts-icon.png" alt="carts-icon"> update order</button>
+                    </div>
+                  {{else}}
+                    <div class="place-orderbtn">
+                      <button class="btn btn-block" id="placeOrder"><img src="/images/carts-icon.png" alt="carts-icon"> place order</button>
+                    </div>
+                  {{/if}}
+                </div>
+              {{/if}}
+            </div>
+      </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+    <div class="modal fade" id="storecloseModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header" style="background: #c42128;padding: 15px;">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+           </div>
+           <div class="modal-body pickingup" style="color: black;">
+             <input type="hidden" name="orderId" id="orderId" value=""/>
+             Store is close.
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" id="storeCloseButton" >OK</button>
+             <!-- <button type="button" class="btn btn-default" >Shopping In Store</button> -->
+           </div>
+         </div>
+       </div>
+     </div>
+    
+	</div>
+</template>
+

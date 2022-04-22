@@ -1,0 +1,115 @@
+<template name="advSliderProducts">
+	<div class="product-list gray-color-bg posterProductPage">
+		<div id="st-container" class="st-container page-wrapper">
+			<div class="st-pusher">
+				{{> menu}}
+				<div class="st-content">
+					<div class="st-content-inner">
+						{{> topHeader}}
+						<div class="content common-form banner-product-list favorites-list posterProductsPage">
+							<div class="container">
+								<div class="form posterForm">
+									<div class="row">
+										{{#if getPosterDetails}}
+											{{#each getPosterDetails}}
+												{{#with getProductDetails this}}
+													<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="favorites-products">
+                              <div class="favorites-proimg">
+                                <a href="/productDetails/{{this._id}}" ><img class="img-responsive center-block" src="{{prodImage this._id}}" alt="Favorites Product"/></a>
+                                <div class="favorites-heart favheart">
+                                  <a href="#">
+                                    {{#if getStatus}}
+                                      <img class="img-responsive" src="/images/favorite-fill.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart" />
+                                    {{else}}
+                                      <img class="img-responsive" src="/images/favorites-heart.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                    {{/if}}
+                                  </a> 
+                                </div>
+                              </div>
+                              <input type="hidden" name="productId" value="{{this._id}}">
+                              <div class="pricetables">
+                                <a href="#"> {{this.productName}} </a>
+                                <div class="pricefvrt"> $ {{this.price}} <span> {{productQuantity this.quantity}} </span> </div><br>
+                                {{#if storename this}}
+                                  <div class="nameOfStore"><b>Store:</b> {{storename this}}</div>
+                                {{else}}
+                                  <div  class="nameOfStore"><b>&nbsp;</b> &nbsp;</div>
+                                {{/if}}
+                              </div>
+
+                              <div class="fvrt-btnaddtocart">
+                                <!-- <a href="/ratings/{{this._id}}" >
+                                  <button class="btn btn-block">
+                                    Add Review
+                                    <div class="ripple-container"></div>
+                                  </button>
+                                </a> -->
+                                  <button class="btn btn-block" id="addCartPoster" data-attr="{{this._id}}">
+                                    Add To Cart <img alt="carts-icon" src="/images/cart-icons.png" data-attr="{{this._id}}" id="addCartPoster">
+                                    <div class="ripple-container"></div>
+                                  </button>
+                              </div>
+                            </div>
+                          </div>
+												{{/with}}
+											{{/each}}
+										{{else}}
+                      {{#if getPosterDetails1}}
+                        {{#each getPosterDetails1}}
+                          {{#with getProductDetails this._id}}
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                              <div class="favorites-products">
+                                <div class="favorites-proimg">
+                                  <a href="/productDetails/{{this._id}}" ><img class="img-responsive center-block" src="{{prodImage this._id}}" alt="Favorites Product"/></a>
+                                  <div class="favorites-heart favheart">
+                                    <a href="#">
+                                      {{#if getStatus}}
+                                        <img class="img-responsive" src="/images/favorite-fill.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart" />
+                                      {{else}}
+                                        <img class="img-responsive" src="/images/favorites-heart.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                      {{/if}}
+                                    </a> 
+                                  </div>
+                                </div>
+                                <input type="hidden" name="productId" value="{{this._id}}">
+                                <div class="pricetables">
+                                  <a href="#"> {{this.productName}} </a>
+                                  <div class="pricefvrt"> $ {{this.price}} <span> {{productQuantity this.quantity}} </span> </div><br>
+                                  {{#if storename this}}
+                                    <div class="nameOfStore"><b>Store:</b> {{storename this}}</div>
+                                  {{else}}
+                                    <div><b>&nbsp;</b> &nbsp;</div>
+                                  {{/if}}
+                                </div>
+
+                                <div class="fvrt-btnaddtocart">
+                                  <!-- <a href="/ratings/{{this._id}}" >
+                                    <button class="btn btn-block">
+                                      Add Review
+                                      <div class="ripple-container"></div>
+                                    </button>
+                                  </a> -->
+                                    <button class="btn btn-block" id="addCartPoster" data-attr="{{this._id}}">
+                                      Add To Cart <img alt="carts-icon" src="/images/cart-icons.png" data-attr="{{this._id}}" id="addCartPoster">
+                                      <div class="ripple-container"></div>
+                                    </button>
+                                </div>
+                              </div>
+                            </div>
+                          {{/with}}
+                        {{/each}}
+                      {{else}}
+                        <center><h2>No products found.</h2></center>
+                      {{/if}}											
+										{{/if}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

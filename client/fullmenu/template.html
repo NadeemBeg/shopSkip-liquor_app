@@ -1,0 +1,236 @@
+<template name="fullMenu">
+	<style type="text/css">
+		.mainContainer
+		{
+			background: #FFF;
+		    height: 100%;
+		    overflow-y: auto;
+		    overflow-x: hidden;
+		}
+		.menuItem
+		{
+
+		}
+		.menuItem .menuHeading {
+		    background: #FFF;
+		    border-top: 1px solid #5f3f3f;
+		    border-bottom: 1px solid #5f3f3f;
+		    /* margin-top: 10px; */
+		    text-align: center;
+		    color: #483f3f;
+		    font-weight: 600;
+		    padding: 5px;
+		}
+		.menuItem .menuItemBody
+		{
+
+		}
+		.menuItem .menuItemBody ul
+		{
+			padding-top: 0;
+		    padding-bottom: 0;
+		    padding-left: 15px;
+		    padding-right: 15px;
+		}
+		.menuItem .menuItemBody ul li
+		{
+			height: 35px;
+		    display: flex;
+		    
+		}
+		.menuItem .menuItemBody ul li.lastItem
+		{
+			border-bottom: 0px solid #ddd !important;
+		}
+		.menuItem .menuItemBody ul li a
+		{
+			color: #483f3f;
+		    font-weight: 100;
+		    width: 100%;
+		    height: 100%;
+		    align-items: center;
+		    /* justify-content: center; */
+		    display: flex;
+		    text-align: left;
+		}
+		.menuItem .menuItemBody ul li a span
+		{
+			margin: 0;
+		}
+		.flexClassMenu
+		{
+			display: flex;
+		    flex: 1;
+		    flex-direction: row;
+		}
+		.flexClassMenu .profilePicSection
+		{
+			height: 150px;
+		    /* border: 1px solid; */
+		    /* width: 55%; */
+		    padding-left: 10px;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+		    max-width: 130px;
+		    overflow: visible;
+		    align-items: center;
+		    justify-content: center;
+		    display: flex;
+		    position: relative;
+		    margin-right: 20px;
+		}
+		.flexClassMenu .userNameSection
+		{
+			height: 150px;
+		    /* border: 1px solid; */
+		    display: flex;
+		    flex: 1;
+		    flex-direction: column;
+		    position: relative;
+		    padding-top: 10px;
+		    padding-bottom: 10px;
+		}
+		.flexClassMenu .userNameSection label
+		{
+			height: 50px;
+		    width: 100%;
+		    color: #000;
+		    font-size: 15px;
+		    margin-left: 10px;
+		}
+		.flexClassMenu .userNameSection button
+		{
+			width: 120px;
+		    background: #c52128;
+		    color: #FFF;
+		    padding: 5px;
+		    font-weight: 400;
+		    margin-left: 10px;
+		    position: absolute;
+		    bottom: 10px;
+		    border: 0;
+		}
+		.flexClassMenu .profilePicSection img
+		{
+    		margin: 0 auto;
+    		max-height: 100%;
+		}
+		.flexClassMenu .profilePicSection button
+		{
+			background: #c52128;
+		    border: 0;
+		    width: 35px;
+		    position: absolute;
+		    padding: 7px;
+		    border-radius: 26px;
+		    top: 50%;
+		    right: -17px;
+		    transform: translate(0, -50%);
+		}
+	</style>
+	<div class="fullMenu flexClass">
+		<div class="headerPortion">
+		  {{> topHeader}}
+		</div>
+		<div class="topPortion">
+		  <div class="mainContainer">
+		  	<div class="menuItem flexClassMenu">
+		  		<div class="profilePicSection">
+		  			<img src="{{userImage}}" id="userProfilePicture">
+		  			<button><img src="/images/rotateImage.png" class="img-responsive rotated">
+		  			<input type="hidden" name="hiddenVar" id="hiddenVar" value="{{getRotation}}">
+		  		</button>
+		  		</div>
+		  		<input type="file" name="profilePicFile" id="profilePicFile" style="opacity: 0;visibility: hidden;width: 0;">
+		  		<div class="userNameSection">
+		  			<label>
+		  				Welcome <br>  {{current_user_name}}
+		  			</label>
+		  			<button id="user_sign_out">
+		  				<img src="/images/signs.png" style="height: 20px;" /> Sign Out
+		  			</button>
+		  		</div>
+		  	</div>
+
+		  	<div class="menuItem">
+		  		<div class="menuHeading">
+		  			User Details
+		  		</div>
+		  		<div class="menuItemBody">
+		  			<ul>
+		  				<li><a href="/accountdetails" onclick='Session.set("PreviousPage", "/dashboard");'><span>Details: View/Edit</span></a></li>
+		  				<li><a href="/changepassword" onclick='Session.set("PreviousPage", "/dashboard");'><span>Change Password</span></a></li>
+		  				<li class="lastItem"><a href="/notification" onclick='Session.set("PreviousPage", "/dashboard");'><span>Notifications</span></a></li>
+		  			</ul>
+		  		</div>
+		  	</div>
+
+		  	<div class="menuItem">
+		  		<div class="menuHeading">
+		  			Orders
+		  		</div>
+		  		<div class="menuItemBody">
+		  			<ul>
+		  				<li><a href="/orderHistory" onclick='Session.set("PreviousPage", "/dashboard");'><span>Order History</span></a></li>
+		  				<li class="lastItem"><a href="#" onclick='Session.set("PreviousPage", "/dashboard");alert("In Progress");'><span>Track Order</span></a></li>
+		  			</ul>
+		  		</div>
+		  	</div>
+
+		  	<div class="menuItem">
+		  		<div class="menuHeading">
+		  			Products
+		  		</div>
+		  		<div class="menuItemBody">
+		  			<ul>
+		  				<li class="lastItem"><a href="/products" onclick='Session.set("PreviousPage", "/dashboard");'><span>Products</span></a></li>
+		  			</ul>
+		  		</div>
+		  	</div>
+
+		  	<div class="menuItem">
+		  		<div class="menuHeading">
+		  			Coupons & Recipes
+		  		</div>
+		  		<div class="menuItemBody">
+		  			<ul>
+		  				<li><a href="/coupons" onclick='Session.set("PreviousPage", "/dashboard");'><span>Coupons</span></a></li>
+		  				<li class="lastItem"><a href="/recipesList" onclick='Session.set("PreviousPage", "/dashboard");'><span>Recipes</span></a></li>
+		  			</ul>
+		  		</div>
+		  	</div>
+
+		  	<div class="menuItem">
+		  		<div class="menuHeading">
+		  			Favorites
+		  		</div>
+		  		<div class="menuItemBody">
+		  			<ul>
+		  				<li><a href="/favorites" onclick='Session.set("PreviousPage", "/dashboard");'><span>Products</span></a></li>
+		  				<li class="lastItem"><a href="/favoriteReceipes" onclick='Session.set("PreviousPage", "/dashboard");'><span>Recipes</span></a></li>
+		  			</ul>
+		  		</div>
+		  	</div>
+
+		  	<div class="menuItem">
+		  		<div class="menuHeading">
+		  			App Information
+		  		</div>
+		  		<div class="menuItemBody">
+		  			<ul>
+		  				<li><a href="/howappworks" onclick='Session.set("PreviousPage", "/dashboard");'><span>How App Works</span></a></li>
+		  				<li><a href="/termsofservice" onclick='Session.set("PreviousPage", "/dashboard");'><span>Terms of Service</span></a></li>
+		  				<li><a href="/privacypolicy" onclick='Session.set("PreviousPage", "/dashboard");'><span>Privacy Policy</span></a></li>
+		  				<li><a href="/interestbasedads" onclick='Session.set("PreviousPage", "/dashboard");'><span>Interest Based Ads</span></a></li>
+		  				<li class="lastItem"><a href="/returnpolicy" onclick='Session.set("PreviousPage", "/dashboard");'><span>Return Policy</span></a></li>
+		  			</ul>
+		  		</div>
+		  	</div>
+
+		  </div>
+		</div>
+		<div class="bottomPortion">
+		  {{> footer}}
+		</div>
+	</div>
+</template>

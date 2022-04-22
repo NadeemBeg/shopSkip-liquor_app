@@ -1,0 +1,88 @@
+<template name="ratingsReceipes">
+  <div class="thanks-for-shopping flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="rating_wrapper">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-12 npbm">
+                    <div class="product-img text-center">
+                      {{#if getReceipe.receipeImage}}
+                        <img src="{{getReceipe.receipeImage}}" class="receipeImg" alt="product-img"/>
+                      {{else}}
+                        <img src="/images/noimage.png" alt="receipe-img" style="width: 100px;"/>
+                      {{/if}}
+                    </div>
+                  </div>
+                  <div class="row rating_content">
+                   <!--  <div class="col-xs-12 npbm">
+                      <div class="title">
+                        <h3>{{getproduct.productName}}</h3>
+                        <div class="sub-title">
+                          <h5>{{getproduct.quantity}}ml Bottle</h5>
+                        </div>
+                      </div>
+                    </div> -->
+                  </div>
+                  <div class="row rating_icon" style="padding: 15px 15px 0px 15px;">
+                    <div class="col-xs-12" style="padding: 0;">
+                      <div class="title">
+                        <h4>Rate Your Review</h4>
+                        <div>
+                          <fieldset class="rating">
+                            {{> rating value=rating beer=_id}}
+                          </fieldset>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ====== /REVIEW  BOC ====== -->
+                  <div class="content common-form">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0;">
+                          <div class="form innerFormGroup" id="reviewForm" style="padding: 0px !important;">
+                            <div class="form-group">
+                              <label for="reviewerName">Name</label>
+                              <input type="text" class="form-control isRequired" id="reviewerName">
+                              <span class="material-input errorSpan"></span> 
+                            </div>
+                            <div class="form-group">
+                              <label for="summary">Summary</label>
+                              <input type="text" class="form-control isRequired" id="summary">
+                              <span class="material-input errorSpan"></span> 
+                            </div>
+                            <div class="form-group">
+                              <label for="writeReview">Write Your Review</label>
+                              <textarea class="form-control form-area isRequired" rows="4" id="writeReview"></textarea>
+                              <span class="material-input errorSpan"></span> 
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
+                    <div class="pos-relative" style="margin-bottom: 2px;margin-top: 20px;">
+                      <button class="btn btn-block" id="submitReview">
+                        Submit Review
+                        <div class="ripple-container errorSpan"></div>
+                      </button>
+                    </div>
+                    <div class="pos-relative" style="margin-bottom: 2px;">
+                      <button class="btn btn-block" id="cancel">
+                        Cancel
+                        <div class="ripple-container errorSpan"></div>
+                      </button>
+                    </div>
+                </div>
+              </div>
+            </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

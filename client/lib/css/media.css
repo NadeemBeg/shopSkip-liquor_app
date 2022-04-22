@@ -1,0 +1,1025 @@
+
+/*
+| --------------------------------------------------------
+| TABLE OF CSS CONTENT
+| --------------------------------------------------------
+|  1. 980 Media General
+|  2. 768 * 979 iPad Portrait
+|  3. 980 * 1024 iPad Landscape	
+|  4. 1200 Up to large
+*/
+
+/* 01 General Media Query (iPhone, iPad, Small Tablet, 979 / 80 px)
+=============================================================== */
+@media (max-width:980px) {
+
+.login .forPadding{
+	padding-bottom: 18px !important;
+}
+
+
+.login .content .form .input-group {
+    padding: 0px 30px 0 10px;}
+	
+.form.gray-color-bg{ padding: 12px;}
+	/*.st-content{margin-top: 40px;}*/
+
+} 
+.changeRequestButton {
+   display: block !important;
+}
+.changeRequestButton .item {
+   display: block !important;
+   margin-bottom: 20px;
+}
+/*.content.common-form.favorites-list {
+    padding-bottom: 25px;
+}*/
+
+/* 02 iPad &amp; Small Tablet (Portrait) (768 * 980)
+============================================================== */
+@media (min-width: 768px) and (max-width: 980px) {
+
+.spirituous_Liquor_img{
+	margin-left: 0.333333%;
+}
+
+	.searchBoxList li .productLink .productImgAvlbSearch{
+	height: 80px !important;
+	margin-left: -3px !important;
+}
+	.content.common-form.favorites-list {
+     padding-top: 25px; 
+    padding-bottom: 100px;
+}
+	.st-content-inner{margin-top: 40px;}
+/*17june*/
+.searchBoxList ul li h3{
+    text-align: left;
+
+}
+.searchBoxList ul li .product-imgs {
+	margin: -13px 80px !important; 
+}
+
+/*** Global Classes CSS BOF ***/
+
+.favorites-proimg img.center-block {
+    height: 242px;
+}
+
+h1, h2, h3, h4, h5, h6 { line-height:1.22; text-align:center; }
+
+h1 { font-size: 24px;}
+h2 { font-size: 22px;}
+h3 { font-size: 18px;}
+h4 { font-size: 16px;} 
+h5 { font-size: 15px;} 
+h6 { font-size: 14px;}
+	
+p { line-height:1.7; text-align:center;}
+	
+/*.serch-homepage {
+    margin-top: 40px !important;
+}*/
+.no-pad{
+border: 2px solid #000;
+   margin-right: 15px;
+   margin-left: 15px;
+   margin-top: 15px;
+   width: 97.5%;
+   padding-bottom: 20px;
+ }
+
+.login .content .logo{    padding: 40px 0;}	
+.login .content .bottom-text a{    font-size: 14px;}	
+.form-group{  margin: 0px 0 0 0;}
+.btn{font-size: 18px;}
+.login .content .or{    margin: 30px 0;}
+.login .content .social-icon li a{ height: 50px; width: 50px;}	
+.login .content .social-icon li a img{ height: 20px; width:auto; margin-top: 14px;}	
+	
+
+.common-form .form h3{margin: 20px 0; font-size: 13px;}
+.common-form .form-control{height: 50px; font-size: 13px; top: -5px; }	
+.form-group.label-floating label.control-label, .form-group.label-placeholder label.control-label{font-size: 13px;}	
+	
+.banner .logo{padding: 30px 0 50px;}
+.header img{ height: 20px;}	
+.header .icon-right img{ height: 25px; margin-top: 0px;}
+.header{    padding-top: 12px;}	
+.header .header_title h2{ font-size: 19px; margin: 6px 0;}	
+	
+.main-header .header{padding: 10px 0;}	
+.content .links a{font-size: 24px;}	
+	
+.content .links{    padding-bottom: 15px; margin-top: 25px;}	
+.content .links a{font-size: 14px;}	
+.content .links img{height: 15px !important;margin-top: 3px !important;}
+	
+.st-menu .profile img{margin-left: 15px;width: 80px;}	
+.st-menu h2{font-size: 18px; padding: 10px;}	
+	
+.st-menu .sign_out{    margin-top: 20px;}	
+.st-menu ul{ padding-top: 10px;}
+.st-menu .back_icon ul li a img	{height: 20px;}
+.st-menu .profile{margin-top: 20px;padding-bottom: 20px;}
+.st-menu ul li a{padding: 1em 1em 0em .6em;font-size: 14px;}	
+.st-menu ul li a img{height: 20px;}	
+
+.forgotinput.common-form .form{padding-top:25px;}
+.forgot-btns.common-form .form {padding-bottom: 13px;}
+
+.content .titles a {font-size: 36px;}
+.map-loactin span {font-size: 24px; padding-left: 8px;}
+.map-loactin > img {width: 9%;}
+.storeproduct {width: 25%; padding:0 10px;}
+.stotelistarrow {margin-top: 70px;}
+.stotelistarrow img {width:65%;}
+.content .storelist {margin-top: 15px; padding-bottom: 10px;}
+
+.store-info-bg{padding:50px 0 30px;}
+.bluehill span {font-size: 30px;}
+.bluehill ul li span {font-size: 18px;}
+.bluehill ul li img {margin-right: 5px; margin-top: 6px; width: 13px;}
+.bluehill ul li {padding-right: 8px;}
+.info-textcon {padding: 30px 0;}
+.info-textcon p {font-size: 20px; line-height: 1.3;}
+.contactbluehill {padding:20px 0;}
+.contactbluehill ul li span a {font-size:20px;}
+.contactbluehill ul li img {margin-right: 5px; width: 13px; margin-top: 2px;}
+.contactbluehill ul li .imgsta{width:20px; margin-top:5px;}
+.forgotpassword{margin-top:30px;}
+
+/* Your Cart CSS BOF */
+.common-form .form.cartlist{padding-bottom:60px;}
+.your-cart-list{margin-top:27px;}
+.cartproduct-image {padding:15px 10px; width: 160px;}
+.cartproduct-image img {}
+.cartprodutitles{margin:0 15px;  width:45%;}
+.cartprodutitles span {font-size:30px;}
+.rodutitles-price {font-size: 26px;}
+.rodutitles-price span {font-size: 18px;}
+.qty {width:60px; height:60px; font-size:28px;}
+
+.subtotals{font-size:30px;}
+.subtotals span {font-size: 40px; line-height: 40px;}
+.place-orderbtn .btn {font-size: 34px; padding: 26px 20px; margin-top:12px;}
+.place-orderbtn img { vertical-align: top; width: 40px;}
+
+.modal-dialog{width: 96%;}
+.pickingup{width:auto; font-size:24px; margin: 0 auto 10px;}
+.modal-content .modal-footer .btn{width:45%;  padding: 15px 20px;}
+
+	
+/* Favorites CSS BOF */
+.pricetables a {font-size: 22px; padding: 15px 0 10px;}	
+.pricefvrt {font-size:28px;}
+.pricefvrt span {font-size: 20px;}
+.common-form .form .fvrt-btnaddtocart .btn {margin: 15px 0 10px; padding: 12px;}
+.favorites-products{  margin-top:0px; }	
+
+/* Order History CSS BOF */
+.order-number {font-size: 22px; padding-bottom: 5px;}
+.orderdate {font-size: 22px; padding-bottom:15px;}
+.orderqunty { font-size: 46px;}
+
+/* How App Works CSS BOF */
+.appworkslider img {width: 30%;}
+.contants-slider h2 { font-size: 36px; padding: 30px 0 20px 0; }
+.contants-slider p {color: #666666; font-size: 26px; margin: 0; padding: 0 0 30px;}
+.form.howappworksslider .carousel-inner {margin-bottom: 100px;}
+.form.howappworksslider .carousel-indicators li { width: 20px; height: 20px; }
+.form.howappworksslider .carousel-indicators .active {  width: 40px; height: 40px; }
+
+/* Coupons CSS BOF */
+.coupons-main .form {padding:20px 0 50px 0;}
+.coupons-bg { padding: 30px 10px; margin-top: 30px; }
+.offers-text { font-size: 54px;  line-height: 46px; }
+.coupons-bg p {font-size: 16px; }
+.offers-text span {  font-size: 30px; }
+.freecode { margin: 10px 0 8px; font-size: 30px; padding: 8px 30px 6px; }
+.free-codeimg {left:30px; top: -25px; width: 20px; }
+
+/* Address & Billing CSS BOF */
+.title-pullbe h2{ padding:15px 0;}
+.common-form .address-filds .form-group .form-control{padding:28px 15px;}
+.address-filds .form-group.label-floating label.control-label{margin-top:40px;}
+.common-form .address-filds .form-group span.required{font-size:14px;  bottom: 30px; right: 24px; font-family: 'Avenir-Book';}	
+.common-form .address-filds .form-group span.required img{width:14px;}
+.form-group.bitnmgt{margin:20px 0 10px 0;}
+.common-form .address-filds li.monthyearpicker .form-group .form-control{padding:5px 15px;}
+.expirationpgdm{font-size:14px; margin-top:15px; padding-bottom:0px;}
+
+/* Thanks For Shopping CSS BOF */
+.thanksyouforshopping h3 {font-size: 18px; margin:10px 0px 12px 0px; line-height:normal;}
+.thanksyouforshopping .btn-block {width: auto;}
+.thanksyouforshopping .form-group.bitnmgt{margin:0px; padding:0px;}
+
+/* Picking Up CSS BOF */
+.pickingupnumber {padding-top:4px;}
+.bluehill.pickingupnumber ul li span {padding-top:5px;}
+.pickingup-form .form-group textarea{height:90px;}
+.selectarrow {bottom: 36px; width: 10px;}
+.common-form.pickingup-form .form{padding-bottom:30px;}
+.common-form.pickingup-form .form .btn{margin-top:30px;}
+
+.rating_wrapper .product-img img {}
+
+/* Account Details CSS BOF */
+.account-details-page{margin-top:30px; padding:1px 20px 0px 20px;}
+
+/* Terms Of Services Legal CSS BOF */
+
+.terms-of-services-legal-page{margin:30px 0 0 0;}
+.terms-of-services-legal-page p{font-size:13px;}
+.checkboxmark h3{font-size:15px;}
+.checkboxmark .checkeds, .radio .checkeds{width:36px; height:36px;}
+.checkboxmark .checkeds .checkeds-icon, .radio .checkeds .checkeds-icon {font-size: 22px;}
+.common-form .form .terms-of-services-legal-page .btn {display: inline-block;  margin-top:20px;}
+
+
+/* Profile css BOF */
+.profile_wrapper .box_bg{margin:25px 0px 0px 0px;}
+.account_setting{padding:30px 0px;}
+.account_setting .account_Profile_img {height:200px; width:200px;}
+.account_setting .Profile_camera {right: 0; top: 0;}
+
+/* Receipt css BOF */
+.common-form.receipt-btni { padding-bottom: 15px; }
+.common-form .form .order-details h3 {font-size: 24px; margin: 0 0 5px;}
+.order-details ul li {font-size: 18px; line-height: 28px;}	
+.payment-summary { padding-top: 30px; }
+.common-form .form.receipt-page {padding-bottom: 5px;}
+.payment-summary-code h4 { font-size:24px;  text-align: left;}
+.ordertotal-summary ul li { font-size: 24px; padding: 20px 15px; }
+
+/* Product Detail css BOF */
+.price-products { font-size: 22px; }
+.rating-star ul li { font-size: 22px; }
+.common-form .form .customer-comments h4 { text-align: left;}
+.order-details.product-detaisls ul li { font-size: 18px; line-height: 24px;}
+.common-form .form .customer-reviewss h3 {font-size: 24px; margin: 15px 0;}
+.common-form .form .customer-comments h4 {font-size: 22px;  margin: 5px 0;}
+.timehours { font-size: 16px; }
+.customer-comments p { font-size: 16px;  text-align: left;}
+.customer-comments { margin-bottom: 20px;}
+.rating_wrapper.details .common-form .form { padding-bottom: 10px !important;}
+.toppicks-products { margin: 30px 0 0;}
+.toppicks {margin-bottom: 20px;}
+.viewalls { font-size: 18px;}
+.addtocart-btn-bottom .form-group .btn img { width: 30px;}
+.addtocart-btn-bottom { padding-top: 30px;}
+.favorite-fill img { width: 30px;}
+	
+/* Checkout css BOF */
+.checkoptsetp .steptabs{ padding: 10px 0 20px; }
+.menutabs-main { min-height: 36px;}
+ul.menutabs-main li a span { width: 36px; height: 36px; margin-bottom: 5px; }
+ul.menutabs-main li a {  font-size: 12px;}
+.common-form.checkout-page .form { padding-bottom:30px; }
+.checkout-page h2 {  text-align: left; padding-bottom: 15px; font-size:18px;}
+.content .picking-address .links { margin-top:20px; font-size: 14px; padding-left: 0px; padding-bottom: 20px;}
+.picking-address { margin-top: 10px;}
+.content .picking-address .links img { height: 22px; margin-top: 0px; }
+.checkout-page .picking-address h2 {  padding-bottom:0px;}
+ul.menutabs-main li a span.complete-checked::before { line-height: 20px; font-size: 18px; }
+
+.nav-justified { margin-bottom: 30px;}
+.payment_wrapper .payment_card .payment_title h2 { font-size: 18px; padding-bottom: 15px;}
+	.payment_wrapper .nav-pills li a { padding: 10px; font-size: 18px;}
+	.payment_wrapper .nav-pills li a i { font-size: 30px; padding:5px 0 5px	0px;}
+	.common-form .payment_details .select-box .selectarrow { right: 5px; top: 5px; }
+	.form-group.next-btns .btn { padding: 15px;}
+	.payment_wrapper{ padding: 0px;}
+	
+.content .order-sendpage .links { font-size:16px; float: left; width: 100%;}
+.content .order-sendpage .links span { width:90%;}
+.content .order-sendpage .links a.edit-icons { width:40px; height:40px; font-size: 16px; }
+
+.content .order-sendpage .links p { font-size: 12px;  }
+.content .links.padd-bottom-none {  padding-bottom:15px;}
+.order-sendpage .cartprodutitles span { font-size: 18px;}
+.rodutitles-price.quantity-order span { font-size: 16px; }
+.order-sendpage .rodutitles-price { font-size: 14px; }
+.order-sendpage .cartproduct-image { width: 130px; }
+.order-sendpage .ordertotal-summary ul li {font-size: 18px; padding: 20px 15px;}
+.order-sendpage .cartprodutitles { width: 64%; }
+	
+.success-page .barcodes { font-size: 18px; }	
+.success-page .barcodeimage img { width: 32%;}
+.success-page .order-pickup {font-size: 16px;}
+.success-page h2 {margin: 20px 0 10px;  padding: 0;}
+.success-page .success-checked img { width:18%; margin-top:60px;}
+
+/* Home page CSS BOF */ 	
+.slide-text > h3{font-size: 28px;left: -90px;top: 15px;}
+.slide-text h1{ font-size: 80px;line-height: 20px;}
+.slide-text > h4{    left: 80px;}
+.slide-text{top: 20%;}	
+.indicators-line > .carousel-indicators{right: 40%;}	
+.header .icon-right img{    height: 28px;}
+
+.cartCount{    padding: 2px 5px;    right: 0px;}
+	
+.ad_banner .content h2{ font-size: 54px;}
+.ad_banner .content h3{font-size: 44px;}
+.ad_banner .content .btn{font-size: 24px;}
+.ad_banner .content{ margin-top: 110px;}	
+.ad_banner .image{top: -80px;}
+.search-with-scaner .form-control  { width:88%; padding: 7px 18px 7px 10px; }	
+	
+/* filter page CSS BOF */ 	
+.filter-modal .modal-dialog {width: 80%;}
+.filter-add-btn {bottom: 1%; right: 2%;	}
+.filter-add-btn a {font-size: 16px;  height: 40px; width: 40px;}
+.filter-modal .modal-title { font-size: 18px; }	
+.filter-modal .modal-content .modal-body { padding: 10px 20px;}	
+.price-label {font-size: 13px;  margin-bottom: 2px;}
+.filter-modal .mgtpricep { font-size: 13px; }
+.filter-modal .form-group .form-control	 { margin-bottom: 0px; }
+.filter-modal .modal .modal-header .close { font-size: 28px;  height: 25px; width: 25px;  }
+	
+
+	
+}
+
+/* 03 All Mobile Device (iPhone, Android, Window)(320 * 767)	
+============================================================== */
+@media (max-width: 767px) {
+
+.LiquorControlContent {
+    float: left;
+    font-size: 14px;
+    color: #000;
+    margin-top: 5px;
+}
+.verticalLine {
+    height: 30px;
+    float: left;
+    border-right: 2px solid;
+    margin-right: 6px;
+}
+.ohlqLink{
+	font-size: 12px;
+	padding-bottom: 5px;
+}
+.spirituous_Liquor_img{
+  margin-left: 8.333333%;
+  padding: 3px 6px 0px 0px !important;
+}
+
+
+
+.login .forPadding{
+	padding-bottom: 20px;
+}
+
+.searchBoxList li .productLink .productImgAvlbSearch{
+	height: 60px !important;
+	margin-left: 0px !important;
+}
+	.st-content-inner{margin-top: 40px;}
+ .productABVS{
+ 	    text-align: left;
+ }
+	
+
+	
+/*** Global Classes CSS BOF ***/
+h1, h2, h3, h4, h5, h6 { line-height:1.22; text-align:center; }
+
+h1 { font-size: 24px;}
+h2 { font-size: 22px;}
+h3 { font-size: 18px;}
+h4 { font-size: 16px;} 
+h5 { font-size: 15px;} 
+h6 { font-size: 14px;}
+	
+p { line-height:1.7; text-align:center;}
+	
+.login .content .logo{    padding: 40px 0;}	
+.login .content .bottom-text a{    font-size: 14px;}	
+.form-group{  margin: 0px 0 0 0;}
+.btn{font-size: 18px;}
+.login .content .or{    margin: 30px 0;}
+.login .content .social-icon li a{ height: 50px; width: 50px;}	
+.login .content .social-icon li a img{ height: 20px; width:auto; margin-top: 14px;}	
+	
+
+.common-form .form h3{margin: 20px 0; font-size: 13px;}
+.common-form .form-control{height: 50px; font-size: 13px; top: -5px; }	
+.form-group.label-floating label.control-label, .form-group.label-placeholder label.control-label{font-size: 13px;}	
+	
+.banner .logo{padding: 30px 0 50px;	}
+.header img{ height: 20px;}	
+.header .icon-right img{ height: 25px; margin-top: 0px;}
+.header{    padding-top: 12px;}	
+.header .header_title h2{ font-size: 19px; margin: 6px 0;}	
+
+.main-header .header{padding: 10px 0;}	
+.main-header .header .icon-right img{margin-top: 2px;}	
+	
+.content .links{    padding-bottom: 15px; margin-top: 25px;}	
+.content .links a{font-size: 14px;}	
+.content .links img{height: 15px !important;margin-top: 3px !important;}	
+	
+	
+.st-menu{ width: 280px;}	
+.st-effect-8.st-menu-open .st-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}	
+.no-csstransforms3d .st-pusher,
+.no-js .st-pusher {
+	padding-left: 280px;
+}	
+	
+.st-menu .profile img{margin-left: 15px;width: 80px;}	
+.st-menu h2{font-size: 18px; padding: 10px;}	
+	
+.st-menu .sign_out{    margin-top: 20px;}	
+.st-menu ul{ padding-top: 10px;}
+.st-menu .back_icon ul li a img	{height: 20px;}
+.st-menu .profile{margin-top: 20px;padding-bottom: 20px;}
+.st-menu ul li a{padding: 1em 1em 0em .6em;font-size: 14px;}	
+.st-menu ul li a img{height: 20px;}
+
+.forgotinput.common-form .form{padding-top:25px;}
+.forgot-btns.common-form .form {padding-bottom: 13px;}
+
+.content .titles a {font-size:18px;}
+.map-loactin span {font-size:14px; padding-left:4px;}
+.map-loactin > img {width:8%; padding-top:8px;}
+.storeproduct {width:95px; padding:0 5px;}
+.stotelistarrow {margin-top:30px; margin-right:10px;}
+.stotelistarrow img {width:9px;}
+.content .storelist {margin-top: 15px; padding-bottom: 10px;}
+.radio-list label::before{width:30px; height:30px; top: -15px;}
+.radio-list label::after{width:15px; height:15px; top: -7px;  left: 7px;}
+.radio-list {margin-right: 5px;}	
+	
+
+.store-info-bg{padding:30px 0 20px;}
+.bluehill span {font-size:24px;}
+.bluehill ul li span {font-size:16px;}
+.bluehill ul li img {margin-right: 5px; margin-top:6px; width:12px;}
+.bluehill ul li{padding-right:8px;}
+.contactbluehill ul li:last-child{padding-top:8px;}
+.info-textcon {padding:20px 0;}
+.info-textcon p {font-size:18px; line-height: 1.3;}
+.contactbluehill {padding:20px 0;}
+.contactbluehill ul li span a {font-size:20px;}
+.contactbluehill ul li img {margin-right: 5px; width: 13px; margin-top: 2px;}
+.contactbluehill ul li .imgsta{width:20px; margin-top:5px;}
+.googlemap iframe{min-height:300px;}
+
+.forgotpassword{margin-top:30px;}	
+
+/* Your Cart CSS BOF */
+.common-form .form.cartlist{padding-bottom:50px;}
+.your-cart-list{margin-top:15px;}
+.cartproduct {border-right: 1px solid #f9efe6;}
+.cartproduct-image {padding:5px 5px; width:50px; margin: 2px;}
+
+/*.cartproduct-image img {width:18px;}*/
+
+.cartprodutitles{margin:0 2px;  width:46%;}
+.cartprodutitles span {font-size:14px;}
+.rodutitles-price {font-size:12px;}
+.rodutitles-price span {font-size:10px;}
+.qty {width:60px; height:60px; font-size:28px;}
+.closebtn {height:22px; padding: 1px; right: 2px; top: 2px; width: 22px; line-height:18px;}
+.closebtn img{width:10px;}
+input.qtyminus {font-size:26px; height: 30px; width:12px;}
+input.qtyplus {font-size:20px; height:30px; width: 16px;}
+.qty {font-size:16px; height:34px; width: 32px;}
+
+.subtotals{font-size:16px;}
+.subtotals span {font-size:18px; line-height:20px; display:block;}
+.place-orderbtn .btn {font-size:20px; padding:16px 5px; margin-top:10px;}
+.place-orderbtn img { vertical-align:top; width:24px;}
+
+.modal-dialog{width: 96%;}
+.modal-content .modal-body {padding: 10px;}
+.pickingup{width:auto; font-size:15px; margin: 0 auto 10px;}
+.modal-content .modal-footer .btn{width:47%;  padding: 15px 20px; font-size: 14px; margin: 0 2px;}
+.modal-content .modal-footer {padding: 10px;}
+	
+/* Notifications CSS BOF */
+.notificationpage {  padding: 0 15px; }
+.content .notificationpage .links {margin-top: 35px;}
+	
+/* Favorites CSS BOF */
+.favorites-products { margin-top: 0; padding: 12px; text-align: center;}	
+.pricetables a {font-size: 20px; padding: 10px 0; width: 80% !important;}	
+.pricefvrt {font-size: 22px;}
+.pricefvrt span {font-size: 16px;}
+.common-form .form .fvrt-btnaddtocart .btn {margin: 20px 0 5px; padding: 10px;}
+/*.favorites-proimg img {width:35%;}*/
+.favorites-heart img {width:60%;}
+
+/* Order History CSS BOF */
+.order-history {padding: 10px 10px 0 0;}
+.order-number {font-size: 12px; padding-bottom: 0px;}
+.orderdate {font-size:11px; padding-bottom:5px;}
+.orderqunty { font-size:22px;}
+.common-form .form .view-cart .btn {padding: 15px;}
+	
+/* How App Works CSS BOF */
+.form.howappworksslider {margin: 30px 0; padding: 0;}
+.appworkslider img {width:50%;}
+.contants-slider h2 { font-size: 26px; padding: 20px 0 15px 0; }
+.contants-slider p {font-size:18px; margin: 0; padding: 0 0 30px;}
+.form.howappworksslider .carousel-inner {margin-bottom: 60px;}
+.form.howappworksslider .carousel-indicators li { width: 20px; height: 20px; }
+.form.howappworksslider .carousel-indicators .active {  width: 30px; height: 30px; }
+.carousel .carousel-indicators {bottom: -40px;}
+.form.howappworksslider .skipintro { margin: 0 auto; width: 70%;}
+.common-form .form.howappworksslider .btn {padding: 15px 12px;}
+
+/* Coupons CSS BOF */
+.coupons-main .form {padding:20px 0 30px 0;}
+.coupons-bg { padding:15px 10px 20px 10px; margin-top: 30px; }
+.offers-text { font-size:40px;  line-height: 46px; }
+.coupons-bg p {font-size: 14px; }
+.offers-text span {  font-size: 30px; }
+.freecode { margin:12px 0 10px; font-size: 28px; padding: 8px 30px 6px; }
+.free-codeimg {left:30px; top: -25px; width: 20px; }
+
+/* Address & Billing CSS BOF */
+.title-pullbe h2{ padding:12px 0; font-size:18px;}
+.common-form .address-filds .form-group .form-control{padding:28px 15px;}
+.address-filds .form-group.label-floating label.control-label{margin-top:40px;}
+.common-form .address-filds .form-group span.required{font-size:14px;  bottom: 35px; right: 24px; font-family: 'Avenir-Book';}	
+.common-form .address-filds .form-group span.required img{width:14px;}
+.form-group.bitnmgt{margin:20px 0 10px 0;}
+.common-form .address-filds li.monthyearpicker .form-group .form-control{padding:5px 15px;}
+.expirationpgdm{font-size:14px; margin-top:15px; padding-bottom:0px;}
+
+/* Thanks For Shopping CSS BOF */
+.thanksyouforshopping h3 {font-size: 18px; margin:10px 0px 12px 0px; line-height:normal;}
+.thanksyouforshopping .btn-block {width: auto;}
+.thanksyouforshopping .form-group.bitnmgt{margin:0px; padding:0px;}
+
+/* Picking Up CSS BOF */
+.pickingupnumber {padding-top:0px;}
+.bluehill.pickingupnumber ul li span {padding-top:0px;}
+.bluehill.pickingupnumber ul li span {font-size: 13px;}
+.pickingup-form .form-group textarea{height:80px;}
+.selectarrow {bottom: 36px; width: 10px;}
+.common-form.pickingup-form .form{padding-bottom:22px;}
+.common-form.pickingup-form .form .btn{margin-top:20px;}
+
+/* Rating CSS BOF */
+.rating_wrapper .title{font-size: 22px;}
+.rating_wrapper .sub-title{font-size: 18px;}
+.rating_wrapper .rating_icon{padding:5px 25px;}
+.rating_wrapper .rating_content{padding: 10px 25px;}
+.common-form .form .btn{margin-top: 25px;}
+.rating_wrapper .common-form .form{padding: 0px 25px 20px 25px !important;}
+.rating_wrapper .product-img img {height:220px;width: auto;}
+
+/* Account Details CSS BOF */
+.account-details-page{margin-top:20px; padding:1px 15px 0px 15px;}
+
+/* Terms Of Services Legal CSS BOF */
+.terms-of-services-legal-page{margin:30px 0 0 0;}
+.terms-of-services-legal-page p{font-size:13px;}
+.checkboxmark h3{padding:0px; font-size:15px;}
+.checkboxmark .checkeds, .radio .checkeds{width:36px; height:36px; margin-right:5px;}
+.checkboxmark .checkeds .checkeds-icon, .radio .checkeds .checkeds-icon {font-size: 20px;}
+
+/* Profile css BOF */
+.profile_wrapper .box_bg{margin:25px 0px 0px 0px;}
+.account_setting .account_Profile_img {height: 180px; width: 180px;}
+.account_setting{padding:30px 0px;}
+.profile_wrapper .box_bg{padding:0;}
+.profile_wrapper .box_bg h3{margin:20px 10px;}
+.account_setting .Profile_camera {right: 0; top: 0;}
+
+/* Receipt css BOF */
+.common-form.receipt-btni { padding-bottom: 15px; }
+.order-details {padding:10px;}
+.common-form .form .order-details h3 {font-size: 16px; margin: 0 0 5px;}
+.order-details ul li{font-size: 14px; line-height: 20px;}	
+.payment-summary { padding-top:15px; padding-bottom: 0px;}
+.common-form .form.receipt-page {padding-bottom: 5px;}
+.payment-summary-code h4 { font-size:16px;  text-align: left;}
+.ordertotal-summary ul li { font-size: 16px; padding:15px; }
+.payment-summary-code img {  width: 50%;}
+.ordertotal-summary { margin-bottom: 10px; }
+	
+/* Product Detail css BOF */
+.price-products { font-size:16px; }
+.rating-star ul li { font-size: 16px; margin-right: 1px; }
+.common-form .form .customer-comments h4 { text-align: left;}
+.order-details.product-detaisls ul li { font-size: 16px; line-height: 24px;}
+.common-form .form .customer-reviewss h3 {font-size: 18px; margin: 15px 0;}
+.common-form .form .customer-comments h4 {font-size: 16px;  margin: 5px 0;}
+.timehours { font-size: 14px; }
+.customer-comments p { font-size: 16px;  text-align: left;}
+.customer-comments { margin-bottom: 20px;}
+.rating_wrapper.details .common-form .form { padding-bottom: 10px !important;}
+.toppicks-products { margin: 30px 0 0;}
+.toppicks {margin-bottom: 20px;}
+.viewalls { font-size: 16px;}
+.addtocart-btn-bottom .form-group .btn img { width: 30px;}
+.addtocart-btn-bottom { padding-top: 30px;}
+.favorite-fill img { width:20px;}	
+.rating_wrapper .rating_content {padding: 10px;}
+.rating_wrapper .sub-title.prices h5{ padding: 5px 0;}
+.bottle-type .common-form .form-control { height: 50px; padding: 5px 18px 14px 8px;}
+.bottle-type .common-form .select-box .selectarrow {  top: 8px;}
+.rating_wrapper .common-form .form.maindetail { padding: 0 10px !important;}
+	
+/* Checkout css BOF */
+.checkout-page {margin-top: 20px;}
+.checkoptsetp .steptabs{ padding: 10px 0 20px; }
+ul.menutabs-main li a span { width: 30px; height: 30px; margin-bottom: 5px; }
+.menutabs-main { min-height: 30px;}
+ul.menutabs-main li a {  font-size: 11px;}
+.common-form.checkout-page .form { padding-bottom:30px; }
+.checkout-page h2 {  text-align: left; padding-bottom: 15px; font-size:18px;}
+.content .picking-address .links { margin-top:20px; font-size: 14px; padding-left: 0px; padding-bottom: 20px;}
+.picking-address { margin-top: 10px;}
+.content .picking-address .links img { height: 22px; margin-top: 0px; }
+.checkout-page .picking-address h2 {  padding-bottom:0px;}
+ul.menutabs-main li a span.complete-checked::before { line-height:16px; font-size: 14px; }
+.payment_wrapper .payment_card .payment_title h2 { font-size: 18px; margin-bottom: 15px; }
+.nav-justified > li{ width: 100%; margin:0px 0 15px 0; margin-left: 0px;  }
+.nav-justified > li:last-child{ margin-bottom: 0;}
+.payment_wrapper .nav-pills li a { font-size: 18px; margin: 0px; padding: 15px; }
+.payment_wrapper { padding: 0px; }	
+.payment_wrapper .nav-pills li a i { display: initial; font-size:26px;  margin: 0 10px;}
+.checkout-page .payment_wrapper h2 { padding: 0 0 15px; }
+.nav-justified { margin-bottom:20px; }
+.nav-justified.nav-pills > li + li { margin-left: 0px;}
+.common-form .payment_details .select-box .selectarrow { right: 5px; top: 5px; }	
+.common-form .form .btn.loginpaypal { margin-top: 15px; width: 100%; padding: 14px;}
+	
+.content .order-sendpage .links { font-size:14px; float: left; width: 100%;}
+.content .order-sendpage .links span { width: 80%;}
+.content .order-sendpage .links a.edit-icons { width: 30px; height: 30px; font-size: 14px; }
+	
+.content .order-sendpage .links p { font-size: 12px;  }
+.rodutitles-price.quantity-order span { font-size: 12px;}
+.content .links.padd-bottom-none {  padding-bottom:15px;}
+	.order-sendpage .your-cart-list .cartprodutitles { width: 50%; line-height: 18px; }
+	
+.success-page .barcodes { font-size: 18px;  margin-top: 20px;}	
+.success-page .barcodeimage img { width:230px;}
+.success-page .order-pickup {font-size: 16px;}
+.success-page h2 {margin: 20px 0 10px;  padding: 0;}
+.form-group.bitnmgt .btn { padding: 20px;}	
+.success-page .btn-block {  width: auto;}
+.success-page .success-checked img { width:22%; margin-top: 40px;}
+
+/* Home page CSS BOF */
+
+.home_page .header .icon-right img{ height: 20px;}
+.home_page .main-header .header{ padding: 10px 0 10px;}
+
+/*.serch-homepage{    margin-top: 40px !important;}*/
+
+.search-with-scaner span.search-icon{font-size: 18px; left: 15px;top: 8px;}
+.search-with-scaner .scanner{ width: 25px; top: 10px;}	
+.search-with-scaner .form-group .form-control{ height: 20px; width: 88%; font-size: 15px; padding:0px 18px 0px 10px; }	
+.currently-shopping{ margin: 15px 0px 15px 9px; font-size: 12px;}
+.slide-text{    top: 2%;}	
+.slide-text > h3{font-size: 20px;left: -60px;top: 15px;}	
+.slide-text > h4{font-size: 20px;left:60px; margin: 0;}	
+.slide-text h1{    font-size: 40px;}	
+.categories .content h2{ margin-top: 5px; text-align: left;}
+.categories .owl-carousel{    margin-top: 20px;}
+/*.categories .content .main_list{ padding: 20px;}	*/
+.categories .content .main_list svg{width: 50px;}
+.categories .content .main_list h3{margin: 5px 0;}
+.home_page .pricetables a{    font-size: 12px;    text-align: left;}
+.home_page .pricefvrt{ font-size: 15px;}	
+.home_page .pricefvrt span{     font-size: 12px; }	
+.home_page .toppicks-products .form .fvrt-btnaddtocart .btn{     font-size: 13px; padding: 10px;}	
+.home_page .fvrt-btnaddtocart img{width: 20%;}
+.home_page .pdnright{ padding-right: 8px;}
+.home_page .pdnleft{ padding-left: 8px;}
+.home_page .favorites-heart img{width: 40%;}	
+.home_page .toppicks h2{ font-size: 16px;}
+
+.banner-liquor .carousel-indicators { bottom: -18px; right:34%; }
+.banner-liquor .carousel-indicators li { height: 15px; width: 15px; }
+	
+.ad_banner .content{ margin-top: 40px;}	
+.ad_banner .content h2{font-size: 24px;}
+.ad_banner .content h3{font-size: 18px; margin-bottom: 10px;}
+.ad_banner .content .btn{ font-size: 15px;  padding: 8px 15px;}	
+.home_page .ad_banner{margin-top:60px;}
+.ad_banner .image{ top: -30px; width: 75%;}
+	
+
+/* filter page CSS BOF */	
+	
+.filter-modal .modal-dialog {width: 90%;}
+.filter-add-btn {bottom: 1%; right: 2%;	}
+.filter-add-btn a {font-size: 16px;  height: 40px; width: 40px;}
+.filter-modal .modal-title { font-size: 18px; }	
+.filter-modal .modal-content .modal-body { padding: 10px 12px;}
+.price-label {font-size: 13px;  margin-bottom: 2px;}
+.filter-modal .mgtpricep { font-size: 13px; }
+.filter-modal .form-group .form-control	 { margin-bottom: 0px; }
+.filter-modal .modal.in .modal-dialog { transform: translate(0px, 40px);}	
+.filter-modal .modal .modal-header .close { font-size: 28px;  height: 25px; width: 25px;  }
+	
+
+.cartCount.badge{    padding: 2px 5px;right:0px;}
+.main-header .header .icon-right img{height: 22px;}
+
+/*30_july*/
+/*.recipesListPage, .favoritesProductPage, .howappworks, .notifications, .coupons, .order_history, .checkout-step02, .checkout-step03, .success-screens, .myChoiceProduct, .topPickProducts, .favoriteReceipesPage,{
+  height: 100vh;
+  overflow: hidden;
+}
+.recipesListPage .favorites-list, .favoritesProductPage .favorites-list-favProdPage, .howappworks .howappworksPage, .notifications .common-form,.coupons .coupons-main, .order_history .orderHistoryPage, .myChoiceProduct .myChoiceProductListing, .topPickProducts .topPickProductsList, .favoriteReceipesPage .favoriteReceipesPage{
+    height: calc(100vh - 51px);
+    overflow: scroll;
+}*/
+
+.login .container
+{
+	display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.login .row.topSection
+{
+	display: flex;
+}
+.login .row.bottomSection
+{
+	display: flex;
+    flex: 1;
+    background: url(images/backgroundWhite.png);
+    /* background-repeat-x: repeat; */
+    /* background-repeat-y: no-repeat; */
+    /* background-position-y: bottom; */
+    background-size: 100% 100%;
+    background-position: 0px 100px;
+    background-repeat: no-repeat;
+
+
+}
+
+}
+
+
+
+/* 04 All Mobile Device (iPhone, Android, Window)(320 * 480)
+============================================================== */
+@media (min-width:320px) and (max-width:479px) {
+	.ohlqLink{
+		font-size: 10px;
+	}
+	.login .forPadding{
+		padding-bottom: 20px;
+	}
+
+	.productABVS.productABVS2{
+		    text-align: left;
+	}
+	.no-pad{
+border: 2px solid #000;
+   margin-right: 15px;
+   margin-left: 15px;
+   margin-top: 15px;
+   width: 94.5%;
+   padding-bottom: 20px;
+ }
+ 	/*17 june*/
+.searchBoxList ul li .product-imgs{
+	margin:-10px 20px 0 20px !important;
+	float: left;
+} 
+.searchBoxList ul {
+    padding: 0 20px; 
+    padding: 0px 15px 0 15px !important;
+}
+.searchBoxList ul li h5{	
+     /*margin-left: 30px !important;
+     marg*/in-right: 12px !important;
+}
+.searchBoxList ul li h3{
+	/*margin-right: 35px !important;*/
+	text-align: left;
+	font-size: xx-small !important;
+}
+.searchBoxList ul li p{
+	font-size: xx-small !important;
+}
+.searchBoxList ul li img{
+    height: 70px !important;
+}
+
+
+/*.changeRequestButton {
+   display: block !important;
+}
+.changeRequestButton .item {
+   display: block !important;
+   margin-bottom: 20px;
+}*/
+/* Home page CSS BOF */
+.st-content-inner{margin-top: 40px;}
+.search-with-scaner .form-group .form-control {width: 84%;  }
+.home_page .pricetables a {font-size: 11px;}
+.ad_banner .content h2 {font-size: 20px;}
+.search-with-scaner .form-group .form-control {width: 85%;}
+.banner-liquor .carousel-indicators {right:32%;}
+.ad_banner .image {width: auto;}
+
+.store_list{
+	height: 100vh;
+	overflow: hidden;
+}
+.storelising{
+	height: calc(100vh - 51px);
+	overflow: scroll;
+}
+
+}
+
+/* 05 iPad & Small Tablet Landscape (981 * 1200)  	
+============================================================== */
+@media (min-width: 981px) and (max-width: 1200px) { 
+
+/*.content.common-form.favorites-list {
+     padding-top: 25px; 
+    padding-bottom: 80px;
+}*/	
+.spirituous_Liquor_img {
+    margin-left: 0.333333%;
+    padding: 3px 6px 0px 25px;
+}
+.LiquorControlContent{
+	font-size: 25px;
+}
+.login .content .form .input-group { padding: 0px 30px 0 10px;}
+
+.forgot-btns.common-form .form {padding-bottom: 13px;}
+/*.st-content*/
+.st-content-inner{margin-top: 120px;}
+/*.serch-homepage{margin-top: 110px !important;}*/
+.store-info-bg{padding:60px 0 30px;}
+.bluehill span {font-size:60px;}
+.bluehill ul li span {font-size:24px;}
+.bluehill ul li img {margin-right:5px; margin-top:4px; width:16px;}
+.bluehill ul li {padding-right: 8px;}
+.info-textcon {padding: 30px 0;}
+.info-textcon p {font-size:20px; line-height: 1.3;}
+.contactbluehill {padding:20px 0;}
+.contactbluehill ul li span a {font-size:24px;}
+.contactbluehill ul li img {margin-right: 5px; width:16px; margin-top: 2px;}
+.contactbluehill ul li .imgsta{width:20px; margin-top:5px;}
+.googlemap iframe{min-height:300px;}
+
+.forgotpassword{margin-top:30px;}
+.modal-dialog {width: 97%;}
+
+/* Picking Up CSS BOF */
+.pickingupnumber {padding-top:24px;}
+
+.success-page .success-checked img { width:18%; margin-top:60px;}
+	
+/* Home page CSS BOF */
+	
+.ad_banner .content h2{ font-size: 74px;}
+.ad_banner .content h3{font-size: 54px;}
+.ad_banner .content .btn{font-size: 24px;}
+.ad_banner .content{ margin-top: 40%;}	
+
+.searchBoxList .productLink h3{
+	font-size: 1.700em;
+}
+	
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+
+	/*.content.common-form.favorites-list {
+	    padding-top: 25px; 
+	    padding-bottom: 80px;
+}*/
+.no-pad{
+border: 2px solid #000;
+   margin-right: 15px;
+   margin-left: 15px;
+   margin-top: 15px;
+   width: 97.5%;
+   padding-bottom: 20px;
+ }
+	.changeRequestButton {
+   display: flex !important;
+}
+.changeRequestButton .item {
+   display: flex !important;
+}
+}
+.changeRequestButton {
+   display: flex ;
+}
+.changeRequestButton .item {
+   display: flex ;
+ 
+}
+
+
+/* Small Device (Portrait) (320)
+============================================================== */
+@media (max-width: 320px) {
+	.header .header_title h2 {
+	    font-size: 14px !important;
+	}
+	.main-header .logoForHomePage .logoForHomePageIcon{
+		height: 23px !important;
+	}
+	.header .menu-open img{
+		height: 16px !important;
+	}
+	.header .icon-right img{
+		height: 16px !important;
+	}
+	#resetFilter button{
+		font-size: 16px !important;
+	}
+	.profile img#profileImageMenu{
+		height: 70px !important;
+    	width: 70px !important;
+	}
+	.menu_Profile_camera .current_user{
+		font-size: 14px !important;
+	}
+	.common-form .form .btn{
+		/*height: 55px !important;*/
+    	font-size: 14px !important;
+	}
+	.cartprodutitles {
+		width: 32% !important;
+	}
+	.btn {
+	    font-size: 14px !important;
+	}
+	.order-details{
+		font-size: 14px !important;
+	}
+	.ordertotal-summary ul li {
+		font-size: 14px !important;
+	}
+	.payment-summary-code h4{
+		font-size: 14px !important;
+	}
+	.YourCartIsEmpty{
+		height: 120px !important;
+	}
+	#accordion .panel-default .panel-heading .panel-title{
+		font-size: 14px !important;
+	}
+	.comingSoonCoupon{
+		font-size: 14px !important;
+	}
+	.pricetables.getReceipeNameSize a{
+		font-size: 14px !important;
+	}
+	.account_setting #profileImage{
+		height: 150px;
+    	width: 150px;
+	}
+	.account_setting .Profile_camera{
+		left: 120px !important;
+	}
+	.account_setting .rotated .rotatedICON{
+		height: 30px !important;
+	    width: 33px !important;
+	}
+	.account_setting .rotated{
+		width: 40px;
+	}
+	.cartCount.badge{
+		padding: 1px 1px;
+	    right: 0px;
+	    top: 2px;
+	    left: 8px;
+	}
+	.content .links{
+		font-size: 14px !important;
+	}
+	.home_page .toppicks-products .form .fvrt-btnaddtocart .btn{
+		font-size: 13px !important;
+	}
+	.fvrt-btnaddtocart img{
+		width: 12%!important;
+	}
+	.common-form .form .fvrt-btnaddtocart .btn{
+		font-size: 12px !important;
+	}
+}

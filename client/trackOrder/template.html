@@ -1,0 +1,39 @@
+<template name="trackOrder">
+	<div class="track-order flexClass">
+		<div class="headerPortion">
+		  {{> topHeader}}
+		</div>
+		<div class="topPortion">
+		  <div class="st-content-inner track-order-inner-div">
+						{{#with getOrderDetails}}
+						<div class="middlePortion">
+							<div class="bodyPortion">
+								<p class="orderTitle">
+									Current Order: (Order #{{this.orderNumber}})
+								</p>
+								<a href="/receiptPage/{{this._id}}" class="viewReceiptTag">View Receipt</a>
+								{{#if this.connectedOrderId}}
+									<p class="orderTitle">
+										Order: (Order #{{getConnectedOrderNumber this.connectedOrderId}})
+									</p>
+									<a href="/receiptPage/{{this.connectedOrderId}}" class="viewReceiptTag">View Receipt</a>
+								{{/if}}
+								<h4 class="statusHeading">Order Status</h4>
+								<p class="statusValue">{{{getOrderStatus this}}}</p>
+
+								<div class="helpBox">
+									<p class="orderTitle">Need Help?</p>
+									{{#with getStoreDetails this.storeId}}
+										<p class="storeDetails">Contact ({{this.storeName}}) <br> {{{getNumbers this.storeNumbers}}}</p>
+									{{/with}}
+								</div>
+							</div>
+						</div>
+						{{/with}}
+					</div>
+		</div>
+		<div class="bottomPortion">
+		  {{> footer}}
+		</div>
+	</div>
+</template>

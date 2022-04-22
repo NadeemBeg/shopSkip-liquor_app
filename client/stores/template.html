@@ -1,0 +1,57 @@
+<template name="storePage">
+  <div class="store_list flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form storelising">
+              <div class="container npbm" style="padding: 0;">
+                <div class="row mgtlr">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 npbm"  style="padding: 0;">
+                    <div class="form" style="padding: 0;">
+                      <div class="form-group storelist">
+                        <div class="radio-list radio-primary">
+                          <input type="radio" name="radio1" id="all" value="option1" data-id="all" class="StoreChecked" checked="{{setCheckedForAllStore}}">
+                          <label for="all"></label>
+                        </div>
+                        <div class="titles">
+                          <a href="#">All Stores</a>
+                        </div>
+                        <div class="stotelistarrow" style="margin-top: 0px;"><a href="#"><img alt="store_list_back" src="/images/store_list_back.png" id="storeArrow" data-id="all" ></a></div>
+                      </div>
+                      {{#if getStores}}
+                        {{#each getStores}}
+                          <div class="form-group storelist">
+                            <div class="radio-list radio-primary">
+                              <input type="radio" name="radio1" id="{{this._id}}" data-id="{{this._id}}" value="option1" class="StoreChecked" checked="{{setChecked this._id}}">
+                              <label for="{{this._id}}"></label>
+                            </div>
+                            {{#if storeImage this._id}}
+                              <img class="storeproduct" src="{{storeImage this._id}}" alt="location-icon"/>
+                            {{else}}
+                              <img class="storeproduct" src="/images/stores_icon.png" style="width: 25%;" alt="location-icon"/>
+                            {{/if}}
+                            <div class="titles">
+                              <a href="#">{{this.storeName}}</a>
+                              {{#if this.address}}
+                                <div class="map-loactin"> 
+                                  <img alt="location-icon" src="/images/location-icon.png"> 
+                                  <a href="#">{{this.address}}</a>
+                                </div>
+                              {{/if}}
+                            </div>
+                            <div class="stotelistarrow"><a href="#"><img alt="store_list_back" src="/images/store_list_back.png" id="storeArrow" data-id="{{this._id}}" ></a></div>
+                          </div>
+                        {{/each}}
+                      {{/if}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

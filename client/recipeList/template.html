@@ -1,0 +1,74 @@
+<template name="recipesList">
+  <div class="favorites gray-color-bg recipesListPage flexClass">
+    <div class="headerPortion">
+        {{> topHeader}}
+      </div>
+      <div class="topPortion">
+        <div class="serch-homepage">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="search-with-scaner recipesListPageSearch">
+                  <span class="search-icon">
+                    <button type="submit">
+                      <span class="fa fa-search"></span>
+                    </button>  
+                  </span>
+                  <!-- <input type="text" id="searchproduct" placeholder="Search" class="form-control"> -->
+                  {{> inputAutocomplete settings=settings id="searchproduct" class="input-xlarge form-control" placeholder="Search Recipe"}} 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content common-form favorites-list recipeListDiv" style="padding-top: 25px;">
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="row listingContainerOnrecipes">
+                        {{#if getFavoriteReceipes}}
+                        {{#each getFavoriteReceipes}}
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <div class="favorites-products">
+                            <div class="favorites-proimg">
+                              <a href="/receipePage/{{this._id}}"><img class="img-responsive center-block" src="{{getReceipeImage this}}" alt="Favorites Receipe" /></a>                              
+                            </div>
+                            <div class="favorites-proimg">
+                              <div class="favorites-heart favheart">
+                                <a href="#">
+                                  {{#if getStatus this._id}}
+                                  <img class="img-responsive" src="/images/favorite-fill.png" id="favReceipe"  style="margin-top: 18px;" data-id="{{this._id}}" data-status="{{getStatusString this._id}}" alt="favorites-heart"/>
+                                  {{else}}
+                                  <img class="img-responsive" src="/images/favorites-heart.png" id="favReceipe"  style="margin-top: 18px;" data-id="{{this._id}}" data-status="{{getStatusString this._id}}" alt="favorites-heart"/>
+                                  {{/if}}
+                                </a> 
+                              </div>
+                              <div class="pricetables ">
+                                <a href="#">{{getReceipeName this}}</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {{/each}}
+                        {{else}}
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <div class="favorites-products">
+                            No Favorite Receipes Available..!
+                          </div>
+                        </div>
+                        {{/if}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div class="bottomPortion">
+        {{> footer}}
+      </div>
+    
+  </div>
+</template>

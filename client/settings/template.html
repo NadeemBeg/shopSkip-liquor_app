@@ -1,0 +1,47 @@
+<template name="settings">
+  <div class="settings flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="form-group links">
+                        <a href="/changepassword">Change Password<img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"></a>
+                      </div>
+                      <div class="form-group links">
+                        <a href="/accountdetails">Edit Account Info <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"></a>
+                      </div>
+                      <div class="form-group links">
+                        <a> Notification </a>
+                        <!-- <span class="switch" style="float: right;">
+                          <input type="checkbox" class="switch" id="notification" {{settingNotChecked}}>
+                          </span> -->
+                        <label class="switch-light switch-material" onclick="" style="float: right;">
+                        <input type="checkbox" id="notification" {{settingNotChecked}}>
+                        <span>
+                        <span>Off</span>
+                        <span>On</span>
+                        <a></a>
+                        </span>
+                        </label>
+                      </div>
+                      <!--
+                        <div class="form-group links">
+                          <a href="login.html">Logout <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"></a>
+                        </div>
+                        -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

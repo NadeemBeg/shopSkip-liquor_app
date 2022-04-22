@@ -1,0 +1,196 @@
+<template name="receipePage">
+	<div class="product-detail flexClass">
+		<div class="headerPortion">
+	      {{> topHeader}}
+	    </div>
+	    <div class="topPortion">
+	    	<div class="serch-homepage">
+            	<div class="container">
+            		<div class="row">
+            			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            				<div class="search-with-scaner receipePage">
+            					<span class="search-icon">
+            						<button type="submit">
+            							<span class="fa fa-search"></span>
+            						</button>  
+            					</span>
+            					<!-- <input type="text" id="searchproduct" placeholder="Search" class="form-control"> -->
+            					{{> inputAutocomplete settings=settings id="searchproduct" class="input-xlarge form-control" placeholder="Search Recipe"}} 
+            				</div>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+
+            {{#if lastReceipe}}
+
+            <div class="rating_wrapper details">
+            	<div class="container">
+	                <!-- <div class="row">
+	                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+	                    <div class="search-with-scaner">
+	                      <span class="search-icon">
+	                        <button type="submit">
+	                          <span class="fa fa-search"></span>
+	                        </button>  
+	                      </span>
+	                      {{> inputAutocomplete settings=settings id="searchproduct" class="input-xlarge form-control" placeholder="Search"}}
+	                    </div>
+	                  </div>
+
+	                </div> -->
+	                <br>
+	                <div class="row">
+	                	<div class="col-xs-12 npbm" style="padding-top: 50px;">
+	                		<div class="text-center"> 
+	                			<img class="img-responsive receipeImg" src="{{receipeImage this}}" alt="receipe-img"/> 
+	                		</div>
+	                	</div>
+	                	<div class="row rating_content details-sec">
+	                		<div class="col-xs-12 npbm">
+	                			<div class="title title-descrpt">
+	                				<h3>{{lastReceipe.receipeName}}</h3>
+	                				<br>
+	                			</div>
+	                			<div class="star-ratings">
+	                				<div class="rating-star">
+	                					<!-- {{> starsRating rating=avgRating size='lg'}} -->
+	                					{{#if avgRating}}
+	                					Ratings: {{avgRating}}/5
+	                					{{else}}
+	                					Ratings: 0/5
+	                					{{/if}}
+	                				</div>
+	                				<br>
+	                				<div class="favorites-proimg">
+	                					<div class="favorites-heart favheart">
+	                						<a href="#">
+	                							{{#if getStatus lastReceipe._id}}
+	                							<img class="img-responsive" src="/images/favorite-fill.png" id="favReceipe" data-id="{{lastReceipe._id}}" data-status="{{getStatusString lastReceipe._id}}" alt="favorites-heart"/>
+	                							{{else}}
+	                							<img class="img-responsive" src="/images/favorites-heart.png" id="favReceipe" data-id="{{lastReceipe._id}}" data-status="{{getStatusString lastReceipe._id}}" alt="favorites-heart"/>
+	                							{{/if}}
+	                						</a> 
+	                					</div>
+	                				</div>
+	                			</div>
+	                		</div>
+	                	</div>
+	                	<div class="customer-reviewss" style="padding: 0 25px 0px!important;">
+	                		<h3 class="font-we-lt">Customer Reviews</h3>
+	                		{{#if reviews}}
+	                		{{#each reviews}}
+	                		{{#if ifFirstThree @index}}
+	                		<div class="customer-comments">
+	                			<h4>{{this.reviewerName}}</h4>
+	                			<div class="raiting-times">
+	                				<div class="rating-star">
+	                					{{> rating value=this.reviewRating }}
+	                				</div>
+	                				<div class="timehours">{{getDays this.createdAt}} ago</div>
+	                			</div>
+	                			<p>{{this.WriteReview}}</p>
+	                		</div>
+	                		{{else}}
+	                		<div class="customer-comments hidden">
+	                			<h4>{{this.reviewerName}}</h4>
+	                			<div class="raiting-times">
+	                				<div class="rating-star">
+	                					{{> rating value=this.reviewRating }}
+	                				</div>
+	                				<div class="timehours">{{getDays this.createdAt}} ago</div>
+	                			</div>
+	                			<p>{{this.WriteReview}}</p>
+	                		</div>
+	                		{{/if}}
+	                		{{/each}}
+	                		{{else}}
+	                		<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                			<div class="favorites-products">
+	                				No Products Reviews Available..!
+	                			</div>
+	                		</div>
+	                		{{/if}}
+	                	</div>
+
+	                	<!-- ====== /REVIEW  BOC ====== -->
+	                	<div class="content common-form">
+	                		<div class="container">
+	                			<div class="row rating_content">
+	                				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 npbm">
+	                					<div class="form maindetail">
+	                						<div class="customer-reviewss">
+	                							{{#if reviewsCount}}
+	                							<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                								<button class="btn btn-block" id="loadMoreReviews">
+	                									Load More Reviews
+	                									<div class="ripple-container"></div>
+	                								</button>
+	                							</div>
+	                							<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	                								<a href="/ratingsReceipes/{{lastReceipe._id}}" onclick='Session.set("PreviousPage", "/receipePage/{{lastReceipe._id}}");'>
+	                									<button class="btn btn-block">
+	                										Add Review
+	                										<div class="ripple-container"></div>
+	                									</button>
+	                								</a>
+	                							</div>
+	                							{{else}}
+	                							<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                								<a href="/ratingsReceipes/{{lastReceipe._id}}" onclick='Session.set("PreviousPage", "/receipePage/{{lastReceipe._id}}");'>
+	                									<button class="btn btn-block">
+	                										Add Review
+	                										<div class="ripple-container"></div>
+	                									</button>
+	                								</a>
+	                							</div>
+	                							{{/if}}
+	                						</div>
+	                					</div>
+	                				</div>
+	                			</div>
+
+	                			<div class="row">
+	                				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 npbm">
+	                					<div class="form maindetail">
+
+	                						<div class="customer-reviewss">
+	                							<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                								<h3 class="font-we-lt">Details</h3>
+	                								{{lastReceipe.receipeDescription}}
+	                							</div>
+	                						</div>
+
+	                					</div>
+	                				</div>
+	                			</div>
+
+	                			<div class="rating_content">
+	                				<div class="customer-reviewss">
+	                					<h3>Instructions</h3>
+	                					{{#each receipe in lastReceipe.receipeSteps}}
+	                					<div class="row parentClass">
+	                						<div class="col-xs-12 col-sm-10 col-md-6 col-lg-6 stepSize childClass">
+	                							{{stepsOrdering @index}}{{receipe.Instructions}} 
+	                						</div>
+	                						<div class="col-xs-12 col-sm-2 col-md-6 col-lg-6 childClass">
+	                							<button class="btn btn-primary viewProductBtn" id="viewReceipeProducts" data-receipeproduct="{{receipe.productIds}}">View Product</button>
+	                						</div>
+	                					</div>
+	                					{{/each}}
+	                				</div>
+	                			</div>
+	                		</div>
+	                	</div>
+	                </div>
+	              </div>
+	            </div>
+	            {{/if}}
+	    </div>
+	    <div class="bottomPortion">
+	    	{{> footer}}
+	    </div>
+		
+	  </div>
+	</template>
+

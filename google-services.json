@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "125142564517",
+    "firebase_url": "https://shopskip.firebaseio.com",
+    "project_id": "shopskip",
+    "storage_bucket": "shopskip.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125142564517:android:6daf4ede92ad2a5c",
+        "android_client_info": {
+          "package_name": "com.liquor.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "125142564517-hnaoupnui2po6musfp83vkcis0tfj5dt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.liquor.app",
+            "certificate_hash": "868cf6ea9e4682a372d63385d0602df659fdb5e7"
+          }
+        },
+        {
+          "client_id": "125142564517-j2h1q3j476gkag52j11mrmodahiimdpl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlqolsuG1MXypFb2lnMjhBc-YxgRtNnb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "125142564517-j2h1q3j476gkag52j11mrmodahiimdpl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "125142564517-4nf8llnmi7q6dbj9aee4726td3bbb9vk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.liquor.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

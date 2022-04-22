@@ -1,0 +1,66 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base@1.4.0             # Packages every Meteor app needs to have
+mobile-experience@1.1.0       # Packages for a great mobile UX
+mongo@1.10.0                   # The database Meteor supports right now
+blaze-html-templates    # Compile .html files into Meteor Blaze views
+reactive-var@1.0.11            # Reactive variable for tracker
+tracker@1.2.0                 # Meteor's client-side reactive programming library
+
+standard-minifier-css@1.6.0   # CSS minifier run for production mode
+standard-minifier-js@2.6.0    # JS minifier run for production mode
+es5-shim@4.8.0                # ECMAScript 5 compatibility for older browsers
+ecmascript@0.14.3              # Enable ECMAScript2015+ syntax in app code
+typescript@3.7.6              # Enable TypeScript syntax in .ts and .tsx modules
+shell-server@0.5.0            # Server-side component of the `meteor shell` command
+accounts-password@1.6.0
+accounts-ui@1.3.1
+twbs:bootstrap
+less@2.7.11
+fortawesome:fontawesome
+dburles:collection-helpers
+accounts-base@1.6.0
+alanning:roles
+email@1.2.3
+random@1.2.0
+mrt:bootstrap3-wysihtml5
+check@1.3.1
+mrt:jquery-ui
+lepozepo:cloudinary
+session@1.2.0
+iron:router@1.1.1
+aldeed:collection2-core
+#cosio55:autoform-cloudinary
+jeremy:geocomplete
+aldeed:autoform
+dburles:google-maps
+accounts-facebook@1.3.2
+service-configuration@1.0.11
+accounts-google@1.3.3
+matb33:collection-hooks
+juliancwirko:s-alert
+juliancwirko:s-alert-jelly
+mrt:bootstrap-switch
+tsega:bootstrap3-datetimepicker
+postrednik:meteor-rangeslider
+momentjs:moment
+#richsilv:owl-carousel
+jquery@1.11.10
+mrt:paypal
+ifuturz:autocomplete
+mdg:geolocation
+matteodem:server-session
+matdutour:popup-confirm
+anbuselvan:meteor-toggle-switch
+fourquet:jquery-toast
+kosst:css-star-rating
+raix:push
+underscore@1.0.10
+meteorhacks:subs-manager
+255kb:cordova-disable-select
+lukemadera:autoform-googleplace
+fongandrew:login-as-user

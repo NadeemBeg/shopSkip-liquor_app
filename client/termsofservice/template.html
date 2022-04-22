@@ -1,0 +1,199 @@
+<template name="termsofservice">
+  <div class="terms-of-services-legal flexClass" id="termsDiv" >
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form favorites-list">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="terms-of-services-legal-page text-center">
+                        {{{tremOfCondition}}}
+                        <!-- {{#if selectCheckBox}} -->
+                        <!-- <div class="form-group label-floating is-empty">
+                          <div class="checkboxmark">
+                            <label>
+                              <input type="checkbox" id="termsConditions" value="">
+                              <span class="checkeds"><i class="fa fa-check checkeds-icon"></i></span>
+                              <h3>I Understand And Accept These Terms &amp; Conditions</h3>
+                            </label>
+                          </div>
+                          <span class="material-input"></span> 
+                        </div> -->
+                        <!-- <div class="form-group">
+                          <div class="pos-relative">
+                            <button class="btn btn-block text-uppercase" id="AcceptTerms">
+                              Accept
+                              <div class="ripple-container"></div>
+                            </button>
+                          </div>
+                        </div> -->
+                        <!-- {{else}} -->
+                       
+                        <!-- {{/if}} -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+    
+  </div>
+
+<!-- Privacy Policy --> 
+<div id="policyDiv"> 
+     <div class="templatepolicycontainer">
+       <div class="row">
+       <div class="policyHeader">
+        <div class="col-xs-2 text-left templateheader">
+          <div> <a onclick="$('#policyDiv').slideUp();"><i class="fa fa-times-circle"  style="color: #ffff" aria-hidden="true" title="angle-left"
+               ></i></a></div>
+        </div>
+        <div class="col-xs-8 text-center templateheader ">
+          <div class="page_title text-center">Privacy Policy</div>
+        </div>
+        <div class="col-xs-2 text-center">
+          &nbsp;
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="about policy" style="    text-align: justify;">
+          
+          {{{privacyPolicy}}}
+        </div>
+      </div>
+      </div>
+
+      </div>
+
+      <style>
+    #policyDiv{
+      position: absolute;
+    top: 0px;
+    z-index: 100;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    }
+    .templatepolicycontainer {
+      max-width: 1170px;
+      width: 100%;
+      margin: 0 auto;
+      height: 100vh;
+       background-color: aliceblue;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .about.policy {
+      padding: 60px;
+    }
+
+    .templatepolicycontainer .policyHeader {
+      height: 50px;
+      background: #c52128;
+      color: #ffff;
+      max-width: 1170px;
+      margin-left: 15px;
+    }
+
+    .templatepolicycontainer .templateheader {
+      top: 12px;
+      font-weight:
+        bold;
+      font-size: 20px;
+    }
+      </style>
+
+
+   </div>
+
+</template>
+<template name="privacyPolicySection">
+  <div class="terms-of-services-legal flexClass" id="termsDiv" >
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form favorites-list">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="terms-of-services-legal-page text-center">
+                        {{{privacyPolicy}}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+    
+  </div>
+</template>
+
+<template name="interestBaseAds">
+  <div class="terms-of-services-legal flexClass" id="termsDiv" >
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form favorites-list">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="terms-of-services-legal-page text-center">
+                        {{{interestBasedAds}}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+    
+  </div>
+</template>
+
+<template name="returnpolicy">
+  <div class="terms-of-services-legal flexClass" id="termsDiv" >
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form favorites-list">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="terms-of-services-legal-page text-center">
+                        {{{returnpolicy}}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+    
+  </div>
+</template>

@@ -1,0 +1,158 @@
+<template name="searchCategory">
+	<div class="searchCategory flexClass">
+		<div class="headerPortion">
+			{{> topHeader}}
+		</div>
+		<div class="searchDiv">
+			<span class="fa fa-search"></span>
+			<input type="text" name="searchTextBox" id="searchTextBox" class="searchTextBox" placeholder="Search State Road Beverage" />
+			{{#if isDevice}}
+				<img class="scanner" id="barcodeIcon" src="/images/scanner-bar-img.png" alt="Scanner"/>
+			{{/if}}
+		</div>
+		<div class="searchTitle">
+			<p>Categories</p>
+		</div>
+		<div class="topPortion" style="background: #fff;">
+			<div class="innerSearchContainer">
+				{{#each getCategories}}
+					<div class="categoryItem clickableCategory" data-id="{{this._id}}">
+						<div class="categoryItemImage clickableCategory" data-id="{{this._id}}">
+							{{#if this.categoryImage}}
+								<img src="{{getImage this.categoryImage}}" class="img-responsive clickableCategory" data-id="{{this._id}}">
+							{{else}}
+								<img src="/images/liquornoimage.png" class="img-responsive clickableCategory" data-id="{{this._id}}" style="height: 60px;"	>
+							{{/if}}
+						</div>
+						<div class="categoryItemName clickableCategory" data-id="{{this._id}}"><p data-id="{{this._id}}">{{this.categoryType}}</p></div>
+					</div>
+				{{else}}
+					<div class="noCats">
+						<span class="noCatsText">No Categories Yet.</span>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+		<div class="bottomPortion">
+			{{> footer}}
+		</div>
+	</div>
+</template>
+
+<template name="searchSubCategory">
+	<div class="searchCategory flexClass">
+		<div class="headerPortion">
+			{{> topHeader}}
+		</div>
+		<div class="searchDiv">
+			<span class="fa fa-search"></span>
+			<input type="text" name="searchTextBox" id="searchTextBox" class="searchTextBox" placeholder="Search State Road Beverage" />
+			{{#if isDevice}}
+				<img class="scanner" id="barcodeIcon" src="/images/scanner-bar-img.png" alt="Scanner"/>
+			{{/if}}
+		</div>
+		<div class="searchTitle">
+			<p>Category: {{getCategoryDetails.categoryType}}</p>
+		</div>
+		<div class="topPortion" style="background: #fff;">
+			<div class="innerSearchContainer">
+				{{#each getSubCategories}}
+					<div class="categoryItem clickableCategory" data-id="{{this._id}}">
+						<div class="categoryItemImage clickableCategory" data-id="{{this._id}}">
+							{{#if this.productTypeImage}}
+								<img src="{{getImage this.productTypeImage}}" class="img-responsive clickableCategory" data-id="{{this._id}}">
+							{{else}}
+								<img src="/images/liquornoimage.png" class="img-responsive clickableCategory" data-id="{{this._id}}" style="height: 60px;">
+							{{/if}}
+						</div>
+						<div class="categoryItemName clickableCategory" data-id="{{this._id}}"><p>{{this.typeName}}</p></div>
+					</div>
+				{{else}}
+					<div class="noCats">
+						<span class="noCatsText">No Sub Categories Yet.</span>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+		<div class="bottomPortion">
+			{{> footer}}
+		</div>
+	</div>
+</template>
+
+<template name="searchSubCategoryProducts">
+	
+	<div class="searchCategory flexClass">
+		<div class="headerPortion">
+			{{> topHeader}}
+		</div>
+		<div class="searchDiv">
+			<span class="fa fa-search"></span>
+			<input type="text" name="searchTextBox" id="searchTextBox" class="searchTextBox" placeholder="Search State Road Beverage" />
+			{{#if isDevice}}
+				<img class="scanner" id="barcodeIcon" src="/images/scanner-bar-img.png" alt="Scanner"/>
+			{{/if}}
+		</div>
+		<div class="searchTitle">
+			<p>Sub Category: {{getProductTypeDetails.typeName}}</p>
+		</div>
+		<div class="topPortion" style="background: #fff;">
+			<div class="innerSearchContainer" style="padding: 20px;">
+				<div class="row listingContainer">
+					<section class="items">
+					<ul>
+    					{{#each getProducts}}
+                        <li><div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding: 5px;">
+                          <div class="favorites-products">
+                            <div class="favorites-proimg">
+                              <a href="/productDetails/{{this._id}}" onclick='Session.set("PreviousPage", "/search-subcategoryproducts/{{getURL this._id}}");'><img class="img-responsive center-block" src="{{prodImage this._id}}" alt="Favorites Product"/></a>
+                              <div class="favorites-heart favheart">
+                                <a href="#">
+                                  {{#if getStatus}}
+                                  <img class="img-responsive" src="/images/favorite-fill.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart" />
+                                  {{else}}
+                                  <img class="img-responsive" src="/images/favorites-heart.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                  {{/if}}
+                                </a> 
+                              </div>
+                            </div>
+                            <input type="hidden" name="productId" value="{{this._id}}">
+                            <div class="pricetables">
+                              <a href="#"> {{this.productName}} </a>
+                              <div class="pricefvrt"> $ {{this.price}} <span> {{bottlesize this.quantity}} </span> <br><span>{{bottleTypeName this.bottleTypes}}</span></div><br>
+                              {{#if storename this}}
+                              <div class="nameOfStore"><b>Store:</b> {{storename this}}</div>
+                              {{else}}
+                              <div class="nameOfStore">&nbsp;</div>
+                              {{/if}}
+                            </div>
+
+                            <div class="fvrt-btnaddtocart">
+                                <!-- <a href="/ratings/{{this._id}}" >
+                                  <button class="btn btn-block">
+                                    Add Review
+                                    <div class="ripple-container"></div>
+                                  </button>
+                                </a> -->
+                                <button class="btn btn-block my-btn" id="addCart" data-attr="{{this._id}}" style="padding: 10px;">
+                                  Add To Cart <img alt="carts-icon" src="/images/cart-icons.png" data-attr="{{this._id}}" id="addCart">
+                                  <div class="ripple-container"></div>
+                                </button>
+                              </div>
+                            </div>
+                          </div></li>
+                          {{/each}}
+    				</ul>
+				</section>
+                        
+                        </div>
+			</div>
+		</div>
+		<div class="searchLoder" style="display: none;">
+			<img src="/images/loader.gif">
+		</div>
+		<div class="bottomPortion">
+			{{> footer}}
+		</div>
+	</div>
+</template>

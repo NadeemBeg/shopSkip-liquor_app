@@ -1,0 +1,14 @@
+<template name="brandNameProdList">
+  <a href="/productDetails/{{productDetailPage}}"> 
+  	<div class="row">
+  		<div class="col-xs-4 col-sm-2 col-md-2 col-lg-2 text-center imagess">
+				{{{productsImage}}}
+  		</div>
+  		<div class="col-xs-8 col-sm-10 col-md-10 col-lg-10" style="padding: 0px;">
+  			<p style="padding: 0px;" class="prodName"> <h3 style="padding: 0px;">{{productName}}</h3></p>
+  			<!-- {{#if productDetails}}<p class="prodDetail"> <h5 style="padding: 0px;"> {{productDetails}} </h5></p>{{/if}} -->
+  			<p class="prodPrice" style="padding: 0px;"><h5 style="padding: 0px;">$ {{productPrice}} &nbsp;{{productQuantity}}&nbsp; - &nbsp;{{productType}} </h5></p>        
+  		</div>
+  	</div>
+   </a>
+</template>

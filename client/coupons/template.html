@@ -1,0 +1,44 @@
+<template name="coupons">
+  <div class="coupons flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form coupons-main">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+              <div class="form">
+                <div class="row text-center">
+                  {{#if getCoupons}}
+                    <!-- {{#each getCoupons}}
+                      <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="coupons-bg">
+                          <div class="offers-text">
+                            {{this.discount}}{{getCouponType this._id}}<span> OFF </span>
+                          </div>
+                          <p>{{this.description}}.</p>
+                          <div class="freecode">
+                            {{this.couponName}}
+                            <div class="free-codeimg"><img src="/images/free-img-code.png" alt="free-img-code"></div>
+                          </div>
+                          <p>{{couponAvailability this._id}}</p>
+                        </div>
+                      </div>
+                    {{/each}} -->
+                    <h2>COMING SOON... </h2>
+                  {{else}}
+                    <center><h2 class="comingSoonCoupon"><b>COMING SOON... </b></h2></center>
+                  {{/if}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

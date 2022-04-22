@@ -1,0 +1,72 @@
+<template name="bannerProducts">
+	<div class="product-list gray-color-bg bannerProductPage flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form banner-product-list favorites-list bannerProductsPage">
+              <div class="container">
+                <div class="form bannerForm">
+                  <div class="row">
+                    {{#if getBannerDetails.productIds}}
+                      <section class="itemsbanner">
+                      <ul>
+                      {{#each getBannerDetails.productIds}}
+                        {{#with getProductDetails this.id}}
+                          <li><div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="favorites-products">
+                              <div class="favorites-proimg">
+                                <a href="/productDetails/{{this._id}}" ><img class="img-responsive center-block" src="{{prodImage this._id}}" alt="Favorites Product"/></a>
+                                <div class="favorites-heart favheart">
+                                  <a href="#">
+                                    {{#if getStatus}}
+                                      <img class="img-responsive" src="/images/favorite-fill.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart" />
+                                    {{else}}
+                                      <img class="img-responsive" src="/images/favorites-heart.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                    {{/if}}
+                                  </a> 
+                                </div>
+                              </div>
+                              <input type="hidden" name="productId" value="{{this._id}}">
+                              <div class="pricetables">
+                                <a href="#"> {{this.productName}} </a>
+                                <div class="pricefvrt"> $ {{this.price}} <span> {{productQuantity this.quantity}} </span> </div><br>
+                                {{#if storename this}}
+                                  <div class="nameOfStore"><b>Store:</b> {{storename this}}</div>
+                                {{else}}
+                                  <div class="nameOfStore"><b>&nbsp;</b> &nbsp;</div>
+                                {{/if}}
+                              </div>
+
+                              <div class="fvrt-btnaddtocart">
+                                <!-- <a href="/ratings/{{this._id}}" >
+                                  <button class="btn btn-block">
+                                    Add Review
+                                    <div class="ripple-container"></div>
+                                  </button>
+                                </a> -->
+                                  <button class="btn btn-block my-btn" id="addCart" data-attr="{{this._id}}">
+                                    Add To Cart <img alt="carts-icon" src="/images/cart-icons.png" data-attr="{{this._id}}" id="addCart">
+                                    <div class="ripple-container"></div>
+                                  </button>
+                              </div>
+                            </div>
+                          </div></li>
+                        {{/with}}
+                      {{/each}}
+                    </ul>
+                  </section>
+                    {{else}}
+                      <center><h2>No products found.</h2></center>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+		
+	</div>
+</template>

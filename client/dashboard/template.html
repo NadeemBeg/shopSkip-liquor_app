@@ -1,0 +1,318 @@
+<template name="dashboard">
+  <div class="home_page">
+    <div id="st-container" class="st-container">
+      <div class="st-pusher">
+        {{> menu}}
+    <div class="topPortion">
+      
+      <!-- <div class="logo-wrap">
+        <div class="row npm" style="margin-top: 20px;margin-left: -40px;">
+          <div class="col-xs-3 npm icon-left">
+            <div id="st-trigger-effects" class="column" style="padding-left: 10px;">
+              <button data-effect="st-effect-3" class="menu-open" onclick='$("#ui-datepicker-div").hide()'>
+              <a href="#" id="nav-icon3"><img src="/images/menu-icon.png" alt="menu-icon"> </a>
+              </button>
+            </div>
+          </div>
+          <div class="col-xs-6 npm">
+            <div class="header_title">
+              
+            </div>
+          </div>
+        </div>
+        <div class="logo">
+          <img src="/images/logo.png" alt="logo" class="img-responsive">
+        </div>
+      </div> -->
+
+      <div class="topLogo" style="padding-top: 5px;">
+        <!-- <div class="menuIcon">
+          <div id="st-trigger-effects" class="column">
+            <button data-effect="st-effect-3" class="menu-open" onclick='$("#ui-datepicker-div").hide()'>
+            <a href="#" id="nav-icon3"><img src="/images/menu-icon.png" alt="menu-icon"> </a>
+            </button>
+          </div>
+        </div> -->
+        <div class="logoPart">
+          <img src="/images/logo.png" alt="logo" class="img-responsive">
+        </div>
+      </div>
+
+      {{#if storeIcon}}
+        <div class="currently-shopping">
+          Currently Shopping At <a href="/storePage">{{selectedStoreName}}</a>
+        </div>
+      {{/if}}
+
+      <div class="banner-liquor" style="margin-top: 0px !important;">
+        <div id="bootstrap-touch-slider" class="carousel slide control-round indicators-line" data-ride="carousel" data-interval="5000">
+          <ol class="carousel-indicators">
+            {{#each getBanners}}
+              <li data-target="#bootstrap-touch-slider" data-slide-to="{{@index}}" class="{{isFirst @index}}"></li>
+            {{/each}}
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            {{#each getBanners}}
+              <div class="item {{isFirst @index}} bannerItem" data-id="{{this._id}}">
+                <img src="{{imageResize this.bannerImage}}" data-id="{{this._id}}" alt="Banner Image"  class="slide-image bannerItem"/>
+                <div class="bs-slider-overlay"></div>
+                <div class="container">
+                  <div class="row">
+                    <div class="slide-text slide_style_center bannerItem"  data-id="{{this._id}}">
+                      <h3 data-animation="animated lightSpeedIn aachenroman">{{this.textOne}}</h3>
+                      <h1 data-animation="animated flipInX"> {{this.textTwo}} </h1>
+                      <h4 data-animation="animated lightSpeedIn">{{this.textThree}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+      {{#if spirituousProduct}}
+        <div class="toppicks-products position-relative spirituous_Liquor_div">
+          <!-- <div class="inprogress"><p>In Progress</p></div> -->
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                <div class="form gray-color-bg">
+                  <div class="toppicks">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                      <h2>Spirituous Liquor</h2>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                      <div class="viewalls">
+                        <a href="/liquorProduct" class="viewallsSpirituous">View All</a><br>
+                        <a href="https://www.ohlq.com/products/%20" class="ohlqLink" target="_blank">Can't Find Your Bottle?</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <section class="itemsliquor">
+                      <ul>
+                    {{#each spirituousProduct}}
+                      <li><div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6 pdnright">
+                        <div class="favorites-products">
+                          <div class="favorites-proimg">
+                            <a href="/productDetails/{{this._id}}" onclick='Session.set("PreviousPage", "/dashboard");'><img class="img-responsive center-block" src="{{prodImage this}}" alt="Favorites Product" style="height:314px;"></a>  
+                            <div class="favorites-heart">
+                              <a href="#">
+                                <!-- <img class="img-responsive" src="/images/favorites-heart.png" alt="favorites-heart"> -->
+                                {{#if getStatus}}
+                                  <img class="img-responsive" src="/images/favorite-fill.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                {{else}}
+                                  <img class="img-responsive" src="/images/favorites-heart.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                {{/if}}
+                              </a> 
+                            </div>
+                          </div>
+                          <div class="pricetables">
+                            <a href="#">{{this.productName}}</a>
+                            <div class="pricefvrt">
+                              $ {{this.price}} <span>{{productQuantity this.quantity}}</span><br /><span>{{bottleTypeName this.bottleTypes}}</span>
+                            </div>
+                          </div>
+                          <div class="fvrt-btnaddtocart" data-attr="{{this._id}}">
+                              <button class="btn btn-block my-btn" id="addCart" data-attr="{{this._id}}">
+                                Add To Cart <img alt="carts-icon" src="/images/cart-icons.png"  data-attr="{{this._id}}">
+                                <div class="ripple-container"></div>
+                              </button>
+                          </div>
+                        </div>
+                      </div></li>
+                    {{/each}}
+                    </ul>
+                  </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/if}}
+
+      {{#if topPicks}}
+        <div class="toppicks-products position-relative">
+          <!-- <div class="inprogress"><p>In Progress</p></div> -->
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                <div class="form gray-color-bg">
+                  <div class="toppicks">
+                    <h2>Top Picks</h2>
+                    <div class="viewalls">
+                      <a href="/topPickProducts">View All</a>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <section class="itemstop">
+                      <ul>
+                    {{#each topPicks}}
+                      <li><div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6 pdnright">
+                        <div class="favorites-products">
+                          <div class="favorites-proimg">
+                            <a href="/productDetails/{{this._id}}" onclick='Session.set("PreviousPage", "/dashboard");'><img class="img-responsive center-block" src="{{prodImage this}}" alt="Favorites Product" style="height:314px;"></a>  
+                            <div class="favorites-heart">
+                              <a href="#">
+                                <!-- <img class="img-responsive" src="/images/favorites-heart.png" alt="favorites-heart"> -->
+                                {{#if getStatus}}
+                                  <img class="img-responsive" src="/images/favorite-fill.png" id="favProduct" data-id="{{this}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                {{else}}
+                                  <img class="img-responsive" src="/images/favorites-heart.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                {{/if}}
+                              </a> 
+                            </div>
+                          </div>
+                          <div class="pricetables">
+                            <a href="#">{{this.productName}}</a>
+                            <div class="pricefvrt">
+                              $ {{this.price}} <span>{{productQuantity this.quantity}}</span><br /><span>{{bottleTypeName this.bottleTypes}}</span>
+                            </div>
+                          </div>
+                          <div class="fvrt-btnaddtocart" data-attr="{{this._id}}">
+                              <button class="btn btn-block my-btn" id="addCart" data-attr="{{this._id}}">
+                                Add To Cart <img alt="carts-icon" src="/images/cart-icons.png" data-attr="{{this._id}}">
+                                <div class="ripple-container"></div>
+                              </button>
+                          </div>
+                        </div>
+                      </div></li>
+                    {{/each}}
+                  </ul>
+                </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/if}}
+
+      <div class="carouselSliderForAd">
+              <div class="container">
+                <div class="row">
+                  <div class="span12">
+                    <div class="well"> 
+                      <div id="myCarousel" class="carousel slide">
+                       <!-- <ol class="carousel-indicators">
+                          {{#each getAdvertisements}}
+                          <li data-target="#myCarousel" data-slide-to="{{@index}}" class="{{isFirst @index}}"></li>
+                          {{/each}}
+                        </ol> -->
+                        <div class="carousel-inner" style="text-align: -webkit-center;">
+                          <div class="categories">
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 content_bg">
+                                  <div class="content">
+                                    <!-- <h2>Categories</h2> -->
+                                    <div class="owl-carousel nonloop">
+                                      {{#each getAdvertisements}}
+                                      {{#each this}}
+                                      <div class="main_list text-center advItem" data-advimg="{{this._id}}">
+                                        <!-- <a href="/advSliderProducts/{{this._id}}" class="thumbnail advItem"> -->
+                                        <img src="{{advSliderImage this._id}}" alt="Image" data-advimg="{{this._id}}" class="img-responsive" /><!-- </a> -->
+                                      </div>
+                                      {{/each}}
+                                      {{/each}}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                         <!--  {{#each getAdvertisements}}
+                          <div class="item {{isFirst @index}}">
+                            <div class="row-fluid">
+                              {{#each this}}
+                                <div class="span3 col-xs-6 col-sm-4 col-md-4 text-center advItem" data-advimg="{{this._id}}"><a href="/advSliderProducts/{{this._id}}" class="thumbnail advItem"><img src="{{advSliderImage this._id}}" alt="Image" data-advimg="{{this._id}}" class="img-responsive" /></a></div>
+                              {{/each}}
+                            </div>
+                          </div>
+                          {{/each}} -->
+                        </div>
+                          <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                          <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a> -->
+                      </div><!--/myCarousel-->
+                    </div><!--/well-->   
+                  </div>
+                </div>
+              </div>
+      </div>
+
+      {{#if collectionForYou}}
+        <div class="toppicks-products last">
+          <!-- <div class="inprogress"><p>In Progress</p></div> -->
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                <div class="form gray-color-bg">
+                  <div class="toppicks">
+                    <h2>Collections For You</h2>
+                   <!--  <div class="viewalls">
+                      <a href="#">View All</a>
+                    </div> -->
+                  </div>
+                  <div class="row">
+                    <section class="itemscollection">
+                      <ul>
+                    {{#each collectionForYou}}
+                      <li><div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6 pdnright">
+                        <div class="favorites-products">
+                          <div class="favorites-proimg">
+                            <a href="/productDetails/{{this._id}}" ondblclick='Session.set("PreviousPage", "/dashboard");'><img class="img-responsive center-block" src="{{prodImage this._id}}" alt="Favorites Product" style="height:314px;"></a>  
+                            <div class="favorites-heart">
+                              <a href="#">
+                                <!-- <img class="img-responsive" src="/images/favorites-heart.png" alt="favorites-heart"> -->
+                                {{#if getStatus}}
+                                  <img class="img-responsive" src="/images/favorite-fill.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                {{else}}
+                                  <img class="img-responsive" src="/images/favorites-heart.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                {{/if}}
+                              </a>
+                            </div>
+                          </div>
+                          <div class="pricetables">
+                            <a href="#">{{this.productName}}</a>
+                            <div class="pricefvrt">
+                              $ {{this.price}} <span>{{productQuantity this.quantity}}</span><br /><span>{{bottleTypeName this.bottleTypes}}</span>
+                            </div>
+                          </div>
+                          <div class="fvrt-btnaddtocart my-btn" data-attr="{{this._id}}">
+                              <button class="btn btn-block" id="addCart" data-attr="{{this._id}}">
+                                Add To Cart <img alt="carts-icon" src="/images/cart-icons.png" data-attr="{{this._id}}">
+                                <div class="ripple-container"></div>
+                              </button>
+                          </div>
+                        </div>
+                      </div></li>
+                    {{/each}}
+                  </ul>
+                </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/if}}
+
+      <div class="container" style="background: #FFF;margin-top: -2px;">
+        <div class="row">
+          <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">  <!-- spirituous_Liquor_img -->
+            <img src="/images/spirituous_Liquor_img1.png" class="verticalLine img-responsive">
+            <p class="LiquorControlContent">In Partnership With Ohio Liquor</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+  </div>
+  </div>
+</template>

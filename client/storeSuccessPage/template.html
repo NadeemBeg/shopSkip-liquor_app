@@ -1,0 +1,68 @@
+<template name="storeSuccessPage">
+  <div class="success-screens">
+    <!-- ====== /WRAPPER BOC ====== -->
+    <div id="st-container" class="st-container page-wrapper">
+      <!-- ====== HEADER BOC ====== -->
+      <div class="st-pusher">
+        {{> menu}}
+        <div class="st-content">
+          <!-- this is the wrapper for the content -->
+          <div class="st-content-inner cartlisting">
+            <!-- extra div for emulating position:fixed of the menu --> 
+            <!-- Top Navigation -->
+            <!-- <div class="main-header">
+              <div class="header">
+                <div class="container">
+                  <div class="row npm">
+                    <div class="col-xs-2 npm icon-left">
+                      <div id="st-trigger-effects" class="column">
+                        <button data-effect="st-effect-3" class="menu-open">
+                        <a href="#" id="nav-icon3"><img src="/images/menu-icon.png" alt="menu-icon"> </a>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-xs-8 npm">
+                      <div class="header_title">
+                        {{#if isOrderSucceed}}
+                        <h2>Success</h2>
+                        {{else}}
+                        <h2>Failed</h2>
+                        {{/if}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            {{> topHeader}}
+            <!-- ====== /HEADER EOC ====== --> 
+            <!-- ====== /CONTENT BOC ====== -->
+            <div class="content common-form">
+              <div class="text-center success-page">
+                <div class="barcodes">Barcode For Your Orders</div>
+                <div class="barcodeimage">
+                  <img id="barcode" style="width: auto;" />
+                </div>
+                {{#if isOrderSucceed}}
+                <div class="success-checked"><img src="/images/success-checked.png" alt="success-checked"/></div>
+                <h2 style="margin: 0;padding: 20px;">Thank You <br> For Your Purchase </h2>
+                <h5 class="order-pickup">Please proceed to the front desk <br>to confirm your purchase </h5>
+                <div class="form-group bitnmgt">
+                  <div class="pos-relative">
+                    <button class="btn btn-block text-uppercase" id="keepShopping">
+                      keep shopping
+                      <div class="ripple-container"></div>
+                    </button>
+                  </div>
+                </div>
+                {{else}}
+                   <h2 style="margin: 0;padding: 20px;">Sorry <br> Order was failed. </h2>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

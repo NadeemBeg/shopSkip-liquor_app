@@ -1,0 +1,54 @@
+<template name="howAreWeDoing">
+	<div class="howarewedoing flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <h3 class="text-center">How Are We Doing</h3>
+      <div class="content common-form">
+        <div class="container" style="height: auto;">
+          <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+              <div class="form" style="padding: 0;">
+                {{#if isDevice}}
+                <div class="form-group links">
+                  <a href="#" id="rateAppLink">Enjoying Our App? Let Us Know! <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"></a>
+                </div>
+                {{/if}}
+                <div class="form-group links">
+                  <a href="mailto:{{getEmail}}?subject=Report an issue in Shop Skip App." target="_blank">Having An Issue With The App? <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"></a>
+                </div>
+                <div class="form-group links">
+                  <a href="mailto:{{getEmail}}?subject=Feature Suggestion for Shop Skip App." target="_blank">Have A Feature Suggestion? <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png">
+                  </a>
+                </div>
+                <div class="form-group links">
+                  <a href="mailto:{{getEmail}}?subject=Questions, Comments, Or Criticisms about Shop Skip App." target="_blank">Questions, Comments, Or Criticisms? <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png">
+                  </a>
+                </div>
+                <div class="form-group links">
+                  <a href="mailto:{{getEmail}}?subject=Contact Us for any help or query in Shop Skip App." target="_blank">Contact Us <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png">
+                  </a>
+                </div>
+                {{#if isDevice}}
+                <div class="form-group links">
+                  <a href="#" id="shareApp">Share App <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png">
+                  </a>
+                </div>
+                {{/if}}
+                <!--
+                  <div class="form-group links">
+                    <a href="login.html">Logout <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"></a>
+                  </div>
+                 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+	</div>
+</template>

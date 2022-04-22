@@ -1,0 +1,130 @@
+ 
+
+<template name="termscondition">
+  <div class="templatecontainer">
+    <div class="row">
+      <div class="termsHeader">
+        <!-- <div class="col-xs-2 text-left templateheader">
+          
+        </div> -->
+        <div class="col-xs-12 text-center templateheader ">
+          <div class="page_title text-center">Terms of use</div>
+          <div class="back_arrow"><a><i class="fa fa-times-circle" style="color: #ffff" aria-hidden="true" title="angle-left"
+                onclick="$('.termsPopupDiv').hide();$('body').css('overflow', 'auto');" id="closeButtonTerms"></i></a></div>
+        </div>
+        <div class="col-xs-2 text-center">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="about term" style="text-align: justify;">
+       {{{tremOfCondition}}}
+
+        
+
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    .templatecontainer {
+      max-width: 1170px;
+      width: 100%;
+      margin: 0 auto;
+      height: 100vh;
+      background-color: #FFFFFF;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .about.term {
+      padding: 0 30px;
+    }
+
+    .templatecontainer .termsHeader {
+      height: 50px;
+      /* background: chocolate; */
+      background: #c52128;
+      color: #ffff;
+      /* padding: 24px; */
+      /* max-width: 1101px; */
+      max-width: 1170px;
+      margin-left: 15px;
+    }
+
+    .templatecontainer .templateheader {
+      top: 12px;
+      font-weight:bold;
+      font-size: 20px;
+    }
+   </style>
+
+   <div id="policyDiv" style="position: fixed;left: 0;margin: 0 auto;top: 0;right:0;display: none !important;"> 
+     <div class="templatepolicycontainer">
+       <div class="row">
+       <div class="policyHeader">
+        <div class="col-xs-2 text-left templateheader">
+          <div> <a onclick="$('#policyDiv').slideUp();"><i class="fa fa-times-circle"  style="color: #ffff" aria-hidden="true" title="angle-left"
+               ></i></a></div>
+        </div>
+        <div class="col-xs-8 text-center templateheader ">
+          <div class="page_title text-center">Privacy Policy</div>
+        </div>
+        <div class="col-xs-2 text-center">
+          &nbsp;
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="about policy" style="    text-align: justify;">
+          
+          {{{privacyPolicy}}}
+        </div>
+      </div>
+      </div>
+
+      </div>
+
+      <style>
+    .templatepolicycontainer {
+      max-width: 1170px;
+      width: 100%;
+      margin: 0 auto;
+      height: 100vh;
+       background-color: #FFFFFF;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .about.policy {
+      padding: 60px;
+    }
+
+    .templatepolicycontainer .policyHeader {
+      height: 50px;
+      background: #c52128;
+      color: #ffff;
+      max-width: 1170px;
+      margin-left: 15px;
+    }
+
+    .templatepolicycontainer .templateheader {
+      top: 12px;
+      font-weight:
+        bold;
+      font-size: 20px;
+    }
+      </style>
+
+
+   </div>
+</template>
+
+
+
+
+

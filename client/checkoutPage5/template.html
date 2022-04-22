@@ -1,0 +1,273 @@
+<template name="checkoutPagefifth">  
+  <div class="checkout-step02 flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="checkoptsetp">
+              <div class="steptabs">
+                <div class="container">
+                  <div class="row npm text-center">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row">
+                        <ul class="menutabs-main">
+                          <!-- <ul class="menutabs-main menutabs-main-pay"> -->
+                          <div class="lines-divider divider-second"></div>
+                          <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> <a class="disabled" href="Javascript:void(0);"> <span class="complete-checked"></span> Order </a></li>
+                          <li class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><a class="active" href="Javascript:void(0);"> <span></span> Payment </a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content common-form checkout-page" id="paymentDetailsSecForm" style="margin-top: 6px;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="payment_wrapper">
+                        <h2 style="padding-top: 10px;">Payment Method</h2>
+                        
+                        
+                       
+                        <div id="mypayment" class="carousel slide" data-ride="carousel" data-interval="false">
+                          <!-- Wrapper for slides -->
+                          <ul class="nav nav-pills nav-justified">
+                            <li data-target="#mypayment" data-slide-to="0" class="active"> <a href="#"> <i class="fa fa-fw"></i> Credit Card </a> </li>
+                            <!-- <li data-target="#mypayment" data-slide-to="1"> <a href="#"> <i class="fa fa-fw"></i>PayPal</a> </li> -->
+                          </ul>
+                          <div class="carousel-inner">
+                            <div class="item active">
+                              <div class="payment_card">
+                                <div class="payment_title">
+                                  <h2>Payment Details</h2>
+                                </div>
+                                <div class="payment_details">
+                                  <form>
+                                      <div class="form-group label-floating is-empty">
+                                        <div class="checkboxmark">
+                                          <label>
+                                            <input type="checkbox" id="useNameOnAccount">
+                                            <span class="checkeds blackboder"><i class="fa fa-check checkeds-icon"></i></span>
+                                            <h3 class="font-weit-normal">Use name on account</h3>
+                                          </label>
+                                        </div>
+                                        <span class="material-input"></span> 
+                                      </div>
+                                      <div class="form-group label-floating" style="margin-top: 25px;">
+                                        <label class="control-label">Name on Card</label>
+                                        <input type="text" class="form-control isRequired" id="NameOnCard" value="{{savedCard.NameOnCard}}">
+                                        <span class="material-input"></span> 
+                                      </div>
+                                      <div class="form-group label-floating " style="margin-top: 30px;">
+                                        <label class="control-label">Card Number</label>
+                                        <input type="text" class="form-control isRequired" id="cardNumber" value="{{savedCard.CardNumber}}">
+                                        <span class="material-input"></span>
+                                      </div>
+                                      <div class="form-group label-floating is-empty" style="padding-top: 30px;">
+                                        
+                                        <div class="select-box">
+                                          <label class="control-label" style="margin-top: -25px;">Card Type</label>
+                                          <div class="form-group">
+                                            
+                                            <select id="cardType" class="form-control isRequired" style="padding: 0px 15px;">
+                                              <option selected="select">Select Card Type</option>
+                                              <option {{selectedCard savedCard 'Visa'}}>Visa</option>
+                                              <option {{selectedCard savedCard 'Master'}}>Master</option>
+                                              <option {{selectedCard savedCard 'American Express'}}>American Express</option>
+                                              <option {{selectedCard savedCard 'Discover'}}>Discover</option>
+                                              <option {{selectedCard savedCard 'JCB'}}>JCB</option>
+                                            </select>
+                                          </div>
+                                          <div class="selectarrow" style="right: 15px;top: 15px;"><i class="fa fa-angle-down"></i></div>
+                                        </div>
+                                        <span class="material-input"></span> 
+                                      </div>
+                                      
+                                      <div class="form-group label-floating" style="margin-top: 30px;padding-bottom: 0;">
+                                        <!-- <div class="expirationpgdm expiry-date"> Expiration </div> -->
+                                        <label class="control-label">Expiration</label>
+                                      </div>
+                                      <div class="monthyearpickered">
+                                        <div class="form-group label-floating">
+                                          <div class="select-box">
+                                            <div class="form-group">
+                                             
+                                              <select class="form-control isRequired" id="monthCategory" style="padding: 0px 15px;">
+                                                <option disabled="disabled" selected="selected">Select Month</option> 
+                                                {{#each getmonths}}
+                                                  <option value="{{this.monthVal}}" selected={{isSelectedMonth this.monthVal savedCard}}>{{this.monthVal}}</option>
+                                                {{/each}}
+                                              </select>
+                                            </div>
+                                            <div class="selectarrow" style="right: 15px;top: 15px;"><i class="fa fa-angle-down"></i></div>
+                                          </div>
+                                          <span class="material-input"></span> 
+                                        </div>
+                                      </div>
+                                      <div class="monthyearpickered pull-right">
+                                        <div class="form-group label-floating is-empty">
+                                          <div class="select-box">
+                                            <div class="form-group">
+                                              <select class="form-control isRequired" id="yearCategory" style="padding: 0px 15px;">
+                                                <option disabled="disabled" selected="selected">Select Year</option> 
+                                                {{#each getyears}}
+                                                  <option selected={{isSelectedYear this.yearVal savedCard}}>{{this.yearVal}}</option>
+                                                {{/each}}
+                                              </select>
+                                            </div>
+                                            <div class="selectarrow" style="right: 15px;top: 15px;"><i class="fa fa-angle-down"></i></div>
+                                          </div>
+                                          <span class="material-input"></span> 
+                                        </div>
+                                      </div>
+                                      <div class="form-group label-floating" style="margin-top: 25px;">
+                                        <label class="control-label">CVV</label>
+                                        <input type="password" class="form-control isRequired" id="cvvNumber" value="">
+                                        <span class="material-input"></span> 
+                                      </div>
+                                      <div class="form-group label-floating is-empty">
+                                        <div class="checkboxmark">
+                                          <label>
+                                            <input type="checkbox" id="saveThecard" checked="checked">
+                                            <span class="checkeds blackboder"><i class="fa fa-check checkeds-icon"></i></span>
+                                            <h3 class="font-weit-normal">Save my Card details</h3>
+                                          </label>
+                                        </div>
+                                        <span class="material-input"></span> 
+                                      </div>
+                                    </form>
+                                 <!--  {{#if savedCard}}
+                                    
+                                  {{else}}
+                                    <form autocomplete="off">
+                                      <input autocomplete="off" name="hidden" type="text" style="display:none;">
+                                      <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Card Number</label>
+                                        <input type="text" class="form-control isRequired" id="cardNumber" value="">
+                                        <span class="material-input"></span>
+                                      </div>
+                                        <div class="form-group label-floating is-empty">
+                                          <div class="select-box">
+                                            <div class="form-group">
+                                              <select id="cardType" class="form-control isRequired">
+                                                <option selected="select">Select Card Type</option>
+                                                <option>Visa</option>
+                                                <option>Master</option>
+                                                <option>American Express</option>
+                                                <option>Discover</option>
+                                                <option>JCB</option>
+                                              </select>
+                                            </div>
+                                            <div class="selectarrow"><i class="fa fa-angle-down"></i></div>
+                                          </div>
+                                          <span class="material-input"></span> 
+                                        </div>
+                                      
+                                      <div class="form-group label-floating is-empty">
+                                        <label class="control-label">Name on Card</label>
+                                        <input type="text" class="form-control isRequired" id="NameOnCard" autocomplete="false">
+                                        <span class="material-input"></span> 
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="expirationpgdm expiry-date"> Expiration </div>
+                                      </div>
+                                      <div class="monthyearpickered">
+                                        <div class="form-group label-floating">
+                                          <div class="select-box">
+                                            <div class="form-group">
+                                              <select class="form-control isRequired" id="monthCategory">
+                                                <option disabled="disabled" selected="selected">Select Month</option> 
+                                                {{#each month in months}}
+                                                  <option>{{month.month}}</option>
+                                                {{/each}}
+                                              </select>
+                                            </div>
+                                            <div class="selectarrow"><i class="fa fa-angle-down"></i></div>
+                                          </div>
+                                          <span class="material-input"></span> 
+                                        </div>
+                                      </div>
+                                      <div class="monthyearpickered pull-right">
+                                        <div class="form-group label-floating is-empty">
+                                          <div class="select-box">
+                                            <div class="form-group">
+                                              <select class="form-control isRequired" id="yearCategory">
+                                                <option disabled="disabled" selected="selected">Select Year</option> 
+                                                {{#each year in years}}
+                                                  <option>{{year.year}}</option>
+                                                {{/each}}
+                                              </select>
+                                            </div>
+                                            <div class="selectarrow"><i class="fa fa-angle-down"></i></div>
+                                          </div>
+                                          <span class="material-input"></span> 
+                                        </div>
+                                      </div>
+                                      <div class="form-group label-floating is-empty">
+                                        <label class="control-label">C V V</label>
+                                        <input type="password" class="form-control isRequired" id="cvvNumber" autocomplete="new-password">
+                                        <span class="material-input"></span> 
+                                      </div>
+                                      <div class="form-group label-floating is-empty">
+                                        <div class="checkboxmark">
+                                          <label>
+                                            <input type="checkbox" id="saveThecard">
+                                            <span class="checkeds blackboder"><i class="fa fa-check checkeds-icon"></i></span>
+                                            <h3 class="font-weit-normal">Save my Card details</h3>
+                                          </label>
+                                        </div>
+                                        <span class="material-input"></span>
+                                      </div>
+                                    </form>
+                                  {{/if}} -->
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End Item -->
+                            <div class="item">
+                              <div class="payment_card">
+                                <div class="payment_title">
+                                  <h2>Login to PayPal</h2>
+                                </div>
+                                <br>
+                                <div id="paypal-button-second"></div>
+                              </div>
+                            </div>
+                            <!-- End Item --> 
+                          </div>
+                          <!-- End Carousel Inner --> 
+                        </div>
+
+                        <div class="form-group label-floating ">
+                          <hr style="width:50%;margin-left: 25%;border-color:#c52128;" class="nav nav-pills nav-justified">
+                        <div class="nav nav-pills nav-justified">
+                          <strong>OR</strong>
+                        </div>
+                        <hr style="width:50%;margin-left: 25%;border-color:#c52128;" class="nav nav-pills nav-justified">
+                            <div class=" nav nav-pills nav-justified">
+                              <button class="btn" id="cashOnDelivery">Pay In Cash</button>
+                            </div>
+                          </div>
+                          <span class="material-input"></span> 
+                        <!-- </div> -->
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="next-btns">
+                <div>
+                  <button class="btn btn-block text-uppercase" id="submitOrder">
+                    Submit Order
+                    <div class="ripple-container"></div>
+                  </button>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+</template>

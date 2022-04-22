@@ -1,0 +1,86 @@
+<template name="spirituousProduct">
+  <div class="product-list gray-color-bg topPickProducts flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="searchDiv">
+      <span class="fa fa-search"></span>
+      <input type="text" name="searchTextBox" id="searchTextBox" class="searchTextBox" placeholder="Search State Road Beverage" />
+      {{#if isDevice}}
+        <img class="scanner" id="barcodeIcon" src="/images/scanner-bar-img.png" alt="Scanner"/>
+      {{/if}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form favorites-list topPickProductsList">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="row">
+                        {{#if getTopProducts}}
+                        <section class="itemsliquor">
+                      <ul>
+                          {{#each getTopProducts}}
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="favorites-products">
+                              <div class="favorites-proimg">
+                                <a href="/productDetails/{{this._id}}" onclick='Session.set("PreviousPage", "/liquorProduct");'><img class="img-responsive center-block" src="{{prodImage this._id}}" alt="Favorites Product"/></a>
+                                <div class="favorites-heart favheart">
+                                  <a href="#">
+                                    {{#if getStatus}}
+                                      <img class="img-responsive" src="/images/favorite-fill.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                    {{else}}
+                                      <img class="img-responsive" src="/images/favorites-heart.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                    {{/if}}
+                                  </a> 
+                                </div>
+                              </div>
+                              <input type="hidden" name="productId" value="{{this._id}}">
+                              <div class="pricetables">
+                                <a href="#"> {{this.productName}} </a>
+                                <div class="pricefvrt"> $ {{this.price}} <span> &nbsp;{{productQuantity this.quantity}} </span><br /><span>{{bottleTypeName this.bottleTypes}}</span> </div><br>
+                                <!-- <div><b>Store:</b> {{storename this.storeName}}</div> -->
+                              </div>
+                              <div class="fvrt-btnaddtocart">
+                                <!-- <a href="/ratings/{{this._id}}" >
+                                  <button class="btn btn-block">
+                                    Add Review
+                                    <div class="ripple-container"></div>
+                                  </button>
+                                </a> -->
+                               <!--  {{#if outOfStock this}} -->
+                                  <button class="btn btn-block my-btn" id="addCart" data-attr="{{this._id}}">
+                                    Add To Cart <img alt="carts-icon" src="/images/cart-icons.png">
+                                    <div class="ripple-container"></div>
+                                  </button>
+                               <!--  {{else}}
+                                  <button class="btn btn-block outOfStock">
+                                    Out Of Stock <img alt="carts-icon" src="/images/outofstock.png" class="outOfStockIcon">
+                                    <div class="ripple-container"></div>
+                                  </button>
+                                {{/if}} -->
+                              </div>
+                            </div>
+                          </div>
+                          {{/each}}
+                        </ul>
+                      </section>
+                        {{else}}
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="favorites-products">
+                              No Products Available..!
+                            </div>
+                          </div>
+                        {{/if}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

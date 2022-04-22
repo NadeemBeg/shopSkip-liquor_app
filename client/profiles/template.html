@@ -1,0 +1,63 @@
+<template name="profiles">
+  <div class="thanks-for-shopping flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="profile_wrapper">
+              <div class="container" style="height: auto;margin-bottom: 25px;">
+                <div class="row">
+                  <div class="account_setting">
+                    <div class="account_Profile_img">
+                      <img src="{{getProfileImage}}" alt="profile-img" id="profileImage" name="profileImage" width="180px" height="180px" onclick="$('#ProfilePic').click();" />
+                      <div class="Profile_camera"><img src="/images/photo-camera.png" alt="camera" onclick="$('#ProfilePic').click();" />
+                        <input type="file" name="ProfilePic" id="ProfilePic" accept="image/*">
+                      </div>
+                      <div class="rotated">
+                        <input type="hidden" name="hiddenVar" id="hiddenVar" value="{{getRotation}}">
+                        <img src="/images/rotate.png" alt="camera" class="rotatedICON" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container" style="height: auto;">
+                  <div class="box_bg content common-form profilesPageOnLinke">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="form">
+                        <h3>Account</h3>
+                        <div class="form-group links" data-src="/accountdetails"> Account Details <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"> </div>
+                        <!-- <div class="form-group links"> <a href="#" id="address_billing">Address & Billing <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"></a> </div> -->
+                        <div class="form-group links" data-src="/notification" style="border-bottom: 0px solid;"> Notifications <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container" style="height: auto;">
+                  <div class="box_bg content common-form">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="form">
+                        <h3>Help & More</h3>
+                        <div class="form-group links" data-src="/orderHistory"> Order History <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"> </div>
+                        <div class="form-group links" data-src="/howappworks"> How App Works <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"> </div>
+                        <div class="form-group links" data-src="/howAreWeDoing"> How Are We Doing <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"> </div>
+                        <div class="form-group links" data-src="/termsofservice" style="border-bottom: 0px solid;"> Terms of Services & Legal <img src="/images/right_icon_chevron.png" alt="right_icon_chevron.png"> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- ====== /REVIEW  BOC ====== -->
+               
+              </div>
+              <div class="pos-relative" id="user_log_out" style="margin-bottom: 1px;">
+                  <button class="btn btn-block">
+                    LOG OUT
+                    <div class="ripple-container"></div>
+                  </button>
+                </div>
+            </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

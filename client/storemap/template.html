@@ -1,0 +1,13 @@
+<template name="storesmap">
+	<div class="store_list map flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      {{> googleMap name="storesmap" options=storesMapOptions}}
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

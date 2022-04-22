@@ -1,0 +1,489 @@
+<head>
+  	<!-- =================== /META ==================== -->
+	<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
+  <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * gap: data: blob: 'unsafe-inline' 'unsafe-eval' ws: wss:;">
+
+	<title> :: ShopSkip ::</title>
+
+	<!-- =================== /FAVICON ==================== -->
+	<link rel="icon" sizes="16x16 32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png"/>
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css"> -->
+  <meta name="appleid-signin-client-id" content="com.liquor.appservices">
+  <meta name="appleid-signin-scope" content="email name">
+  <meta name="appleid-signin-redirect-uri" content="https://www.shopskip.shop/login">
+  <meta name="appleid-signin-state" content="signin">
+  <meta name="appleid-signin-use-popup" content="true">
+  <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+	<!-- =================== /FAVICON ==================== -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/js/functions.js"></script>
+  <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+  <script type="text/javascript" src="/js/JsBarcode.all.min.js"></script>
+ <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+
+	<!-- <script type="text/javascript" src="/js/material.min.js"></script> -->
+	<!-- <script type="text/javascript" src="/js/material-kit.js"></script> -->
+
+	<script src="/js/modernizr.custom.js" type="text/javascript"></script> 
+	<script type="text/javascript" src="/js/bootstrap-touch-slider-min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+
+
+  <link href="/css/bootstrap-touch-slider.css" rel="stylesheet" type="text/css">
+  <link href="/css/component.css" rel="stylesheet" type="text/css">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+  
+  <link href="/css/xmedia.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.css">
+
+  <link href="/css/fonts.css" rel="stylesheet">
+<!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ -->   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   
+
+  <link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
+  
+
+
+</head>
+
+<body>
+  {{> sAlert}}
+  <div class="fullScreenImage" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 43242332432432432;
+    background: #fff;
+    display: none;
+    overflow: hidden;
+    height: 100vh;">
+    <span style="
+    position: absolute;
+    top: 20px;
+    left: 20px;
+"><i class="fa fa-times" style="
+    font-size: 23px;
+    font-weight: bolder;
+        z-index: 5000;
+" onclick="$('.fullScreenImage').slideUp()"></i></span><img class="img-responsive center-block productImageDetailPage" src="https://res.cloudinary.com/liqour/image/upload//v1561668681/z4bioatnxzm4fpyhcoru.jpg" alt="product-img" style="
+    height: auto !important;
+    /* overflow: hidden; */
+    max-height: 70%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0px, -50%);
+    bottom: 0;
+    right: 0;
+"></div>
+</body>
+
+<!-- Sidebar transition menu start -->
+<template name="menu">
+	<nav class="st-menu st-effect-3" id="menu-3">
+    <div class="back_icon">
+      <ul>
+        <li><a href="#" class="menu-close"><img src="/images/menu_back_icon.png" alt="menu_back_icon"></a></li>
+      </ul>
+    </div>
+    <div class="profile">
+      <!-- <img src="{{userImage}}" alt="profile-pic" id="profileImageMenu"> -->
+      <!-- <input type="file" name="ProfilePic" id="ProfilePic" accept="image/*"> --> 
+           
+        <div class="menu_Profile_camera" style="margin-right: 0px; display: inline-block;">
+          <img src="{{userImage}}" alt="profile-img" id="profileImageMenu" name="profileImage" onclick="$('#ProfilePic').click();"/>
+          <input type="file" name="ProfilePic" id="ProfilePic" accept="image/*">  
+          <h2 class="menu-close current_user"> {{current_user_name}}</h2>      
+        </div>
+      
+      
+    </div>
+    <ul class="sideMenuul">
+      <li><a href="/dashboard" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/account_settings_icon.png" alt="account settings"><span>Home</span></a></li>
+      <li><a href="/accountdetails" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/account_settings_icon.png" alt="account settings"><span>Account Settings</span></a></li>
+      <li><a href="/profiles" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/account_settings_icon.png" alt="profile"><span>User Profile</span></a></li>
+      <li><a href="#" id="change_password"><img src="/images/account_settings_icon.png" alt="change password"><span>Change Password</span></a></li>
+      <li><a id="testProduct" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/products_icon.png" alt="products_icon"><span>products</span></a></li>
+      <li><a href="/storePage" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/stores_icon.png" alt="stores_icon">Stores</a></li>
+      <li><a href="/favorites" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/favorite_products_icon.png" alt="favorite_products_icon">favorite products</a></li>
+      <li><a href="/favoriteReceipes" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/favorite_products_icon.png" alt="favorite_products_icon">favorite Recipes</a></li>
+      <li><a href="/orderHistory" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/order_history_icon.png" alt="order_history_icon">order history</a></li>
+      <li><a href="/coupons" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/coupons_icon.png" alt="coupons_icon">coupons</a></li>
+      <li><a href="/recipesList" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/coupons_icon.png" alt="coupons_icon">Recipes</a></li>
+      <!-- <li><a href="/receipePage/{{lastReceipeId}}"><img src="/images/coupons_icon.png" alt="coupons_icon">Recipes</a></li> -->
+      <li><a href="/howappworks" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/how_app_works_icon.png" alt="how_app_works_icon">how app works</a></li>
+      <li><a href="/settings" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/settings_icon.png" alt="settings_icon">settings</a></li>      
+       <li><a href="/faq" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/question.png" alt="settings_icon"> faq</a></li>
+      <li><a href="/notification" onclick='Session.set("PreviousPage", "/dashboard");'><img src="/images/settings_icon.png" alt="settings_icon">Notification</a></li>
+    </ul>
+    <div class="sign_out">
+      <ul>
+        <li><a href="#" id="user_sign_out"><img src="/images/sign_out_icon.png" alt="sign_out_icon"><span>Sign out</span></a></li>
+      </ul>
+    </div>
+  </nav>
+</template>
+<!-- Sidebar transition menu end -->
+<!-- <template name="connectionOverlay">
+  {{#unless isConnected}}
+  <div class="overlay">
+    <div class="modal-warning">
+      {{#if isConnecting}}
+      <div class="icon fa fa-refresh fa-spin"></div>
+      <div class="title">
+        Connecting to server ...
+      </div>
+      {{else}}
+      <div class="icon fa fa-warning"></div>
+      <div class="title">
+        Connection to server lost
+      </div>
+      {{/if}}
+      {{#if isWaiting}}
+      <div class="body">
+        Trying to reconnect in few seconds.
+        <a href="">Click here</a> to reconnect immediately.
+      </div>
+      {{/if}}
+      {{#if isOffline}}
+      <div class="body">
+        <a href="">Click here</a> to reconnect.
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{/unless}}
+</template> -->
+
+<template name="topHeader">
+  <div class="main-header">
+    <div class="header" style="padding: 0;height: 50px;">
+      <div class="container">
+        <div class="row npm" style="height: 100%;">
+         
+          <div class="col-xs-4 npm icon-left nopadding" style="height: 100%;">
+           
+            {{#if backIcon}}
+            <div id="st-trigger-effects" class="column backIcon" style="height: 100%;">
+              <button data-effect="st-effect-3" class="backButton" style="height: 100%;">
+                <a href="#" id="nav-icon3" style="height: 100%;display: flex;align-items: center;">
+                  
+                  <i class="fa fa-arrow-left" style="color: #FFFFFF;font-size: 25px;padding-left: 15px;padding-right: 15px;"></i>
+                </a>
+              </button>
+            </div>
+            {{/if}}
+            
+            
+          </div>
+          
+          <div class="col-xs-4 npm" style="height: 100%;">
+            <div class="header_title" style="height: 100%;display: flex;align-items: center;">
+              <h2 style="margin: 0 auto;">{{getTitle}}</h2>
+            </div>
+          </div>
+          
+         <!--  {{#if cartIcon}}
+          <div class="col-xs-4 npm text-right icon-right"> <a href="/storePage" class="store-iconmargin"><img class="store-icons" alt="store-icons" src="/images/store-icons.png"> </a>
+           <a href="/cart" class="" style="position: relative !important;" id="iconCartCounter"><img alt="cart-icons" src="/images/cart-icons.png"> <span class="badge" style="right: -7px !important;
+position: absolute !important;background: yellow;color: #ff0000;padding:2px 5px;">{{cartCount}}</span> </a>
+         </div>
+          {{/if}} -->
+          <!-- {#if HomeIcon}}
+          <div class="col-xs-4 npm text-right icon-right"> <a href="/dashboard"><img src="/images/home-icons.png" alt="home-icons"/> </a> </div>
+          {{/if}} -->
+          {{#if MapIcon}}
+          <div class="col-xs-4 npm text-right icon-right" style="height: 100%;padding-right: 0;">
+            <div id="st-trigger-effects" class="column backIcon" style="height: 100%;width: 55px;">
+              
+                <a href="/storePage/map" id="nav-icon3" style="height: 100%;display: flex;align-items: center;margin: 0;">
+                  <!-- <img src="/images/back-new.png" alt="back-icon"> </a> -->
+                  <img src="/images/map-location-icon.png" alt="location-icon" style="margin: auto;" />
+                </a>
+              
+            </div>
+          </div>
+          {{/if}}
+          <!-- {{#if BackMapIcon}}
+          <div class="col-xs-4 npm text-right icon-right" style="height: 100%;padding-right: 0;">
+            <div id="st-trigger-effects" class="column backIcon" style="height: 100%;width: 55px;">
+              <a href="/storePage" style="height: 100%;display: flex;align-items: center;margin: 0;color: #FFFFFF;"> 
+                <i class="fa fa-chevron-left" aria-hidden="true" style="color: #fff;font-size: 16px;"></i> Back
+              </a> 
+            </div>
+          </div>
+          {{/if}}    -->       
+          <!-- {{#if backChooseProd}}
+          <div class="col-xs-4 npm text-right icon-right">
+            <div id="st-trigger-effects" class="column backIcon" style="height: 100%;width: 55px;">
+              <a href="/myChoiceProduct/{{getOrderId}}/ProductsId/{{getOutOfStockProdID}}" style="height: 100%;display: flex;align-items: center;margin: 0;color: #FFFFFF;"> 
+                <i class="fa fa-chevron-left" aria-hidden="true" style="color: #fff;font-size: 16px;"></i> Back
+              </a> 
+            </div>
+          </div>
+          {{/if}} -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- {{#if FilterShowHide}}
+  {{#if sreachBar}}
+    <div class="serch-homepage">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10">
+          
+          <div class="search-with-scaner" id ="newSearchBox">
+            <span class="search-icon">
+            <button type="submit">
+            <span class="fa fa-search"></span>
+            </button>  
+            </span>
+
+            
+            <input type="text" id="searchproduct" class="input-xlarge form-control" placeholder="Search"> 
+            {{#if isCordova}}
+            <a href="#" id="barcodeIcon"><img class="scanner" src="/images/scanner-bar-img.png" alt="Scanner"/></a>
+            {{/if}}
+
+          </div>
+          
+          {{#if storeIcon}}
+          <div class="currently-shopping">
+            Currently Shopping At <a href="/storePage">{{selectedStoreName}}</a>
+
+            
+          </div>
+
+          {{/if}}
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 homeFilterButton">
+          
+          <span><i class="fa fa-filter"></i></span>
+        </div>
+      </div>
+    </div>
+   
+        <div class="hideFilterDiv hideDiv filterRangeSlider dashbordFilter" tabindex="0" style="display: none; margin-top: 10px;">
+          <div class="container" style="position: relative;">
+            <p style="font-size: 15px;    padding-bottom: 11px;" id="showFilter">Filter</p>
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+                <select name="category" id="category" class="form-control selectProd" style="text-transform:capitalize;">
+                  <option selected="selected" value="">Select category</option> 
+                  
+                  {{#each allCategories}}
+                    <option value="{{this._id}}" {{isSelectedCategory this._id}}>{{this.categoryType}}</option>
+                  {{/each}}
+                </select>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <select name="category" id="type" class="form-control" style="text-transform:capitalize;">
+                  <option selected="selected" value="">Product Type</option> 
+                  
+                  {{#each allProductTypes}}
+                    <option value="{{this._id}}" {{isSelectedProduct this._id}} >{{this.typeName}}</option>
+                  {{/each}}
+                </select>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+                <select name="brandName" id="brand" class="form-control" style="text-transform:capitalize;">
+                  <option selected="selected" value="">Brand Name</option> 
+                  
+                  {{#each allBrandsTypes}}
+                    <option value="{{this._id}}" {{isSelectedBrand this._id}} >{{this.brandName}}</option>
+                  {{/each}}
+                </select>
+              </div>
+
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="resetFilter" style="text-align: center; color: red !important;">
+                <a href="/products">
+                <button style="width: 100%;margin-top: 5px;background: #fff;">Apply Fliter</button></a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+    </div>
+  {{/if}}
+  {{else}}
+    {{#if sreachBar}}
+      <div class="serch-homepage">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              
+
+              <div class="search-with-scaner" id ="newSearchBox" style="border-radius: 30px 30px 30px 30px;">
+                <span class="search-icon">
+                <button type="submit">
+                <span class="fa fa-search"></span>
+                </button>  
+                </span>
+
+                
+                <input type="text" id="searchproduct" class="input-xlarge form-control" placeholder="Search"> 
+                {{#if isCordova}}
+                <a href="#" id="barcodeIcon"><img class="scanner" src="/images/scanner-bar-img.png" alt="Scanner"/></a>
+                {{/if}}            
+                       
+              </div>
+              
+              {{#if storeIcon}}
+              <div class="currently-shopping">
+                Currently Shopping At <a href="/storePage">{{selectedStoreName}}</a>
+              </div>
+              {{/if}}
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    {{/if}}
+  {{/if}} -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="filter-modal">
+  <div class="modal" id="scanedModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">scanned Products</h4>
+        </div>
+        <div class="modal-body">
+
+          <!-- <div class="content common-form">
+            <div class="select-box">
+              <div class="form-group">
+                <div class="row">
+                </div>                
+              </div>
+            </div>          
+          </div> -->
+
+          {{#if getScannedProducts}}
+            <div class="content common-form favorites-list productListPage">
+              <div class="container">
+                <div class="row" style="padding-bottom: 100px;">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="row listingContainer">
+                        {{#each getScannedProducts}}
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                          <div class="favorites-products">
+                            <div class="favorites-proimg">
+                              <a href="/productDetails/{{this._id}}" ><img class="img-responsive center-block" src="{{prodImage this._id}}" alt="Favorites Product"/></a>
+                              <div class="favorites-heart favheart">
+                                <a href="#">
+                                  {{#if getStatus}}
+                                  <img class="img-responsive" src="/images/favorite-fill.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart" />
+                                  {{else}}
+                                  <img class="img-responsive" src="/images/favorites-heart.png" id="favProduct" data-id="{{this._id}}" data-status="{{getStatusString}}" alt="favorites-heart"/>
+                                  {{/if}}
+                                </a> 
+                              </div>
+                            </div>
+                            <input type="hidden" name="productId" value="{{this._id}}">
+                            <div class="pricetables">
+                              <a href="#"> {{this.productName}} </a>
+                              <div class="pricefvrt"> $ {{this.price}} <span> {{bottlesize this.quantity}} </span> <br><span>{{bottleTypeName this.bottleTypes}}</span></div><br>
+                              {{#if storename this}}
+                              <div class="nameOfStore"><b>Store:</b> {{storename this}}</div>
+                              {{else}}
+                              <div class="nameOfStore">&nbsp;</div>
+                              {{/if}}
+                            </div>
+
+                            <div class="fvrt-btnaddtocart">
+                                <!-- <a href="/ratings/{{this._id}}" >
+                                  <button class="btn btn-block">
+                                    Add Review
+                                    <div class="ripple-container"></div>
+                                  </button>
+                                </a> -->
+                                <button class="btn btn-block" id="addCart" data-attr="{{this._id}}">
+                                  Add To Cart <img alt="carts-icon" src="/images/cart-icons.png" data-attr="{{this._id}}">
+                                  <div class="ripple-container"></div>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          {{/each}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {{else}}
+              <div class="content common-form favorites-list productListPage" style="height: calc(100vh - 51px)">
+                <div class="container">
+                  <div class="row" style="padding-bottom: 100px;">
+                    <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                      <div class="form">
+                        <div class="row listingContainer">
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="favorites-products">
+                              No Products Available..!
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {{/if}}
+
+
+
+
+          <!-- <button id="filter_product">submit</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</template>

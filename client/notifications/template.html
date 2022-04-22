@@ -1,0 +1,80 @@
+<template name="notification">
+  <div class="notifications flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form" style="overflow: hidden;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="notificationpage">
+                <div class="form">
+                  <h2>Push Notifications</h2>
+                  <div class="form-group links">
+                    <a href="#">
+                      Promotions 
+                    </a>
+                    <label class="switch-light switch-material" onclick="" style="float: right;">
+                      {{#if promotionChecked}}
+                      <input type="checkbox" id="Promotion" checked>
+                      {{else}}
+                      <input type="checkbox" class="" id="Promotion">
+                      {{/if}}
+                      <span>
+                        <span>Off</span>
+                        <span>On</span>
+                        <a></a>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="form-group links border-none">
+                    <a href="#">
+                      Push Order Updates
+                    </a>
+                    <label class="switch-light switch-material" onclick="" style="float: right;">
+                      <input type="checkbox" id="push_ord_update" {{pushOrderChecked}}>
+                      <span>
+                        <span>Off</span>
+                        <span>On</span>
+                        <a></a>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="notificationpage">
+                <div class="form">
+                  <h2>Text Messages</h2>
+                  <div class="form-group links border-none">
+                    <a href="#">
+                      SMS Order Updates 
+                    </a>
+                    <label class="switch-light switch-material" onclick="" style="float: right;">
+                      <input type="checkbox" id="sms_ord_update" {{smsChecked}}>
+                      <span>
+                        <span>Off</span>
+                        <span>On</span>
+                        <a></a>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              {{#if showOrderButton}}
+              <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <button class="btn btn-block" id="backToMyOrder">
+                  Back To My Order                        
+                </button>
+              </div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

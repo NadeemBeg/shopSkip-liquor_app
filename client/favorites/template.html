@@ -1,0 +1,66 @@
+<template name="favorites">
+  <div class="favorites gray-color-bg favoritesProductPage flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form favorites-list-favProdPage">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form">
+                      <div class="row">
+                      {{#if getfavProducts}}
+                      <section class="itemsfav">
+                      <ul>
+                        {{#each getfavProducts}}
+                          <li><div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <div class="favorites-products">
+                              <div class="favorites-proimg">
+                                <a href="/productDetails/{{this._id}}" onclick='Session.set("PreviousPage", "/favorites");'><img class="img-responsive center-block" src="{{getProductImage this._id}}" alt="Favorites Product" style="height:314px;"/></a>  
+                                <div class="favorites-heart">
+                                  <a href="#"><img class="img-responsive" id="favProducts" data-id="{{this._id}}" src="/images/favorite-fill.png" alt="favorites-heart"/></a> 
+                                </div>
+                              </div>
+                              <div class="pricetables">
+                                <a href="#">{{this.productName}}</a>
+                                <div class="pricefvrt">
+                                  ${{this.price}} <span> {{bottlesize this._id}} </span><br>
+                                  {{#if storename this._id}}
+                                    <div style="text-overflow: ellipsis; overflow: hidden;white-space: nowrap;"><b>Store:</b> {{storename this._id}}</div>
+                                    <!-- <div><b>Store:</b> {{storename this}}</div> -->
+                                  {{else}}
+                                    <div><b>&nbsp;</b> &nbsp;</div>
+                                  {{/if}}
+                                
+                                </div>
+                              </div>
+                              <div class="fvrt-btnaddtocart">
+                                  <button class="btn btn-block my-btn" id="addFavCart" data-attr="{{this._id}}">
+                                    Add To Cart <img alt="carts-icon" src="/images/cart-icons.png"> 
+                                    <div class="ripple-container"></div>
+                                  </button>
+                              </div>
+                            </div>
+                          </div></li>
+                          {{/each}}
+                        </ul></section>
+                        {{else}}
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="favorites-products">
+                              No Favorite Products Available..!
+                            </div>
+                          </div>
+                        {{/if}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

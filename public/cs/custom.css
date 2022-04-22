@@ -1,0 +1,7 @@
+.modal-backdrop.in {
+    z-index: -1;
+}
+.indicators-line > .carousel-indicators li
+{
+	border-radius: 50% !important;
+}

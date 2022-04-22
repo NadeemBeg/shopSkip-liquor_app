@@ -1,0 +1,73 @@
+<template name="accountdetails">
+  <div class="account-details gray-color-bg flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion innerFormGroup">
+      <h4 class="homeAddress innerHeading">Personal Details</h4>
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" class="form-control isRequired validateName " id="first_name" value={{firstName}} placeholder="First Name">
+        <span class="material-input errorSpan"></span> 
+      </div>
+
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" class="form-control isRequired validateName " id="last_name" value={{lastName}} placeholder="Last Name">
+        <span class="material-input errorSpan"></span> 
+      </div>
+
+      <div class="form-group">
+        <label for="email_address">Email</label>
+        <input type="text" class="form-control isRequired" readonly id="email_address" value={{userEmail}}>
+        <span class="material-input errorSpan"></span> 
+      </div>
+
+      <div class="form-group">
+        <label id="birthday">Birthday (Must Match State ID)</label>
+        <input type="text" class="datepicker form-control isRequired" id="birthday" value={{userBirthday}} readonly="readonly">
+        <span class="material-input errorSpan"></span> 
+      </div>
+
+      <div class="form-group">
+        <label for="phone_number">Phone Number</label>
+        <input type="text" class="form-control isRequired validateMobileNumber " id="phone_number" value={{userPhoneNumber}} placeholder="Phone Number">
+        <span class="material-input errorSpan"></span> 
+      </div>
+
+      <h4 class="homeAddress innerHeading">Home Address</h4>
+
+      <div class="form-group">
+        <label for="user_street">Street</label>
+        <input type="text" class="form-control isRequired" name="userStreet" id="user_street" value={{userStreet}} placeholder="Street">
+        <span class="material-input errorSpan"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="user_city">City</label>
+        <input type="text" class="form-control isRequired" name="userCity" id="user_city" value={{userCity}} placeholder="City">
+        <span class="material-input errorSpan"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="user_state">State</label>
+        <input type="text" class="form-control isRequired" name="userState" id="user_state" value={{userState}} placeholder="State">
+        <span class="material-input errorSpan"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="user_zip">Zip</label>
+        <input type="text" class="form-control isRequired  validateZip " name="userZip" id="user_zip" value={{userZip}} placeholder="Zip">
+        <span class="material-input errorSpan"></span>
+      </div>
+
+      <button class="btn btn-block text-uppercase buttonClass" id="update_account">
+        Update
+        <div class="ripple-container"></div>
+      </button>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

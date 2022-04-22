@@ -1,0 +1,47 @@
+<template name="faq">
+   <div class="howappworks flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form faq">
+              <div class="container">
+                 <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel-group" id="accordion">
+                    {{#if FAQs}}
+                      {{#each FAQs}}
+                      <div class="panel panel-default">
+                          <div class="panel-heading">
+                              <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#{{this._id}}">{{this.question}}</a>
+                              </h4>
+                          </div>
+                          <div id="{{this._id}}" class="panel-collapse collapse">
+                              <div class="panel-body">
+                                  {{#if this.isCMS}}
+                                    {{#with getCMSContent this}}
+                                      {{{this.pageContent}}}
+                                    {{/with}}
+                                  {{else}}
+                                    <p style="text-align: justify;">{{this.answer}}</p>
+                                  {{/if}}
+                              </div>
+                          </div>
+                      </div>
+                      {{/each}}
+                    {{else}}
+                    {{/if}}
+                    </div>
+                    
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="bottomPortion">
+      {{> footer}}
+    </div>
+    </div>
+    
+</template>

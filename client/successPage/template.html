@@ -1,0 +1,102 @@
+<template name="successPage">
+  <div class="success-screens flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="st-content-inner cartlisting" style="margin: 0 !important;height: 100vh;overflow: hidden;">
+            <div style="display: flex;flex-direction: column;flex: 1;height: 100%;">
+              
+
+              <div class="content common-form" style="display: flex;flex: 1;overflow-y: auto;overflow-x: hidden;">
+                <div class="text-center success-page">
+                <div class="barcodes">Barcode For Your Orders</div>
+                <div class="barcodeimage">
+                  <img id="barcode" style="width: auto;" />
+                </div>
+                {{#if isOrderSucceed}}
+                <h2>Thank You <br> For Your Purchase </h2>
+                
+                <h5 class="order-pickup">
+                  {{#if isShopInStore}}
+                    Please show this receipt and items to an employee.
+                  {{else}}
+                    {{#if isDeliveryAndPickup}}
+                      We will notify you when your deliverable goods are out for delivery and goods scheduled for pick up are ready.
+                    {{else}}
+                      {{#if isPickup}}
+                        We will notify you when your goods are ready for pickup.
+                      {{/if}}
+                      {{#if isDelivery}}
+                        We will notify you when your goods are out for delivery.
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                </h5>
+
+
+                {{else}}
+                <h2>Sorry <br> Order was failed </h2>
+                {{/if}}
+                <div class="form-group bitnmgt">
+                  <div class="pos-relative">
+                    <button class="btn btn-block text-uppercase" id="keepShopping">
+                      keep shopping
+                      <div class="ripple-container"></div>
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="storedetails" style="text-align: left;padding-left: 15px;padding-bottom: 25px;">
+                  <h2 style="text-align: left;margin: 40px 0px 0px 0px;color: #C52128;font-weight: 600;">
+
+                  {{#if isShopInStore}}
+                    Store Information
+                  {{else}}
+                    {{#if isDeliveryAndPickup}}
+                      Items are being delivered and picked up from:
+                    {{else}}
+                      {{#if isPickup}}
+                        Pick Up Information
+                      {{/if}}
+                      {{#if isDelivery}}
+                        Items are being delivered from:
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                  
+
+                  </h2>
+                  {{#with storeDetails}}
+                  <label style="color: #000000;font-size: 16px;font-weight: 500;text-align: left;margin: 0;padding-top: 10px;">Store Name:</label>
+                  <p style="text-align: left;font-size: 14px;margin-bottom: 0;">{{storeDetails.storeName}}</p>
+
+                  <label style="color: #000000;font-size: 16px;font-weight: 500;text-align: left;margin: 0;padding-top: 10px;">Store Address:</label>
+                  <p style="text-align: left;font-size: 14px;margin-bottom: 0;">{{{storeDetails.address}}}</p>
+
+                  <label style="color: #000000;font-size: 16px;font-weight: 500;text-align: left;margin: 0;padding-top: 10px;">Phone:</label>
+                  <p style="text-align: left;font-size: 14px;margin-bottom: 0;">{{{getNumbers storeDetails.storeNumbers}}}</p>
+                  {{/with}}
+                </div>
+                
+              </div>
+              </div>
+
+              <div style="display: flex;">
+                <div style="height: 50px;width: 100%;">
+                {{#if isNotShopInStore}}
+                  <a style="background: #C52128;color: #FFFFFF;padding: 13px;height: 50px;float: left;width: 50%;border: 1px solid #C52128;text-align: center;" href="/trackOrder/{{id}}">Track Order</a>
+                  <a href="{{openinmap storeDetails}}" target="_blank" style="background: #C52128;color: #FFFFFF;padding: 13px;height: 50px;float: right;width: 50%;border: 1px solid #C52128;border-left: 1px solid #FFFFFF;text-align: center;">Directions</a>
+                <!-- {{else}}
+                  <a style="background: #C52128;color: #FFFFFF;padding: 13px;height: 50px;float: left;width: 100%;border: 1px solid #C52128;text-align: center;">Track Order</a> -->
+                {{/if}}
+              </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

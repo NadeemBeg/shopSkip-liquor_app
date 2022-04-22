@@ -1,0 +1,102 @@
+<template name="pickingup">
+  <div class="picking-up">
+    <!-- ====== /WRAPPER BOC ====== -->
+    <div id="st-container" class="st-container page-wrapper">
+      <!-- ====== HEADER BOC ====== -->
+      <div class="st-pusher">
+        {{> menu}}
+        <div class="st-content">
+          <!-- this is the wrapper for the content -->
+          <div class="st-content-inner">
+            <!-- extra div for emulating position:fixed of the menu --> 
+            <!-- Top Navigation -->
+            <div class="main-header">
+              <div class="header">
+                <div class="container">
+                  <div class="row npm">
+                    <div class="col-xs-4 npm icon-left">
+                      <div id="st-trigger-effects" class="column">
+                        <button data-effect="st-effect-3" class="menu-open">
+                        <a href="#" id="nav-icon3"><img src="/images/menu-icon.png" alt="menu-icon"> </a>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-xs-4 npm">
+                      <div class="header_title">
+                        <h2>Picking Up</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ====== /HEADER EOC ====== --> 
+            <!-- ====== /CONTENT BOC ====== -->
+            <div class="content common-form">
+              <div class="store-info-bg">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
+                      <div class="bluehill">
+                        <span>Blue Hill</span>
+                        <ul>
+                          <li><img src="/images/white-location.png" alt="white-location"> <span>75 Washington Pl</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5">
+                      <div class="bluehill pickingupnumber text-center">
+                        <ul>
+                          <li><span>888 999 7777</span></li>
+                          <li><span>Change the store</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="content common-form pickingup-form">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                      <div class="form">
+                        <div class="form-group label-static selecdatetime">
+                          <input type="text" class="datepicker form-control" value="Select Date">
+                          <span class="material-input"></span> 
+                          <span class="selectarrow"><img alt="right_icon_chevron" src="/images/right_icon_chevron.png"></span>
+                        </div>
+                        <div class="form-group label-static selecdatetime">
+                          <input type="text" class="form-control" value="Select Time">
+                          <span class="material-input"></span> 
+                          <span class="selectarrow"><img alt="right_icon_chevron" src="/images/right_icon_chevron.png"></span>
+                        </div>
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label">Special Instructions</label>
+                          <textarea type="text" class="form-control"></textarea>
+                          <span class="material-input"></span> 
+                        </div>
+                        <div class="form-group label-floating is-empty">
+                          <label class="control-label">Enter Phone Number</label>
+                          <input type="text" class="form-control">
+                          <span class="material-input"></span> 
+                        </div>
+                        <div class="form-group">
+                          <div class="pos-relative">
+                            <button class="btn btn-block text-uppercase">
+                              Continue to Payment
+                              <div class="ripple-container"></div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

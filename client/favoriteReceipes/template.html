@@ -1,0 +1,49 @@
+<template name="favoriteReceipes">
+  <div class="favorites gray-color-bg favoriteReceipesPage flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form favorites-list favoriteReceipesList">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form" style="padding: 0;">
+                      <div class="row">
+                        {{#if getFavoriteReceipes}}
+                          {{#each getFavoriteReceipes}}
+                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="favorites-products">
+                              <div class="favorites-proimg">
+                                <a href="/receipePage/{{this.receipeId}}"><img class="img-responsive center-block" src="{{getReceipeImage this}}" alt="Favorites Receipe" /></a>  
+                                </div>
+                                <div class="favorites-proimg">
+                                <div class="favorites-heart favheart">
+                                  <a href="#"><img class="img-responsive" id="favoriteReceipes"  style="margin-top: 18px;" data-id="{{this._id}}" src="/images/favorite-fill.png" alt="favorites-heart"/></a> 
+                                </div>        
+                              <div class="pricetables getReceipeNameSize">
+                                <a href="#">{{getReceipeName this}}</a>
+                              </div>
+                            </div>
+                            </div>
+                          </div>
+                          {{/each}}
+                        {{else}}
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12" style="margin-top: 20px;">
+                            <div class="favorites-products">
+                              No Favorite Receipes Available..!
+                            </div>
+                          </div>
+                        {{/if}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

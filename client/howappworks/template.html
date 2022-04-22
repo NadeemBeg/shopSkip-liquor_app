@@ -1,0 +1,58 @@
+<template name="howappworks" >
+  <div class="howappworks flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form howappworksPage">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form howappworksslider">
+                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                          {{#if getAppContents}}
+                            {{#each getAppContents}}
+                              <li data-target="#myCarousel" data-slide-to={{@index}} class="{{isActive @index}}"></li>
+                            {{/each}}
+                          {{else}}
+                          {{/if}}
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner text-center appworkslider">
+                          {{#if getAppContents}}
+                            {{#each getAppContents}}
+                              <div class="item {{isActive @index}}">
+                                <img class="img-responsive center-block" src="{{getImage this.appImage}}" alt="wine-home-img">
+                                <div class="contants-slider">
+                                  <h2>{{this.title}}</h2>
+                                  <p>{{this.content}}</p>
+                                </div>
+                              </div>
+                            {{/each}}
+                          {{else}}
+                          {{/if}}
+                        </div>
+                      </div>
+                      <div class="form-group skipintro">
+                        <div class="pos-relative">
+                          <button class="btn btn-block" id="skipIntro">
+                            Skip Intro
+                            <div class="ripple-container"></div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+    {{#if isLoggedIn}}
+      <div class="bottomPortion">
+        {{> footer}}
+      </div>
+    {{/if}}
+  </div>
+</template>

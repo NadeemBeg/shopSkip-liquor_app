@@ -1,0 +1,72 @@
+<template name="login">
+	<div class="login">
+	<div class="page-wrapper"> 
+  <!-- ====== /CONTENT BOC ====== -->
+	<div class="content">
+		<div class="container">
+			<div class="row topSection">
+				<div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+					<div class="logo">
+						<img src="/images/logo.png" alt="logo" class="img-responsive">
+					</div>
+				</div>
+			</div>
+			<div class="row bottomSection">
+				<div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+					<form>
+					<div class="form" id="loginForm">
+						<div class="input-group" style="position: relative;padding: 0px 10px 0 10px;">   
+							<span class="input-group-addon forPadding" style="padding: 0px !important;position: absolute;z-index: 111;right: 40px;top: 18px;">
+								<i class="fa fa-envelope-o"></i>
+							</span>
+							<div class="form-group"><input type="text" class="form-control isRequired validateEmail" placeholder="Email" id="userName" name="userName"><span class="errorSpan"></span></div>
+						</div>
+						<div class="input-group" style="position: relative;padding: 0px 10px 0 10px;">
+							<span class="input-group-addon forPadding" style="padding: 0px !important;position: absolute;z-index: 111;right: 40px;top: 18px;">
+								<i class="fa fa-lock"></i>
+							</span>
+							<div class="form-group"><input type="Password" class="form-control isRequired" placeholder="Password" id="userPassword" name="userPassword"><span class="errorSpan"></span><span class="material-input"></span></div>
+						</div>
+						<div class="errorMsgSpanLogin"></div>
+						<div class="pos-relative">
+							<button class="btn btn-block" id="signInButton">Sign In</button>
+						</div>
+						<div class="or">
+						<h3>or</h3>
+						</div>
+						
+						<div class="social-icon">
+							<ul>
+								<li><a href="" id="facebookLogin"><img src="/images/facebook-icon.png" alt="facebook"></a></li>
+								<li><a href="" id="googleLogin"><img src="/images/google-icon.png" alt="images"></a></li>
+								{{#if isIOS}}
+								<li><!-- <div id="appleid-signin" class="signin-button" data-color="black" data-border="true" data-type="sign in">1</div> -->
+									<a href="" id="appleLogin"><img src="/images/apple_icon.png" alt="images"></a>
+								</li>
+								{{/if}}
+							</ul>
+							<script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+						</div>
+						<div class="bottom-text">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><a href="/signup">Create Account</a></div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right"><a href="/forgotpassword">Forgot Password</a></div>
+							</div>
+						</div>
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+  	
+  <!-- ====== /CONTENT EOC ====== --> 
+  
+  <!-- ====== /FOOTER BOC ====== -->
+  
+  <!-- ====== /FOOTER EOC ====== -->
+  
+</div>
+<!-- ====== /WRAPPER EOC ====== --> 
+</div>
+</template>

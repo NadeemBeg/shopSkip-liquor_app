@@ -1,0 +1,72 @@
+<template name="forgot">
+	<div class="forgot_password" style="background: #000;height: 100vh;"> 
+		<div class="page-wrapper" style="height: 100%;display: flex;flex-direction: column;"> 
+  
+  <!-- ====== HEADER BOC ====== -->
+  
+  <div class="banner">
+    <div class="header">
+      <div class="container">
+        <div class="row npm">
+          <div class="col-xs-3 npm icon-left"> <a href="/login" id="nav-icon2"><img src="/images/back-icon.png" alt="back-icon"> </a> </div>
+          <div class="col-xs-6 npm">
+            <div class="header_title">
+              <h2>Forgot Password</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+          <div class="logo"> <img src="/images/logo.png" alt="logo" class="img-responsive"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ====== /HEADER EOC ====== --> 
+  
+  <!-- ====== /CONTENT BOC ====== -->
+  <div class="content common-form" style="background: #FFF;display: flex;flex: 1;border-top-right-radius: 30px;border-top-left-radius: 30px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+        	<form>
+            <div class="form" id="forgotForm" style="padding-top: 30px;">
+              
+              
+             
+
+                <div class="input-group" style="position: relative;width: 100%">   
+              <span class="input-group-addon forPadding" style="padding: 0px !important;position: absolute;z-index: 111;right: 35px;top: 13px;font-size: 18px;">
+                <i class="fa fa-envelope-o"></i>
+              </span>
+              <div class="form-group"><input type="text" class="form-control isRequired validateEmail" placeholder="Email" id="forgotEmailAddress" name="forgotEmailAddress" style="border-top-right-radius: 10px;border-bottom-right-radius: 10px;"><span class="errorSpan"></span></div>
+            </div>
+              
+              <div class="form-group">
+                <div class="pos-relative">
+                  <button class="btn btn-block" id="forgotSubmit" style="margin-top: 0px;"> Submit                  
+                  <div class="ripple-container"></div>
+                  </button>
+                </div>
+              </div>
+            </div>
+     	    </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ====== /CONTENT EOC ====== --> 
+  
+  <!-- ====== /FOOTER BOC ====== --> 
+  
+  <!-- ====== /FOOTER EOC ====== --> 
+  
+</div>
+	</div>
+
+  
+</template>

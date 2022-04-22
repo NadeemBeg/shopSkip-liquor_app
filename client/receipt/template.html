@@ -1,0 +1,182 @@
+<template name="receiptPage">
+  <div class="receipt-screen flexClass">
+    <div class="headerPortion">
+        {{> topHeader}}
+      </div>
+    <div class="topPortion">
+      <div class="content common-form receipt-btni" style="padding-bottom: 0;">
+              <div class="container" style="height: auto;">
+                <div class="row">
+                  <div class="form cartlist receipt-page" style="padding-top: 0;">
+                    {{#if productDetails}}
+                    {{#each productDetails}}
+                    {{#if ProdCountIsZero this}}
+                    <div class="col-xs-12 no-pad" style="border: 2px solid #f9efe6; padding: 10px;margin: 10px;">
+                    <div class="col-xs-12">
+                      <div class="form-group your-cart-list">
+                        <div class="cartproduct border-none">
+                          <div class="cartproduct-image"><a href="#"><img src="{{productImage this}}" alt="bottle-product" style="height: 14vw;"></a></div>
+                        </div>
+                        <div class="cartprodutitles">
+                          <div class="order-number">Order #{{getOrderNumber orderDetail.barcodeOrderValue}}</div>
+                          <span>{{productName this}}</span>
+                          <div class="rodutitles-price"> $ {{productPrice this}} <span>{{productQuanty this}}</span> </div>
+                        </div>
+                        <div class="order-history">
+                          {{#if ProdCountIsZero this}}
+                        <div class="order-number"><b>OUT OF STOCK</b> </div>
+                          <div class="orderdate"> {{orderDate}} </div>
+                          {{else}}
+                          <div class="orderdate"> {{orderDate}} </div>
+                          <div class="orderqunty"> {{orderProductCount this}} </div>
+                          
+                          {{/if}}
+                        </div>
+                        <div class="order-details">
+                          <h3 class="font-we-lt">Details</h3>
+                          {{prodDetail this}}
+                        </div>
+                      </div>
+                    </div>
+                    <div  class="col-xs-12">
+                    <i class="fa fa-arrow-down  fa-2x" aria-hidden="true" style="color: #c52128 ;    margin-left: 50%; padding-top: 10px;"></i> 
+                    </div>
+                    
+                    {{#if notifiedToCust}}
+                      <div class="col-xs-12">
+                        <div class="form-group your-cart-list">
+                          <div class="cartproduct border-none">
+                            <div class="cartproduct-image"><a href="#"><img src="{{altProImage this}}" alt="bottle-product" style="height: 14vw;"></a></div>
+                          </div>
+                          <div class="cartprodutitles">
+                            <div class="order-number">Order #{{getOrderNumber orderDetail.barcodeOrderValue}}</div>
+                            <span>{{altProName this}}</span>
+                            <div class="rodutitles-price"> $ {{altProPrice this}} <span></span> </div>
+                          </div>
+                          <div class="order-history">
+                            <div class="orderdate"> {{orderDate}} </div>
+                            <div class="orderqunty"> {{altOrderProductCount this}} </div>
+                            
+                          </div>
+                          <div class="order-details">
+                            <h3 class="font-we-lt">Details</h3>
+                            {{prodDetail this}}
+                          </div>
+                          {{#if notConfirmedOrCancelledOrder}}
+                          <div class="my-choice">
+                            <a href="/myChoiceProduct/{{CurrentOrderId}}/ProductsId/{{altProdId this}}">Choose the product of my choice</a>                                      
+                          </div>
+                          {{/if}}
+                        </div>
+                      </div>
+                    {{/if}}
+                    </div>
+
+                  {{else}}
+                    <div class="col-xs-12 ">
+                      <div class="form-group your-cart-list">
+                        <div class="cartproduct border-none">
+                          <div class="cartproduct-image"><a href="#"><img src="{{productImage this}}" alt="bottle-product" style="height: 14vw;"></a></div>
+                        </div>
+                        <div class="cartprodutitles">
+                          <div class="order-number">Order #{{getOrderNumber orderDetail.barcodeOrderValue}}</div>
+                          <span>{{productName this}}</span>
+                          <div class="rodutitles-price"> $ {{productPrice this}} <span>{{productQuanty this}}</span> </div>
+                        </div>
+                        <div class="order-history">
+                          {{#if ProdCountIsZero this}}
+                            <div class="order-number"> {{orderProductCount this}} </div>
+                            <div class="order-number"><b>OUT OF STOCK</b> </div>
+                            <div class="orderdate"> {{orderDate}} </div>
+                          {{else}}
+                            <div class="orderdate"> {{orderDate}} </div>
+                            <div class="orderqunty"> {{orderProductCount this}} </div>
+                          
+                          {{/if}}
+                        </div>
+                        {{#if prodDetail}}
+                          <div class="order-details">
+                            <h3 class="font-we-lt">Details</h3>
+                            {{prodDetail this}}
+                          </div>
+                        {{/if}}
+                      </div>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                    {{/if}}
+                    <br>
+                    <br>
+                    <!-- {{#if alternateProdDetails}}
+                      <p style="font-size: 30px;"><b>ALternate Products To Products OUT OF STOCK:</b></p>
+                      {{#each alternateProdDetails}}
+                        <div class="form-group your-cart-list">
+                          <div class="cartproduct border-none">
+                            <div class="cartproduct-image"><a href="#"><img src="{{alternateProductImage this}}" alt="bottle-product" style="height: 100px;"></a></div>
+                          </div>
+                          <div class="cartprodutitles">
+                            <div class="order-number">Order #{{getOrderNumber orderDetail.barcodeOrderValue}}</div>
+                            <span>{{alternateProductName this}}</span>
+                            <div class="rodutitles-price"> $ {{alternateProductPrice this}} <span>{{alternateProductQuanty this}}ml Bottle</span> </div>
+                          </div>
+                          <div class="order-details">
+                            <h3 class="font-we-lt">Details</h3>
+                            {{alternateProdDetail this}}
+                          </div>
+                        </div>
+                      {{/each}}
+                      {{/if}} -->
+                    <div class="form-group payment-summary">
+                      <div class="payment-summary-code">
+                        <img class="center-block" src="" alt="" id="orderBarcodeImage"/>
+                        <h4>Payment summary</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ordertotal-summary" style="margin: 0;">
+                <ul>
+                  <li>Store Name <span> {{StoreName}}</span></li>
+                  <li>Order Total <span>$ {{totalOrderAmount}}</span></li>
+                  <li>Tax <span>$ {{productTaxTotal}}</span></li>
+                  <li>Sin Tax <span>$ {{sinProductTaxTotal}}</span></li>
+                  <li>Discount <span>{{#if orderDiscount}} ${{orderDiscount}} {{else}} - {{/if}}</span></li>
+                  <li>Order Gross Total <span>$ {{totalGrossAmount}}</span></li>
+                  <li>Charges  <span class="greencolor">Free</span></li>
+                  {{#if alternateProdDetails1}}
+                  <li class="font-we-rg">Total Amount without ALternate Products<span class="greencolor">$ {{withoutAltProWithTotal}}</span></li>
+                  <li class="font-we-rg">Total Amount with ALternate Products<span class="greencolor">$ {{altProWithTotal}}</span></li>
+                  {{else}}
+                  <li class="font-we-rg">Total Amount<span class="greencolor">$ {{totalGrossAmount}}</span></li>
+                  {{/if}}
+                  <li>Payment Status <span>{{paymentStatus}}</span></li>
+                  <li>Order Status <span class="order-number">{{orderStatus}}</span></li>
+                  <!-- {{#if isPaymentPending}}
+                  <li> <a href="/checkoutPagefirst/{{orderDetail._id}}" style="float: right;"> Continue Order </a> </li>
+                  {{/if}} -->
+                </ul>
+              </div>
+              <!-- {{#if OutOfStockNotification}} -->
+              
+              <!-- {{/if}} -->
+            </div>
+            {{#if notConfirmedOrCancelledOrder}}
+                {{#if notifiedToCust}}
+                  <button class="btn btn-block" id="confirmOrderWithoutOutOfStck" style="margin-bottom: 5px;">
+                    Confirm Order Without <br> Out Of Stock Products
+                  </button>
+                  <button class="btn btn-block" id="confirmOrderWith_OutOfStck" style="margin-bottom: 5px;margin-top: 0;">
+                    Confirm Order With <br> Alternate Products
+                  </button>
+                  <button class="btn btn-block" id="cancelOrderWithOutOfStck" style="margin-bottom: 5px;margin-top: 0;">
+                  Cancel <br> Order
+                  </button>
+                {{/if}}
+              {{/if}}
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+  </div>
+</template>

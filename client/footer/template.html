@@ -1,0 +1,42 @@
+<template name="footer">
+	<style type="text/css">
+		.appFooter {
+		    height: 50px;
+		    width: 100%;
+		    background: #c52128;
+		    display: flex;
+		    flex: 5;
+		    flex-direction: row;
+		}
+		.childFooterItem {
+		    display: flex;
+		    height: 100%;
+		    width: 20%;
+		}
+		.childFooterItem img {
+		    height: 30px;
+		    width: 30px;
+		    margin: auto;
+		}
+	</style>
+	<div class="appFooter">
+		<div class="childFooterItem">
+			<a href="/storePage" style="margin: 0 auto;align-items: center;display: flex;"><img src="/images/storeIcon.png"></a>
+		</div>
+		<div class="childFooterItem">
+			<a href="/search-category" style="margin: 0 auto;align-items: center;display: flex;"><img src="/images/searchIcon.png"></a>
+		</div>
+		<div class="childFooterItem">
+			<a href="/dashboard" style="margin: 0 auto;align-items: center;display: flex;"><img src="/images/logo_Home.png" style="border-radius: 100px;width: 33px;height: 33px;"></a>
+		</div>
+		<div class="childFooterItem">
+			<a href="/full-menu" style="margin: 0 auto;align-items: center;display: flex;"><img src="/images/settingsIcon.png"></a>
+		</div>
+		<div class="childFooterItem cartssa">
+			<a href="/cart" style="margin: 0 auto;align-items: center;display: flex;position: relative;width: 100%;">
+				<span class="badge" style="right: 10px !important;position: absolute !important;background: yellow;color: #ff0000;padding: 5px 5px;top: 4px;font-size: 10px;">{{cartCount}}</span>
+				<img src="/images/shoppingCartIcon.png">
+			</a>
+		</div>
+	</div>
+</template>

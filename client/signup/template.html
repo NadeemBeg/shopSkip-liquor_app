@@ -1,0 +1,192 @@
+<template name="signup">
+	<div class="login">
+		<div class="page-wrapper"> 
+			<!-- ====== HEADER BOC ====== -->
+			<!-- ====== /HEADER EOC ====== --> 
+			<!-- ====== /CONTENT BOC ====== -->
+			<div class="content">
+				<div class="container">
+					<div class="main-wrap">
+						<div class="logo-wrap">
+							<div class="row npm">
+					          <div class="col-xs-3 npm icon-left"> <a href="/login" id="nav-icon2"><img src="/images/back-icon.png" alt="back-icon" style="height: 20px;margin-top: 40px;"> </a> </div>
+					          <div class="col-xs-6 npm">
+					            <div class="header_title">
+					              <h2 style="color: #FFFFFF;font-size: 16px;margin-top: 40px;">Sign Up</h2>
+					            </div>
+					          </div>
+					        </div>
+							<div class="logo">
+								<img src="/images/logo.png" alt="logo" class="img-responsive">
+							</div>
+						</div>
+						<div class="welcome-page">
+							<div class="form-wrap">
+								<div class="form-inner">
+									<div class="form">
+										<form>
+											<h3>Welcome to <span class="red-text">	Shopskip!</span></h3>
+											<p class="grey-text sub-title">Let’s Start out by getting some information</p>
+
+											<div class="form-group">
+												<label for="home-address">Home Address</label>
+												<input class="form-control" id="home-address" placeholder="Enter home Address" name="address" type="googleplace" opts=optsGoogleplace>
+												<input type="hidden" name="lat" id="lat" value="">
+												<input type="hidden" name="lng" id="lng" value="">
+												<input name="formatted_address" type="hidden" value="">
+												<span class="errorClass locationError"></span>
+											</div>
+
+
+											<div class="form-group">
+												<label for="appt-floor">Apt #/ Floor</label>
+												<input type="text" class="form-control" id="aptNumber" placeholder="Enter Apt #/ Floor">
+												<span class="errorClass aptError"></span>
+											</div>
+
+											<div class="form-group">
+												<label for="phone-no">Phone</label>
+												<input type="number" class="form-control" id="phoneNumber" placeholder="Enter phone">
+												<span class="errorClass phoneNumberError"></span>
+											</div>
+
+											<div class="pos-relative">
+												<button class="btn btn-block" id="continueButton">Continue</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- ====== /CONTENT EOC ====== --> 
+			<!-- ====== /FOOTER BOC ====== -->
+			<!-- ====== /FOOTER EOC ====== -->
+		</div>
+		<!-- ====== /WRAPPER EOC ====== --> 
+	</div>
+</template>
+
+<template name="signupstep2">
+	<dir class="login">
+		<div class="page-wrapper"> 
+			<!-- ====== HEADER BOC ====== -->
+			<!-- ====== /HEADER EOC ====== --> 
+			<!-- ====== /CONTENT BOC ====== -->
+			<div class="content">
+				<div class="container">
+					<div class="main-wrap">
+						<div class="logo-wrap">
+							<div class="logo">
+								<img src="images/logo.png" alt="logo" class="img-responsive">
+							</div>
+						</div>
+						<div class="welcome-page">
+							<div class="form-wrap">
+								<div class="form-inner">
+									<div class="form">
+										<form>
+											<div class="form-group">
+												<label for="home-address">Full Name</label>
+												<input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter Full Name">
+												<span class="errorClass fullNameError"></span>
+											</div>
+
+											<div class="form-group">
+												<label for="birthday">Birthday</label>
+												<div class="mainClass">
+													<!-- <input type="month" class="form-control dateTextBox" id="birthdaymonth" name="birthdaymonth">  -->
+													<select class="form-control dateTextBox" id="birthdaymonth" name="birthdaymonth" style="padding: 0px 0px;text-align: center;height: 55px;text-align-last: center;">
+														<option value="">Month</option>
+														<option value="1">Jan</option>
+														<option value="2">Feb</option>
+														<option value="3">Mar</option>
+														<option value="4">Apr</option>
+														<option value="5">May</option>
+														<option value="6">Jun</option>
+														<option value="7">Jul</option>
+														<option value="8">Aug</option>
+														<option value="9">Sep</option>
+														<option value="10">Oct</option>
+														<option value="11">Nov</option>
+														<option value="12">Dec</option>
+													</select>
+
+													<select class="form-control dateTextBox" id="birthdaydate" name="birthdaydate" style="padding: 0px 0px;text-align: center;height: 55px;text-align-last: center;">
+														{{{getDates}}}
+													</select>
+													<!-- <input type="date" class="form-control dateTextBox" id="birthdaydate" name="birthdaydate"> --> 
+													<!-- <input type="year" class="form-control dateTextBox last" id="birthdayyear" name="birthdayyear"> --> 
+													<select class="form-control dateTextBox" id="birthdayyear" name="birthdayyear" style="padding: 0px 0px;text-align: center;height: 55px;text-align-last: center;">
+														{{{getYears}}}
+													</select>
+												</div>
+												
+												<span class="errorClass birthdayError"></span>
+											</div>
+											<div class="form-group">
+												<label>Gender</label>
+												<div class="">
+													<div class="text-r-btn-main "> 
+														<div class="radio-btn">
+															<input type="radio" name="type-btn-1" id="type_1" value="male">
+															<label for="type_1">Male</label>
+														</div>
+														<div class="radio-btn">
+															<input type="radio" name="type-btn-1" id="type_2" value="female">
+															<label for="type_2">Female</label>
+														</div>
+														<div class="radio-btn">
+															<input type="radio" name="type-btn-1" id="type_3" value="other">
+															<label for="type_3">Other</label>
+														</div>
+														<span class="errorClass genderError"></span>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="email">Email</label>
+												<input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+												<span class="errorClass emailError" style="padding-bottom: 20px;display: block;"></span>
+												<input type="email" class="form-control" id="confirmEmail"  name="confirmEmail" placeholder="Verify Email">
+												<span class="errorClass confirmEmailError"></span>
+											</div>
+											<div class="form-group">
+												<label for="Password1">Password</label>
+												<input type="Password" class="form-control" id="password" name="password" placeholder="Enter Password">
+												<span class="errorClass passwordError" style="padding-bottom: 20px;display: block;"></span>
+												<input type="Password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Verify Password">
+												<span class="errorClass confirmPasswordError"></span>
+											</div>
+											<div class="pos-relative">
+												<button class="btn btn-block" id="signupstep2Submit">Agree and Continue</button>
+											</div>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="customCheckDisabled1">
+												<label class="custom-control-label" for="customCheckDisabled1">By Clicking Agree and Continue, You Agree To Shopskip’s Terms & Conditions And That You Are At Least 21 Years of Age Or Older</label>
+											</div>
+											<div class="Terms-condition">
+												<a href="#">Terms & Conditions</a>
+
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ====== /CONTENT EOC ====== --> 
+			<!-- ====== /FOOTER BOC ====== -->
+			<!-- ====== /FOOTER EOC ====== -->
+		</div>
+		<!-- ====== /WRAPPER EOC ====== --> 
+	</dir>
+	<div class="termsPopupDiv">
+		{{> termscondition}}
+	</div>
+</template>

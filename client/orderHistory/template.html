@@ -1,0 +1,98 @@
+<template name="orderHistory">
+  <div class="order_history flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="content common-form orderHistoryPage">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form cartlist" style="padding-top: 0;padding-bottom: 15px;">
+                      {{#if getAllOrders}}
+                        {{#each getAllOrders}}
+                        {{#if hasProductImage this}}
+                         <a href="/receiptPage/{{this._id}}">
+                          <div class="form-group your-cart-list">
+                            <div class="cartproduct">
+                              <div class="cartproduct">
+                                <div class="cartproduct-image">                                  
+                                    <a href="/receiptPage/{{this._id}}"><img src="{{productImage this}}" class="avlImage" alt="bottle-product"></a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="cartprodutitles">
+                              <div class="order-number">Order #{{setOrderNumber this}}</div>
+                              <span>{{productName this}}</span>
+                              <div class="rodutitles-price"> $ {{productPrice this}} <span>{{productQuanty this}}</span> </div>
+                            </div>
+                            <div class="order-history">
+                              <div class="orderdate"> {{orderDate this.createdAt}} </div> 
+                              <div class="orderqunty"> {{orderProductCount this._id}} </div>
+                            </div>
+                          </div>
+                        </a>
+                          {{else}}
+                          <a href="/receiptPage/{{this._id}}">
+                          <div class="form-group your-cart-list">
+                            <div class="cartproduct">
+                              <div class="cartproduct">
+                                <div class="cartproduct-image">                                  
+                                    <a href="/receiptPage/{{this._id}}"><img src="{{productImage this}}" class="noAvlImage" alt="bottle-product"></a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="cartprodutitles">
+                              <div class="order-number">Order #{{setOrderNumber this}}</div>
+                              <span>{{productName this}}</span>
+                              <div class="rodutitles-price"> $ {{productPrice this}} <span>{{productQuanty this}}</span> </div>
+                            </div>
+                            <div class="order-history">
+                              <div class="orderdate"> {{orderDate this.createdAt}} </div> 
+                              <div class="orderqunty"> {{orderProductCount this._id}} </div>
+                            </div>
+                          </div>
+                        </a>
+                          {{/if}}
+                        {{/each}}
+                        {{else}}
+                       <p style="text-align: center;margin-top: 25px;"> No order's yet. </p> 
+                      {{/if}}
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pos-relative" style="margin-bottom: 1px;">
+              <button class="btn btn-block" id="viewCart">
+                View Cart
+                <div class="ripple-container"></div>
+              </button>
+            </div>
+            </div>
+
+    </div>
+    <div class="bottomPortion">
+      {{> footer}}
+    </div>
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body pickingup">
+              Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit. Curabitur a porttitor massa,
+              eu fringilla neque.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default">Picking Up</button>
+              <button type="button" class="btn btn-primary">Shopping In Store</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+</template>

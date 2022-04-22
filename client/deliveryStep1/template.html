@@ -1,0 +1,155 @@
+<template name="deliveryStep1">
+  <div class="checkout-step01 deliveryStep1 flexClass">
+    <div class="headerPortion">
+      {{> topHeader}}
+    </div>
+    <div class="topPortion">
+      <div class="checkoptsetp">
+              <div class="steptabs">
+                <div class="container">
+                  <div class="row npm text-center">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row">
+                        <ul class="menutabs-main">
+                          <div class="lines-divider"></div>
+                          <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <a class="active" href="Javascript:void(0);"> <span></span> Delivery </a> </li>
+                          <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <a href="Javascript:void(0);"> <span></span> Payment </a></li>
+                          <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><a href="Javascript:void(0);"> <span></span> Order </a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content common-form checkout-page form" id="checkoutPage1form" style="height: calc(100vh - 150px);overflow-y: auto;">
+              <div class="container" style="margin-bottom: 76px;">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div style="padding-bottom: 25px;">
+                      <h2 style="padding-top: 10px;padding-bottom: 40px;">Contact details</h2>
+                        <div class="form-group label-floating" style="margin-bottom: 25px">
+                          <label class="control-label" style="margin-bottom: 10px">Name</label>
+                          <input type="text" class="form-control isRequired validateName" id="firstname" value={{userFirstName}} placeholder="Full Name">
+                          <span class="errorSpan"></span> 
+                        </div>
+                        <div class="form-group label-floating" style="margin-bottom: 25px">
+                          <label class="control-label" style="margin-bottom: 10px">Email Address</label>
+                          <input type="text" class="form-control isRequired validateEmail " id="emailaddress" value={{userEmailAddress}} placeholder="Email Address" >
+                          <span class="errorSpan"></span> 
+                        </div>
+                        <div class="form-group label-floating" style="margin-bottom: 25px">
+                          <label class="control-label" style="margin-bottom: 10px">Phone</label>
+                          <input type="text" class="form-control isRequired validateMobileNumber " id="phonenumber" value={{userPhoneNumber}} placeholder="Phone Number">
+                          <span class="errorSpan"></span> 
+                        </div>
+                        <div class="form-group label-floating" style="margin-bottom: 0px">
+                          <label class="control-label" style="margin-bottom: 10px">Preferred form of notification</label>
+                          <div style="display: flex;flex-direction: row;flex:3;">
+                            <div style="display: flex;flex:1;">
+                              <input type="radio" name="prefferedNotificationMode" value="phone" checked/><label>Phone</label>
+                            </div>
+                            <div style="display: flex;flex:1;">
+                              <input type="radio" name="prefferedNotificationMode" value="email"/><label>Email</label>
+                            </div>
+                            <div style="display: flex;flex:1;">
+                              <input type="radio" name="prefferedNotificationMode" value="both"/><label>Both</label>
+                            </div>
+                          </div>
+                          <span class="errorSpan"></span> 
+                        </div>
+                      <!-- <div class="form-group label-floating is-empty">
+                        <div class="checkboxmark">
+                          <label>
+                            <input type="checkbox" value="off" id="receiveTextMessages">
+                            <span class="checkeds blackboder"><i class="fa fa-check checkeds-icon"></i></span>
+                            <h3 class="font-weit-normal">Check To Recieve Text Messages About Order</h3>
+                          </label>
+                        </div>
+                        <span class="material-input"></span> 
+                      </div> -->
+                      {{#if checkMsg}}
+                      <div class="form-group label-floating is-empty">
+                        <div class="checkboxmark">
+                          <label>
+                            <h4 class="font-weit-normal">NOTE: Check To Recieve Text Messages About Order
+                            <a href="/notification/{{getOrderId}}">Click Here</a> <!-- for receiving text messages of orders --></h4>
+                          </label>
+                        </div>
+                        <span class="material-input"></span> 
+                      </div>
+                      {{/if}}
+                      
+                      <div class="picking-address">
+                        {{#if hasDeliveryProducts}}
+                        <h2 style="padding-top: 10px;padding-bottom: 40px;">Delivery address</h2>
+                        <!-- <div class="form-group links"> <img src="/images/map-iconsa.png" alt="map-iconsa"> {{productStoreAddress}} </div>
+                        <div class="form-group links"> <a href="tel:{{productStorePhnNumber}}"><img src="/images/phone-contact.png" alt="phone-contact"></a>{{productStorePhnNumber}}</div>
+                       
+                        <div class="form-group links"> <img src="/images/passage-of-time.png" alt="passage-of-time"> <span>Store Time: </span> {{productStoreTiming}}</div>
+                      
+                        {{#if pickupTimes}}
+                        <div class="form-group">
+                          <h2>Select Pickup Time:</h2>
+                          <select class="form-control" id="pickupTimingSelectBox">
+                           <option value="">Select Pickup Time</option> 
+                           {{#each pickupTimes}}
+                             <option value="{{this.val}}">{{this.text}}</option>
+                           {{/each}}
+                         </select>
+                          <div class="selectarrow"><i class="fa fa-angle-down"></i></div>
+                        </div>
+                        {{/if}} -->
+                        
+                        <div class="form-group label-floating" style="margin-bottom: 25px">
+                          <label class="control-label" style="margin-bottom: 10px">Address</label>
+                          <input type="text" class="form-control isRequired" id="address" value={{deliveryAddress}} placeholder="Address">
+                          <span class="errorSpan"></span> 
+                        </div>
+
+                        <div class="form-group label-floating" style="margin-bottom: 25px">
+                          <label class="control-label" style="margin-bottom: 10px">APT #/Floor</label>
+                          <input type="text" class="form-control" id="aptNumber" value={{aptNumber}} placeholder="APT #/Floor">
+                          <span class="errorSpan"></span> 
+                        </div>
+                        {{/if}}
+                        {{#if hasPickupProducts}}
+                          {{#if pickupTimes}}
+                            <div class="form-group" style="margin-bottom: 35px;">
+                              <h2 style="padding-top: 10px;padding-bottom: 20px;">Schedule Pickup Time:</h2>
+                              <select class="form-control" id="pickupTimingSelectBox" style="padding: 0px 15px;">
+                                <option value="">Select Pickup Time</option> 
+                                {{#each pickupTimes}}
+                                  <option value="{{this.val}}">{{this.text}}</option>
+                                {{/each}}
+                              </select>
+                              <div class="selectarrow"><i class="fa fa-angle-down"></i></div>
+                            </div>
+                          {{/if}}
+                        {{/if}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group next-btns" style="margin:0;position: absolute;bottom: 0px;width: 100%;">
+                {{#if pickupTimes}}
+                <div class="pos-relative">
+                  <button class="btn btn-block text-uppercase" id="submitcheckoutPagefirst">
+                    Next
+                    <div class="ripple-container"></div>
+                  </button>
+                </div>
+                {{else}}
+                <div class="pos-relative">
+                  <h3 class="btn btn-block text-uppercase">
+                    Store Close
+                    <div class="ripple-container"></div>
+                  </h3>
+                </div>
+                {{/if}}
+              </div>
+            </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,153 @@
+<template name="checkoutPagefirst">
+  <div class="checkout-step01">
+    <!-- ====== /WRAPPER BOC ====== -->
+    <div id="st-container" class="st-container page-wrapper">
+      <!-- ====== HEADER BOC ====== -->
+      <div class="st-pusher">
+        {{> menu}}
+        <div class="st-content">
+          <!-- this is the wrapper for the content -->
+          <div class="st-content-inner">
+            <!-- extra div for emulating position:fixed of the menu --> 
+            <!-- Top Navigation -->
+            <!-- <div class="main-header">
+              <div class="header">
+                <div class="container">
+                  <div class="row npm">
+                    <div class="col-xs-4 npm icon-left">
+                      <div id="st-trigger-effects" class="column">
+                        <button data-effect="st-effect-3" class="menu-open">
+                          <a href="#" id="nav-icon3"><img src="/images/menu-icon.png" alt="menu-icon"> </a>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-xs-4 npm">
+                      <div class="header_title">
+                        <h2>Checkout</h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            {{> topHeader}}
+            <!-- ====== /HEADER EOC ====== --> 
+            <!-- ====== /CONTENT BOC ====== -->
+            <div class="checkoptsetp">
+              <div class="steptabs">
+                <div class="container">
+                  <div class="row npm text-center">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                      <div class="row">
+                        <ul class="menutabs-main">
+                          <div class="lines-divider"></div>
+                          <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <a class="active" href="Javascript:void(0);"> <span></span> Pick up </a> </li>
+                          <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><a href="Javascript:void(0);"> <span></span> Order </a></li>
+                          <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4"> <a href="Javascript:void(0);"> <span></span> Payment </a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content common-form checkout-page form" id="checkoutPage1form" style="margin-top: 4px;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+                    <div>
+                      <h2 style="padding-top: 10px;">Contact details</h2>
+                        <div class="form-group label-floating" style="margin-top: 25px;">
+                          <label class="control-label">First Name</label>
+                          <input type="text" class="form-control isRequired validateName" id="firstname" value={{userFirstName}}>
+                          <span class="errorSpan"></span> 
+                        </div>
+                        <div class="form-group label-floating" style="margin-top: 25px;">
+                          <label class="control-label">Last Name</label>
+                          <input type="text" class="form-control isRequired validateName " id="lastname" value={{userLastName}}>
+                          <span class="errorSpan"></span> 
+                        </div>
+                        <div class="form-group label-floating" style="margin-top: 25px;">
+                          <label class="control-label">Email Address</label>
+                          <input type="text" class="form-control isRequired validateEmail " id="emailaddress" value={{userEmailAddress}} >
+                          <span class="errorSpan"></span> 
+                        </div>
+                        <div class="form-group label-floating" style="margin-top: 25px;">
+                          <label class="control-label">Phone</label>
+                          <input type="text" class="form-control isRequired validateMobileNumber " id="phonenumber" value={{userPhoneNumber}}>
+                          <span class="errorSpan"></span> 
+                        </div>
+                      <!-- <div class="form-group label-floating is-empty">
+                        <div class="checkboxmark">
+                          <label>
+                            <input type="checkbox" value="off" id="receiveTextMessages">
+                            <span class="checkeds blackboder"><i class="fa fa-check checkeds-icon"></i></span>
+                            <h3 class="font-weit-normal">Check To Recieve Text Messages About Order</h3>
+                          </label>
+                        </div>
+                        <span class="material-input"></span> 
+                      </div> -->
+                      {{#if checkMsg}}
+                      <div class="form-group label-floating is-empty">
+                        <div class="checkboxmark">
+                          <label>
+                            <h4 class="font-weit-normal">NOTE: Check To Recieve Text Messages About Order
+                            <a href="/notification/{{getOrderId}}">Click Here</a> <!-- for receiving text messages of orders --></h4>
+                          </label>
+                        </div>
+                        <span class="material-input"></span> 
+                      </div>
+                      {{/if}}
+                      
+                      <div class="picking-address">
+                        <h2>Picking up address</h2>
+                        <div class="form-group links"> <img src="/images/map-iconsa.png" alt="map-iconsa"> {{productStoreAddress}} </div>
+                        <div class="form-group links"> <a href="tel:{{productStorePhnNumber}}"><img src="/images/phone-contact.png" alt="phone-contact"></a>{{productStorePhnNumber}}</div>
+                       
+                        <div class="form-group links"> <img src="/images/passage-of-time.png" alt="passage-of-time"> <span>Store Time: </span> {{productStoreTiming}}</div>
+                      
+                        {{#if pickupTimes}}
+                        <div class="form-group" style="margin-top: 25px;">
+                          <h2 style="margin-bottom: 20px;">Select Pickup Time:</h2>
+                          <select class="form-control" id="pickupTimingSelectBox" style="padding: 0px 15px;">
+                           <option value="">Select Pickup Time</option> 
+                           {{#each pickupTimes}}
+                             <option value="{{this.val}}">{{this.text}}</option>
+                           {{/each}}
+                         </select>
+                          <div class="selectarrow" style="right: 15px;top: 55px;"><i class="fa fa-angle-down"></i></div>
+                        </div>
+                        {{/if}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group next-btns" style="margin:0;position: inherit;bottom: 0px;">
+                {{#if pickupTimes}}
+                <div class="pos-relative">
+                  <button class="btn btn-block text-uppercase" id="submitcheckoutPagefirst">
+                    Next
+                    <div class="ripple-container"></div>
+                  </button>
+                </div>
+                {{else}}
+                <div class="pos-relative">
+                  <h3 class="btn btn-block text-uppercase">
+                    Store Close
+                    <div class="ripple-container"></div>
+                  </h3>
+                </div>
+                {{/if}}
+              </div>
+            </div>
+            <!-- ====== /CONTENT EOC ====== --> 
+            <!-- ====== /FOOTER BOC ====== --> 
+            <!-- ====== /FOOTER EOC ====== --> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ====== /WRAPPER EOC ====== --> 
+  </div>
+</template>
